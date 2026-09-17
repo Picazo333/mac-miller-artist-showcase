@@ -51,6 +51,27 @@
   .door-line{left:auto!important;right:var(--v5-gutter)!important;top:auto!important;bottom:2.25rem!important;max-width:31rem!important}
 }
 
+/* Wide-screen GO:OD AM: the alarm becomes the architecture; career phases orbit it as annotations. */
+@media(min-width:1101px){
+  .goodam{position:relative!important;display:block!important;min-height:138svh!important;padding-top:clamp(8rem,10vw,10rem)!important}
+  .goodam .chapter-mark{display:block!important;margin-bottom:clamp(3rem,5vw,5rem)!important}
+  .goodam-copy{position:relative!important;z-index:5!important;width:min(40vw,610px)!important;max-width:none!important;margin-left:clamp(0rem,3vw,3.5rem)!important;padding:0!important}
+  .goodam-copy h2{max-width:8.5ch!important}
+  .alarm{position:absolute!important;right:4.5%!important;top:21%!important;width:min(50vw,720px)!important;height:auto!important;z-index:1!important;margin:0!important;opacity:1!important;border-width:clamp(13px,1.6vw,20px)!important;background:radial-gradient(circle at center,rgba(215,154,170,.07),transparent 56%)!important}
+  .alarm b{font-size:clamp(3.2rem,5.6vw,5.8rem)!important;letter-spacing:-.04em!important}
+  .career-timeline{position:absolute!important;right:2.2%!important;top:18%!important;width:min(55vw,790px)!important;height:min(55vw,790px)!important;aspect-ratio:1!important;display:block!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;z-index:4!important}
+  .career-timeline article{position:absolute!important;width:min(17vw,235px)!important;max-width:235px!important;min-height:0!important;padding:0!important;border:0!important;transform:none!important}
+  .career-timeline article:nth-child(1){top:2%!important;left:7%!important}
+  .career-timeline article:nth-child(2){top:8%!important;right:2%!important}
+  .career-timeline article:nth-child(3){bottom:9%!important;left:2%!important}
+  .career-timeline article:nth-child(4){bottom:2%!important;right:5%!important}
+  .career-timeline article::before{content:""!important;position:absolute!important;top:-.65rem!important;left:0!important;width:2.7rem!important;height:2px!important;background:var(--pink-deep)!important}
+  .career-timeline h3{font-size:clamp(1rem,1.25vw,1.35rem)!important}
+  .career-timeline p{max-width:24ch!important;font-size:clamp(.73rem,.8vw,.84rem)!important;line-height:1.38!important}
+  .lyric-rush{bottom:3.2rem!important;left:var(--v5-gutter)!important}
+  .door-line{bottom:3.2rem!important;right:var(--v5-gutter)!important}
+}
+
 @media(max-width:900px){
   .lyric-question{display:none!important}
   .goodam .career-timeline{border-top:0!important}
