@@ -1,0 +1,170 @@
+/* V4 bounded polish layer. Imported by a11y-performance.css.
+   High-specificity selectors intentionally override later chapter rules. */
+
+/* Prevent the V2 repair layer from duplicating the fifth memorial lyric; V4
+   already carries all five approved excerpts inside the two rings/core. */
+.v4 .orbit-memorial::after { display: none !important; }
+
+/* Watching Movies: give the Star Room sign breathing room from the chapter
+   heading and make the CRT read as an object deeper inside the room. */
+.v4.chapter--watching .star-room-sign,
+.v4 .chapter--watching .star-room-sign {
+  left: auto !important;
+  right: -2% !important;
+  top: -2% !important;
+  max-width: 82% !important;
+  text-align: right !important;
+  letter-spacing: -.075em !important;
+  opacity: .9;
+}
+.v4.chapter--watching .star-room-installation,
+.v4 .chapter--watching .star-room-installation { padding-top: clamp(5rem, 9vw, 9rem) !important; }
+.v4.chapter--watching .star-room-installation .crt-wrap,
+.v4 .chapter--watching .star-room-installation .crt-wrap { margin-top: clamp(2rem, 5vw, 5rem) !important; }
+
+/* Macadelic: an oversized question mark is the chapter's visual thesis,
+   making the section less interchangeable with a conventional artist hero. */
+.v4 .chapter--macadelic::after {
+  content: "?";
+  position: absolute;
+  z-index: 1;
+  left: 42%;
+  top: 6%;
+  color: rgba(238,230,223,.07);
+  font: 700 clamp(18rem, 39vw, 42rem)/.75 var(--display);
+  letter-spacing: -.12em;
+  transform: rotate(7deg);
+  pointer-events: none;
+}
+.v4 .chapter--macadelic .macadelic-copy { z-index: 4 !important; }
+.v4 .chapter--macadelic .macadelic-photo { z-index: 5 !important; }
+
+/* GO:OD AM: the auditorium gets a clock/curtain cue so the career timeline
+   reads as a program inside a specific chapter instead of a generic timeline. */
+.v4 .chapter--goodam::before {
+  content: "05:00 AM";
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  color: rgba(217,154,169,.16);
+  font: 700 clamp(5rem, 14vw, 15rem)/.8 var(--mono);
+  letter-spacing: -.09em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.v4 .chapter--goodam .stage-program .career-node {
+  border-top: 3px solid var(--v4-pink) !important;
+}
+.v4 .chapter--goodam .stage-program .career-node::before {
+  content: "PROGRAM";
+  display: block;
+  margin-bottom: 1.2rem;
+  color: rgba(238,230,223,.42);
+  font: 700 .55rem/1 var(--mono);
+  letter-spacing: .16em;
+}
+
+/* Divine Feminine: turn the portrait into a radial mirror assembly rather than
+   an ordinary framed photograph. */
+.v4 .chapter--divine::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: 3%;
+  top: 7%;
+  width: min(58vw, 820px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0deg,
+      transparent 0 7%, rgba(238,230,223,.16) 7% 8%, transparent 8% 18%,
+      rgba(217,154,169,.22) 18% 19%, transparent 19% 31%,
+      rgba(238,230,223,.13) 31% 32%, transparent 32% 45%,
+      rgba(217,154,169,.18) 45% 46%, transparent 46% 60%,
+      rgba(238,230,223,.12) 60% 61%, transparent 61% 74%,
+      rgba(217,154,169,.2) 74% 75%, transparent 75% 100%);
+  transform: scaleX(.74) rotate(7deg);
+  filter: blur(.1px);
+  pointer-events: none;
+}
+.v4 .chapter--divine .divine-portrait { z-index: 4 !important; }
+.v4 .chapter--divine .divine-copy { z-index: 5 !important; }
+
+/* Archive: encode Mac's changing eras directly into the register so it is more
+   than a generic musician discography list. */
+.v4 .chapter--archive .release-register::before {
+  content: "PITTSBURGH  →  ROSTRUM  →  INDEPENDENCE  →  WARNER  →  ARCHIVE";
+  display: block;
+  margin: 0 0 2rem;
+  padding: .75rem 0;
+  border-bottom: 3px solid var(--v4-pink-shadow);
+  color: var(--v4-pink-shadow);
+  font: 700 clamp(.62rem, 1vw, .82rem)/1.35 var(--mono);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.v4 .chapter--archive .release-line--major {
+  position: relative;
+  background: linear-gradient(90deg, rgba(217,154,169,.22), transparent 72%) !important;
+}
+.v4 .chapter--archive .release-line--major::before {
+  content: "TURN";
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  color: var(--v4-pink-shadow);
+  font: 700 .55rem/1 var(--mono);
+  letter-spacing: .18em;
+}
+
+/* Upcoming shows: instead of event cards, frame the academic truth as a
+   deliberately blank marquee / no-fiction notice. */
+.v4 .chapter--shows::before {
+  content: "NO DATES / NO FICTION";
+  position: absolute;
+  z-index: 1;
+  right: -4vw;
+  top: 12%;
+  color: rgba(20,17,18,.055);
+  font: 700 clamp(5rem, 14vw, 14rem)/.8 var(--display);
+  letter-spacing: -.07em;
+  transform: rotate(4deg);
+  pointer-events: none;
+}
+.v4 .chapter--shows .tribute-board { z-index: 4 !important; }
+.v4 .chapter--shows .tribute-slip::after {
+  content: "NO FUTURE DATE INVENTED";
+  display: block;
+  margin-top: 1.5rem;
+  padding-top: .8rem;
+  border-top: 1px dashed currentColor;
+  font: 700 .54rem/1.3 var(--mono);
+  letter-spacing: .08em;
+  opacity: .6;
+}
+
+@media (max-width: 720px) {
+  .v4 .chapter--watching .star-room-sign {
+    right: -4% !important;
+    top: 2% !important;
+    max-width: 95% !important;
+    font-size: clamp(3.8rem, 19vw, 6.5rem) !important;
+  }
+  .v4 .chapter--watching .star-room-installation { padding-top: 7rem !important; }
+  .v4 .chapter--macadelic::after { left: 28%; top: 22%; font-size: 74vw; }
+  .v4 .chapter--goodam::before { top: 23%; font-size: 22vw; }
+  .v4 .chapter--divine::before { right: -42%; top: 43%; width: 135vw; }
+  .v4 .chapter--archive .release-register::before { font-size: .56rem; letter-spacing: .08em; }
+  .v4 .chapter--archive .release-line--major::before { display: none; }
+  .v4 .chapter--shows::before { top: 17%; right: -22vw; font-size: 25vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v4 .chapter--macadelic::after,
+  .v4 .chapter--goodam::before,
+  .v4 .chapter--divine::before,
+  .v4 .chapter--shows::before { transform: none; }
+}
