@@ -1,0 +1,858 @@
+/* V4 authored chapter layer — intentionally loaded after the stable V2 CSS. */
+
+.v4 {
+  --v4-paper: #eee6df;
+  --v4-paper-2: #d8ccc5;
+  --v4-ink: #141112;
+  --v4-black: #050505;
+  --v4-pink: #d99aa9;
+  --v4-pink-deep: #b66f82;
+  --v4-pink-shadow: #7a3f52;
+}
+
+.v4 .chapter {
+  position: relative;
+  isolation: isolate;
+}
+
+.v4 .chapter::after {
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   00 — PORTAL / BALLOONERISM
+   Preserve the proven V2 portal proportions, but make the space less grid-led
+   and more object-led.
+   -------------------------------------------------------------------------- */
+.v4 .chapter--portal {
+  background:
+    radial-gradient(ellipse at 72% 48%, rgba(217,154,169,.22) 0 12%, transparent 34%),
+    radial-gradient(circle at 17% 82%, rgba(122,63,82,.19), transparent 31%),
+    #030303;
+}
+.v4 .chapter--portal .portal-grid {
+  opacity: .12;
+  transform: rotate(-4deg) scale(1.08);
+  mask-image: radial-gradient(ellipse at 68% 48%, #000 0 12%, transparent 68%);
+}
+.v4 .chapter--portal .portal-copy {
+  max-width: 630px;
+  margin-left: clamp(0rem, 2.4vw, 2.4rem);
+}
+.v4 .chapter--portal h1 {
+  mix-blend-mode: normal;
+  text-shadow: 0 0 38px rgba(217,154,169,.08);
+}
+.v4 .chapter--portal .portal-object {
+  transform: translateY(1.5rem);
+}
+.v4 .chapter--portal .mirror-ring--one {
+  border-width: 3px;
+  border-style: dashed;
+  opacity: .72;
+}
+.v4 .chapter--portal .mirror-ring--two {
+  border-style: solid;
+  box-shadow: 0 0 0 1px rgba(238,230,223,.14), inset 0 0 80px rgba(217,154,169,.1);
+}
+.v4 .chapter--portal .mirror-ring--three {
+  border-width: 7px;
+  opacity: .62;
+}
+.v4 .chapter--portal .portal-portrait-wrap {
+  clip-path: polygon(51% 0, 83% 12%, 96% 43%, 83% 79%, 52% 100%, 20% 83%, 6% 48%, 18% 14%);
+  border-radius: 0;
+}
+
+/* --------------------------------------------------------------------------
+   01 — MACADELIC
+   Deliberately breaks the V2 two-column hero rhythm.
+   -------------------------------------------------------------------------- */
+.v4 .chapter--macadelic {
+  display: block;
+  min-height: 112svh;
+  padding-top: clamp(8rem, 12vw, 11rem);
+  background:
+    linear-gradient(119deg, transparent 0 46%, rgba(217,154,169,.08) 46% 47%, transparent 47%),
+    radial-gradient(circle at 81% 26%, rgba(217,154,169,.14), transparent 28%),
+    #090808;
+}
+.v4 .macadelic-slab {
+  position: absolute;
+  z-index: 0;
+  border: 1px solid rgba(238,230,223,.13);
+}
+.v4 .macadelic-slab--a {
+  width: min(58vw, 820px);
+  height: min(34vh, 330px);
+  left: -8vw;
+  top: 19vh;
+  background: var(--v4-pink);
+  transform: rotate(-7deg);
+  box-shadow: 0 28px 0 rgba(122,63,82,.35);
+}
+.v4 .macadelic-slab--b {
+  width: min(45vw, 660px);
+  height: min(28vh, 280px);
+  right: -7vw;
+  bottom: 7vh;
+  background: rgba(238,230,223,.03);
+  transform: rotate(9deg);
+}
+.v4 .chapter--macadelic .macadelic-copy {
+  position: relative;
+  z-index: 3;
+  width: min(68vw, 980px);
+  max-width: none;
+  margin: 4vh 0 0 7vw;
+}
+.v4 .chapter--macadelic .macadelic-copy h2 {
+  max-width: 11ch;
+  font-size: clamp(4rem, 8.4vw, 9rem);
+  line-height: .82;
+}
+.v4 .chapter--macadelic .macadelic-copy h2 span {
+  color: var(--v4-paper);
+  display: inline-block;
+  margin-left: clamp(1rem, 8vw, 8rem);
+  transform: rotate(-1.5deg);
+}
+.v4 .chapter--macadelic .hero-kicker {
+  max-width: 47ch;
+  margin-left: clamp(0rem, 4vw, 5rem);
+  margin-top: 2.25rem;
+}
+.v4 .chapter--macadelic .macadelic-photo {
+  position: absolute;
+  z-index: 2;
+  right: 5vw;
+  top: 18vh;
+  width: min(31vw, 470px);
+  height: min(56vh, 610px);
+  transform: rotate(5.5deg);
+  box-shadow: -18px 22px 0 var(--v4-pink-shadow);
+}
+.v4 .chapter--macadelic .macadelic-fragment {
+  right: 8vw;
+  left: auto;
+  top: auto;
+  bottom: 12vh;
+  width: min(31vw, 430px);
+  transform: rotate(3deg);
+  background: var(--v4-paper);
+}
+.v4 .chapter--macadelic .macadelic-snake {
+  left: -1vw;
+  right: -1vw;
+  bottom: -1rem;
+  opacity: .78;
+}
+.v4 .chapter--macadelic .macadelic-snake path {
+  stroke: rgba(238,230,223,.26);
+  stroke-width: 1.5;
+}
+.v4 .chapter--macadelic .macadelic-snake text {
+  fill: var(--v4-paper);
+  font-size: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   02 — WATCHING MOVIES / STAR ROOM
+   Keep V2 CRT dimensions; build a room around it rather than replacing it.
+   -------------------------------------------------------------------------- */
+.v4 .chapter--watching {
+  display: grid;
+  grid-template-columns: minmax(280px, .82fr) minmax(480px, 1.18fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 6rem);
+  min-height: 118svh;
+  background:
+    radial-gradient(circle at 72% 48%, rgba(217,154,169,.09), transparent 25%),
+    linear-gradient(180deg, #090808 0 71%, #030303 71% 100%);
+  color: var(--v4-paper);
+}
+.v4 .chapter--watching .section-copy {
+  color: var(--v4-paper);
+}
+.v4 .room-ceiling,
+.v4 .room-floor,
+.v4 .room-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.v4 .room-ceiling {
+  inset: 0 0 auto;
+  height: 28%;
+  background: linear-gradient(168deg, rgba(238,230,223,.045), transparent 52%);
+  border-bottom: 1px solid rgba(238,230,223,.08);
+}
+.v4 .room-floor {
+  left: -12%;
+  right: -12%;
+  bottom: -8%;
+  height: 37%;
+  transform: perspective(700px) rotateX(64deg);
+  transform-origin: bottom;
+  background:
+    repeating-linear-gradient(90deg, rgba(238,230,223,.06) 0 1px, transparent 1px 9vw),
+    repeating-linear-gradient(0deg, rgba(238,230,223,.045) 0 1px, transparent 1px 4.5rem),
+    #080707;
+}
+.v4 .room-corner {
+  top: 20%; bottom: 21%; left: 52%; width: 1px;
+  background: linear-gradient(transparent, rgba(238,230,223,.13), transparent);
+}
+.v4 .watching-copy {
+  position: relative;
+  z-index: 4;
+  max-width: 680px;
+}
+.v4 .chapter--watching .watching-copy h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(3.7rem, 7vw, 7.8rem);
+  line-height: .87;
+}
+.v4 .watching-lyric {
+  margin-top: clamp(2rem, 4vw, 4rem);
+  max-width: 25ch;
+  padding-left: 1rem;
+  border-left: 2px solid var(--v4-pink);
+  font: italic 700 clamp(1.2rem, 2vw, 2rem)/1.15 var(--display);
+}
+.v4 .watching-lyric cite {
+  display: block;
+  margin-top: .6rem;
+  font: 700 .66rem/1 var(--mono);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--v4-pink);
+}
+.v4 .star-room-installation {
+  position: relative;
+  z-index: 4;
+  min-height: min(72vh, 720px);
+  display: grid;
+  place-items: center;
+}
+.v4 .star-room-sign {
+  position: absolute;
+  z-index: 1;
+  left: -7%;
+  top: 5%;
+  color: rgba(217,154,169,.12);
+  font: 700 clamp(5rem, 11vw, 10rem)/.74 var(--display);
+  letter-spacing: -.06em;
+  white-space: nowrap;
+}
+.v4 .star-room-installation .crt-wrap {
+  width: min(43vw, 660px);
+  margin: 5vh auto 0;
+}
+.v4 .star-room-installation .crt {
+  transform: rotate(-1deg);
+  box-shadow: 30px 30px 0 rgba(0,0,0,.45), 0 0 80px rgba(217,154,169,.07);
+}
+.v4 .star-room-installation::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 74%;
+  height: 68%;
+  border: 1px solid rgba(238,230,223,.09);
+  transform: translate(5%, 5%) rotate(2deg);
+}
+
+/* --------------------------------------------------------------------------
+   03 — GO:OD AM / AUDITORIUM
+   Architectural scene; timeline is a program laid across the stage.
+   -------------------------------------------------------------------------- */
+.v4 .chapter--goodam {
+  display: block;
+  min-height: 130svh;
+  padding-top: clamp(7rem, 10vw, 10rem);
+  color: var(--v4-paper);
+  background:
+    radial-gradient(ellipse at 50% 41%, rgba(217,154,169,.14), transparent 28%),
+    linear-gradient(180deg, #070606 0 58%, #120d0f 58% 100%);
+}
+.v4 .auditorium-shell {
+  position: absolute;
+  inset: 4.3rem 0 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.v4 .proscenium {
+  position: absolute;
+  left: 9%; right: 9%; top: 10%; height: 51%;
+  border: clamp(18px, 2.5vw, 38px) solid #1b1416;
+  border-bottom-width: 12px;
+  box-shadow:
+    inset 0 0 0 2px rgba(238,230,223,.08),
+    inset 0 0 110px rgba(217,154,169,.08),
+    0 24px 0 #030303;
+}
+.v4 .proscenium::before,
+.v4 .proscenium::after {
+  content: "";
+  position: absolute;
+  top: -18px; bottom: -12px;
+  width: 8%;
+  background: repeating-linear-gradient(90deg, #1d1517 0 15%, #2a1c20 15% 28%);
+  opacity: .75;
+}
+.v4 .proscenium::before { left: -9%; }
+.v4 .proscenium::after { right: -9%; }
+.v4 .stage-floor {
+  position: absolute;
+  left: 12%; right: 12%; top: 59%; height: 21%;
+  background:
+    repeating-linear-gradient(90deg, rgba(238,230,223,.045) 0 1px, transparent 1px 7vw),
+    linear-gradient(180deg, #100c0d, #050505);
+  transform: perspective(650px) rotateX(61deg);
+  transform-origin: top;
+  border-top: 1px solid rgba(238,230,223,.1);
+}
+.v4 .seat-row {
+  position: absolute;
+  left: 8%; right: 8%;
+  height: 7%;
+  border-radius: 48% 48% 10% 10%;
+  background:
+    radial-gradient(ellipse at center, #3a2028 0 25%, #1a1114 26% 48%, transparent 49%) 0 0 / 4.6vw 100% repeat-x;
+  opacity: .85;
+}
+.v4 .seat-row--1 { bottom: 16%; transform: scaleX(.84); }
+.v4 .seat-row--2 { bottom: 9%; transform: scaleX(.93); opacity: .92; }
+.v4 .seat-row--3 { bottom: 1%; transform: scaleX(1.02); }
+.v4 .aisle {
+  position: absolute;
+  bottom: -3%; width: 2px; height: 38%;
+  background: linear-gradient(transparent, rgba(217,154,169,.75));
+  transform-origin: bottom;
+}
+.v4 .aisle--l { left: 31%; transform: rotate(15deg); }
+.v4 .aisle--r { right: 31%; transform: rotate(-15deg); }
+.v4 .stage-heading {
+  position: relative;
+  z-index: 3;
+  width: min(72vw, 1050px);
+  margin: 0 auto;
+  text-align: center;
+}
+.v4 .stage-heading h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(3.8rem, 7.5vw, 8rem);
+  line-height: .84;
+}
+.v4 .stage-heading p:last-child {
+  margin: 1.25rem auto 0;
+  max-width: 54ch;
+}
+.v4 .stage-program {
+  position: relative;
+  z-index: 5;
+  width: min(74vw, 1120px);
+  margin: 9vh auto 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.8rem, 1.4vw, 1.4rem);
+}
+.v4 .stage-program::before { display: none; }
+.v4 .stage-program .career-node {
+  min-height: 245px;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  background: rgba(6,6,6,.86);
+  border: 1px solid rgba(238,230,223,.22);
+  box-shadow: 0 10px 0 rgba(122,63,82,.45);
+  backdrop-filter: blur(5px);
+}
+.v4 .stage-program .career-node--offset {
+  transform: translateY(2.1rem);
+}
+.v4 .stage-program .career-node h3 {
+  color: var(--v4-pink);
+}
+.v4 .stage-ticker {
+  bottom: 4.3%;
+  z-index: 6;
+}
+
+/* --------------------------------------------------------------------------
+   04 — THE DIVINE FEMININE
+   -------------------------------------------------------------------------- */
+.v4 .chapter--divine {
+  display: grid;
+  grid-template-columns: minmax(300px, .85fr) minmax(360px, 1.15fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 8rem);
+  min-height: 110svh;
+  padding: clamp(7rem, 10vw, 10rem) var(--pad);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 49%, rgba(238,230,223,.26) 0 12%, transparent 31%),
+    linear-gradient(135deg, #24151a 0 20%, #7a3f52 54%, #1b1115 100%);
+}
+.v4 .divine-copy {
+  position: relative;
+  z-index: 4;
+  max-width: 720px;
+}
+.v4 .divine-copy h2 {
+  margin: 0 0 1.5rem;
+  font: 700 clamp(3.6rem, 7vw, 7.8rem)/.86 var(--display);
+  letter-spacing: -.055em;
+}
+.v4 .divine-copy blockquote {
+  margin: clamp(2rem, 5vw, 5rem) 0 0 clamp(1rem, 6vw, 6rem);
+  max-width: 24ch;
+  font: italic 700 clamp(1.2rem, 2.2vw, 2.1rem)/1.2 var(--display);
+}
+.v4 .divine-copy cite {
+  display: block;
+  margin-top: .6rem;
+  font: 700 .64rem/1 var(--mono);
+  font-style: normal;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.v4 .divine-portrait {
+  position: relative;
+  z-index: 3;
+  width: min(43vw, 610px);
+  height: min(73vh, 720px);
+  justify-self: center;
+  transform: rotate(1deg);
+}
+.v4 .divine-orbit {
+  position: absolute;
+  z-index: 1;
+  right: 8%; top: 14%;
+  width: min(52vw, 760px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(238,230,223,.25);
+  border-radius: 50%;
+  transform: scaleX(.72) rotate(12deg);
+}
+.v4 .divine-orbit--b {
+  right: 14%; top: 21%; width: min(42vw, 620px);
+  transform: scaleX(.82) rotate(-18deg);
+  border-color: rgba(217,154,169,.42);
+}
+
+/* --------------------------------------------------------------------------
+   05 — SWIMMING
+   -------------------------------------------------------------------------- */
+.v4 .chapter--swimming {
+  min-height: 114svh;
+  padding: clamp(8rem, 11vw, 11rem) var(--pad);
+  overflow: hidden;
+  background: #080707;
+}
+.v4 .swim-plane {
+  position: absolute;
+  left: -12vw; right: -12vw;
+  height: 19vh;
+  border-top: 1px solid rgba(238,230,223,.18);
+  border-bottom: 1px solid rgba(217,154,169,.13);
+  background: linear-gradient(90deg, transparent 3%, rgba(217,154,169,.055) 42%, transparent 92%);
+}
+.v4 .swim-plane--1 { top: 18%; transform: rotate(-3deg); }
+.v4 .swim-plane--2 { top: 43%; transform: translateX(6vw) rotate(2deg); }
+.v4 .swim-plane--3 { top: 68%; transform: translateX(-4vw) rotate(-1deg); }
+.v4 .swimming-copy {
+  position: relative;
+  z-index: 4;
+  width: min(60vw, 900px);
+  margin: 6vh 0 0 7vw;
+}
+.v4 .swimming-copy h2 {
+  margin: 0 0 1.5rem;
+  max-width: 11ch;
+  font: 700 clamp(4rem, 8vw, 8.7rem)/.85 var(--display);
+  letter-spacing: -.055em;
+}
+.v4 .swimming-photo {
+  position: absolute;
+  z-index: 3;
+  right: 5vw;
+  bottom: 7vh;
+  width: min(35vw, 540px);
+  height: min(49vh, 520px);
+  transform: rotate(-2deg);
+  opacity: .84;
+}
+.v4 .swimming-photo::after {
+  content: "";
+  position: absolute;
+  inset: 42% -8% auto;
+  height: 1px;
+  background: var(--v4-pink);
+}
+
+/* --------------------------------------------------------------------------
+   06 — CIRCLES
+   -------------------------------------------------------------------------- */
+.v4 .chapter--circles {
+  display: grid;
+  place-items: center;
+  min-height: 108svh;
+  padding: clamp(7rem, 10vw, 10rem) var(--pad);
+  background: var(--v4-paper);
+  color: var(--v4-ink);
+  overflow: hidden;
+}
+.v4 .circle-field {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.v4 .circle {
+  position: absolute;
+  border: 1px solid rgba(20,17,18,.18);
+  border-radius: 50%;
+}
+.v4 .circle--1 { width: min(76vw, 1000px); aspect-ratio: 1; }
+.v4 .circle--2 { width: min(58vw, 760px); aspect-ratio: 1; border-width: 3px; border-color: rgba(182,111,130,.38); }
+.v4 .circle--3 { width: min(38vw, 520px); aspect-ratio: 1; transform: translate(20vw,-5vh); }
+.v4 .circle--4 { width: min(26vw, 360px); aspect-ratio: 1; transform: translate(-21vw,9vh); border-color: rgba(20,17,18,.35); }
+.v4 .circles-copy {
+  position: relative;
+  z-index: 3;
+  width: min(68vw, 980px);
+  text-align: center;
+}
+.v4 .circles-copy h2 {
+  margin: 0 0 2rem;
+  font: 700 clamp(4rem, 8vw, 8.7rem)/.86 var(--display);
+  letter-spacing: -.06em;
+}
+.v4 .circles-copy p {
+  max-width: 52ch;
+  margin: 0 auto;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+/* --------------------------------------------------------------------------
+   07 — DISCOGRAPHY REGISTER
+   -------------------------------------------------------------------------- */
+.v4 .chapter--archive {
+  min-height: auto;
+  padding-bottom: clamp(7rem, 10vw, 11rem);
+}
+.v4 .chapter--archive .discography-heading {
+  width: min(78vw, 1100px);
+  margin: 0 0 clamp(4rem, 7vw, 7rem);
+}
+.v4 .chapter--archive .discography-heading h2 {
+  max-width: 13ch;
+}
+.v4 .release-grid { display: none; }
+.v4 .release-register {
+  position: relative;
+  z-index: 3;
+  width: min(92vw, 1380px);
+  margin: 0 auto;
+  border-top: 1px solid rgba(20,17,18,.35);
+}
+.v4 .release-line {
+  display: grid;
+  grid-template-columns: 90px minmax(240px, 1.8fr) minmax(120px, .8fr) 130px;
+  align-items: baseline;
+  gap: clamp(.8rem, 2vw, 2.4rem);
+  min-height: 76px;
+  padding: 1rem .4rem;
+  border-bottom: 1px solid rgba(20,17,18,.25);
+  color: var(--v4-ink);
+  text-decoration: none;
+  transition: transform .16s ease, background .16s ease, padding .16s ease;
+}
+.v4 .release-line:nth-child(3n+2) { margin-left: clamp(0rem, 5vw, 5rem); }
+.v4 .release-line:nth-child(4n) { margin-right: clamp(0rem, 7vw, 7rem); }
+.v4 .release-line span,
+.v4 .release-line em,
+.v4 .release-line b {
+  font: 700 .68rem/1.2 var(--mono);
+  font-style: normal;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.v4 .release-line strong {
+  font: 700 clamp(1.45rem, 2.7vw, 3.4rem)/.95 var(--display);
+  letter-spacing: -.03em;
+}
+.v4 .release-line b { justify-self: end; color: var(--v4-pink-shadow); }
+.v4 .release-line--major strong { font-size: clamp(2rem, 4vw, 5rem); }
+.v4 .release-line:hover,
+.v4 .release-line:focus-visible {
+  transform: translateX(clamp(.2rem, 1vw, 1rem));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: var(--v4-pink);
+  color: var(--v4-ink);
+  outline-offset: 2px;
+}
+.v4 .release-line:hover b,
+.v4 .release-line:focus-visible b { color: var(--v4-ink); }
+
+/* --------------------------------------------------------------------------
+   08 — MEMORIAL
+   -------------------------------------------------------------------------- */
+.v4 .chapter--memorial {
+  min-height: 118svh;
+  background:
+    radial-gradient(circle at 50% 57%, rgba(217,154,169,.1), transparent 25%),
+    #050505;
+}
+.v4 .chapter--memorial .memorial-copy {
+  width: min(52vw, 760px);
+  margin-left: 4vw;
+}
+.v4 .chapter--memorial .orbit-memorial {
+  margin-top: clamp(2rem, 5vw, 5rem);
+}
+
+/* --------------------------------------------------------------------------
+   09 — SHOWS / TRIBUTE BOARD
+   -------------------------------------------------------------------------- */
+.v4 .chapter--shows {
+  min-height: 105svh;
+  overflow: hidden;
+}
+.v4 .chapter--shows .shows-intro {
+  width: min(75vw, 1050px);
+}
+.v4 .event-grid { display: none; }
+.v4 .tribute-board {
+  position: relative;
+  z-index: 3;
+  width: min(90vw, 1250px);
+  min-height: 520px;
+  margin: clamp(4rem, 8vw, 8rem) auto 0;
+}
+.v4 .tribute-board::before {
+  content: "";
+  position: absolute;
+  inset: 7% 5% 0;
+  border: 2px solid var(--v4-ink);
+  transform: rotate(-1deg);
+}
+.v4 .tribute-slip {
+  position: absolute;
+  width: min(31vw, 390px);
+  min-height: 285px;
+  padding: clamp(1.2rem, 2vw, 2rem);
+  background: #f7f0ea;
+  border: 1px solid var(--v4-ink);
+  box-shadow: 16px 16px 0 rgba(122,63,82,.45);
+  transform: rotate(-3deg);
+}
+.v4 .tribute-slip:nth-child(1) { left: 1%; top: 12%; }
+.v4 .tribute-slip:nth-child(2) { left: 34%; top: 2%; transform: rotate(2.5deg); background: var(--v4-pink); }
+.v4 .tribute-slip:nth-child(3) { right: 1%; top: 17%; transform: rotate(-1deg); }
+.v4 .tribute-slip span {
+  font: 700 .68rem/1 var(--mono);
+  letter-spacing: .1em;
+}
+.v4 .tribute-slip h3 {
+  margin: 2.2rem 0 1rem;
+  font: 700 clamp(2rem, 3vw, 3.4rem)/.95 var(--display);
+}
+.v4 .tribute-slip a {
+  font: 700 .75rem/1.2 var(--mono);
+  text-transform: uppercase;
+  text-decoration-thickness: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   10 — AFTERIMAGE
+   -------------------------------------------------------------------------- */
+.v4 .chapter--legacy {
+  min-height: 104svh;
+  background: #030303;
+}
+.v4 .chapter--legacy .legacy-photo {
+  opacity: .58;
+  filter: grayscale(1) contrast(1.06);
+}
+.v4 .chapter--legacy .legacy-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(3,3,3,.1), rgba(3,3,3,.86) 67%, #030303 100%);
+}
+.v4 .chapter--legacy .legacy-copy {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: 5vw;
+}
+
+/* --------------------------------------------------------------------------
+   MOTION: purposeful, bounded, progressive enhancement only.
+   -------------------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  .v4 .chapter--macadelic .macadelic-slab--a {
+    animation: v4-slab-drift linear both;
+    animation-timeline: view();
+    animation-range: entry -10% exit 110%;
+  }
+  .v4 .swim-plane--1,
+  .v4 .swim-plane--3 {
+    animation: v4-plane-a linear both;
+    animation-timeline: view();
+    animation-range: entry -10% exit 110%;
+  }
+  .v4 .swim-plane--2 {
+    animation: v4-plane-b linear both;
+    animation-timeline: view();
+    animation-range: entry -10% exit 110%;
+  }
+  .v4 .circle--2 {
+    animation: v4-circle-scale linear both;
+    animation-timeline: view();
+    animation-range: entry 10% exit 90%;
+  }
+}
+@keyframes v4-slab-drift { from { transform: translateX(-4vw) rotate(-7deg); } to { transform: translateX(7vw) rotate(-4deg); } }
+@keyframes v4-plane-a { from { translate: -5vw 0; } to { translate: 7vw 0; } }
+@keyframes v4-plane-b { from { translate: 7vw 0; } to { translate: -6vw 0; } }
+@keyframes v4-circle-scale { from { transform: scale(.82); opacity: .28; } to { transform: scale(1.08); opacity: .62; } }
+
+/* --------------------------------------------------------------------------
+   TABLET
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .v4 .chapter--macadelic .macadelic-copy { width: min(74vw, 820px); margin-left: 2vw; }
+  .v4 .chapter--macadelic .macadelic-photo { width: min(38vw, 430px); right: 2vw; }
+  .v4 .chapter--watching { grid-template-columns: 1fr; padding-top: 8rem; padding-bottom: 8rem; }
+  .v4 .watching-copy { width: min(86vw, 780px); }
+  .v4 .star-room-installation { min-height: 650px; }
+  .v4 .star-room-installation .crt-wrap { width: min(72vw, 660px); }
+  .v4 .room-corner { left: 72%; }
+  .v4 .stage-program { width: min(90vw, 980px); grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .v4 .stage-program .career-node--offset { transform: none; }
+  .v4 .chapter--divine { grid-template-columns: 1fr 1fr; }
+  .v4 .divine-portrait { width: min(48vw, 520px); height: 620px; }
+  .v4 .swimming-copy { width: min(72vw, 760px); margin-left: 2vw; }
+  .v4 .swimming-photo { width: min(42vw, 470px); }
+  .v4 .release-line { grid-template-columns: 74px minmax(210px, 1.7fr) minmax(110px,.7fr) 110px; }
+  .v4 .tribute-slip { width: min(34vw, 360px); }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE — each chapter is recomposed, not merely stacked.
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .v4 .chapter { overflow: hidden; }
+  .v4 .chapter--portal .portal-copy { margin-left: 0; }
+  .v4 .chapter--portal .portal-object { transform: none; }
+
+  .v4 .chapter--macadelic {
+    min-height: 118svh;
+    padding-top: 8.5rem;
+  }
+  .v4 .macadelic-slab--a { width: 92vw; height: 26vh; left: -24vw; top: 19vh; }
+  .v4 .macadelic-slab--b { width: 82vw; right: -35vw; bottom: 8vh; }
+  .v4 .chapter--macadelic .macadelic-copy { width: 92%; margin: 3vh 0 0; }
+  .v4 .chapter--macadelic .macadelic-copy h2 { font-size: clamp(3.7rem, 16vw, 6.2rem); max-width: 9ch; }
+  .v4 .chapter--macadelic .macadelic-copy h2 span { margin-left: 0; }
+  .v4 .chapter--macadelic .hero-kicker { max-width: 34ch; margin-left: 0; }
+  .v4 .chapter--macadelic .macadelic-photo { position: relative; top: auto; right: auto; width: 78vw; height: 42vh; margin: 3rem 0 0 auto; }
+  .v4 .chapter--macadelic .macadelic-fragment { position: relative; right: auto; bottom: auto; width: 82%; margin: -2rem auto 5rem 0; z-index: 6; }
+  .v4 .chapter--macadelic .macadelic-snake { height: 130px; bottom: .4rem; }
+
+  .v4 .chapter--watching { min-height: auto; padding-top: 8rem; padding-bottom: 7rem; }
+  .v4 .watching-copy { width: 100%; }
+  .v4 .chapter--watching .watching-copy h2 { font-size: clamp(3.3rem, 15vw, 5.5rem); max-width: 9ch; }
+  .v4 .watching-lyric { margin-left: 8vw; }
+  .v4 .star-room-installation { min-height: 510px; margin-top: 2.5rem; }
+  .v4 .star-room-sign { left: -4%; top: 5%; font-size: clamp(4rem, 22vw, 7rem); opacity: .9; }
+  .v4 .star-room-installation .crt-wrap { width: 93vw; margin-top: 7rem; }
+  .v4 .room-corner { display: none; }
+  .v4 .room-floor { height: 25%; }
+
+  .v4 .chapter--goodam { min-height: auto; padding-top: 8rem; padding-bottom: 11rem; }
+  .v4 .stage-heading { width: 100%; text-align: left; }
+  .v4 .stage-heading h2 { font-size: clamp(3.4rem, 15vw, 5.7rem); max-width: 9ch; }
+  .v4 .stage-heading p:last-child { margin-left: 0; }
+  .v4 .stage-program { width: 92vw; grid-template-columns: 1fr; margin-top: 5rem; }
+  .v4 .stage-program .career-node { min-height: auto; margin-left: 12vw; }
+  .v4 .stage-program .career-node:nth-child(even) { margin-left: 0; margin-right: 12vw; }
+  .v4 .proscenium { left: 3%; right: 3%; top: 12%; height: 39%; opacity: .7; }
+  .v4 .stage-floor { left: 3%; right: 3%; top: 49%; }
+  .v4 .seat-row { left: -3%; right: -3%; background-size: 12vw 100%; }
+  .v4 .aisle--l { left: 24%; }.v4 .aisle--r { right: 24%; }
+  .v4 .stage-ticker { bottom: 2%; }
+
+  .v4 .chapter--divine { display: block; min-height: 112svh; padding-top: 8rem; }
+  .v4 .divine-copy { max-width: 100%; }
+  .v4 .divine-copy h2 { font-size: clamp(3.6rem, 16vw, 5.9rem); max-width: 9ch; }
+  .v4 .divine-copy blockquote { margin: 2rem 0 0 12vw; }
+  .v4 .divine-portrait { width: 78vw; height: 53vh; margin: 4rem auto 0; }
+  .v4 .divine-orbit { right: -30%; top: 47%; width: 105vw; }.v4 .divine-orbit--b { right: -14%; top: 54%; width: 82vw; }
+
+  .v4 .chapter--swimming { min-height: 112svh; padding-top: 8rem; }
+  .v4 .swimming-copy { width: 100%; margin: 3vh 0 0; }
+  .v4 .swimming-copy h2 { font-size: clamp(3.7rem, 16vw, 6.2rem); max-width: 9ch; }
+  .v4 .swimming-photo { position: relative; right: auto; bottom: auto; width: 82vw; height: 42vh; margin: 5rem 0 0 auto; }
+  .v4 .swim-plane--1 { top: 26%; }.v4 .swim-plane--2 { top: 53%; }.v4 .swim-plane--3 { top: 76%; }
+
+  .v4 .chapter--circles { min-height: 100svh; padding-top: 8rem; }
+  .v4 .circles-copy { width: 100%; text-align: left; }
+  .v4 .circles-copy h2 { font-size: clamp(3.6rem, 16vw, 6rem); max-width: 9ch; }
+  .v4 .circles-copy p { margin-left: 10vw; }
+  .v4 .circle--1 { width: 132vw; }.v4 .circle--2 { width: 100vw; }.v4 .circle--3 { width: 72vw; transform: translate(32vw,-16vh); }.v4 .circle--4 { width: 54vw; transform: translate(-36vw,16vh); }
+
+  .v4 .chapter--archive .discography-heading { width: 100%; }
+  .v4 .release-register { width: 100%; }
+  .v4 .release-line,
+  .v4 .release-line:nth-child(3n+2),
+  .v4 .release-line:nth-child(4n) {
+    grid-template-columns: 54px 1fr;
+    grid-template-areas: "year title" "type action";
+    gap: .45rem 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    min-height: 94px;
+    padding: 1rem 0;
+  }
+  .v4 .release-line span { grid-area: year; }.v4 .release-line strong { grid-area: title; font-size: clamp(1.6rem, 8vw, 2.8rem); }.v4 .release-line em { grid-area: type; }.v4 .release-line b { grid-area: action; justify-self: start; }
+
+  .v4 .chapter--memorial .memorial-copy { width: 100%; margin-left: 0; }
+
+  .v4 .chapter--shows { min-height: auto; padding-bottom: 8rem; }
+  .v4 .chapter--shows .shows-intro { width: 100%; }
+  .v4 .tribute-board { width: 100%; min-height: auto; display: grid; gap: 1.6rem; margin-top: 4rem; }
+  .v4 .tribute-board::before { display: none; }
+  .v4 .tribute-slip,
+  .v4 .tribute-slip:nth-child(1),
+  .v4 .tribute-slip:nth-child(2),
+  .v4 .tribute-slip:nth-child(3) {
+    position: relative;
+    inset: auto;
+    width: 90%;
+    min-height: auto;
+    transform: rotate(-2deg);
+  }
+  .v4 .tribute-slip:nth-child(2) { justify-self: end; transform: rotate(2deg); }
+
+  .v4 .chapter--legacy .legacy-copy { margin: 0; max-width: 90%; }
+}
+
+@media (max-width: 470px) {
+  .v4 .chapter--macadelic .macadelic-photo { width: 84vw; height: 390px; }
+  .v4 .star-room-installation { min-height: 455px; }
+  .v4 .star-room-installation .crt-wrap { width: 96vw; margin-left: -2vw; }
+  .v4 .stage-program .career-node { margin-left: 7vw; }.v4 .stage-program .career-node:nth-child(even) { margin-right: 7vw; }
+  .v4 .divine-portrait { width: 84vw; height: 450px; }
+  .v4 .swimming-photo { width: 88vw; height: 380px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v4 .macadelic-slab--a,
+  .v4 .swim-plane,
+  .v4 .circle--2 { animation: none !important; }
+}
