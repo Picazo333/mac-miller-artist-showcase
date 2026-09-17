@@ -1,0 +1,114 @@
+/* Scene-specific visual overdrive. Loaded after styles.css so spatial motifs remain isolated and reversible. */
+
+/* WATCHING MOVIES — turn the CRT into an unmistakable physical object inside a room. */
+.watching{
+  background:
+    radial-gradient(ellipse at 72% 44%,rgba(215,154,170,.13),transparent 24%),
+    linear-gradient(180deg,#090708 0 64%,#100d0e 64% 100%);
+}
+.watching-wall::before{
+  left:9%;right:7%;top:10%;height:57%;
+  border:1px solid rgba(238,230,223,.10);
+  border-bottom:0;
+  box-shadow:inset 0 0 120px rgba(0,0,0,.48),0 24px 80px rgba(0,0,0,.34);
+}
+.watching-wall span{
+  position:absolute;left:8%;right:6%;top:63%;height:1px;
+  background:rgba(238,230,223,.14);
+  box-shadow:0 18px 0 rgba(238,230,223,.025),0 110px 80px rgba(0,0,0,.8);
+}
+.crt-installation{filter:drop-shadow(0 30px 28px rgba(0,0,0,.5));}
+.crt-installation::before{
+  content:"";position:absolute;z-index:0;left:50%;top:-4.3rem;width:7rem;height:5.2rem;
+  border-left:2px solid rgba(238,230,223,.48);border-right:2px solid rgba(238,230,223,.48);
+  transform:translateX(-50%) perspective(200px) rotateX(-18deg) skewX(-28deg);
+  transform-origin:bottom;
+}
+.crt-installation::after{
+  content:"";position:absolute;z-index:0;left:12%;right:12%;bottom:-1.25rem;height:1.6rem;
+  border-left:1.2rem solid transparent;border-right:1.2rem solid transparent;
+  box-shadow:inset 5rem 0 0 -4.1rem rgba(238,230,223,.25),inset -5rem 0 0 -4.1rem rgba(238,230,223,.25);
+}
+.crt-shell{
+  border:2px solid rgba(238,230,223,.34);
+  border-radius:3rem 3rem 4rem 4rem / 2.6rem 2.6rem 3.4rem 3.4rem;
+  background:
+    radial-gradient(circle at 86% 83%,rgba(215,154,170,.11),transparent 16%),
+    linear-gradient(145deg,#342b2e 0,#211a1d 34%,#0d0b0c 78%);
+  box-shadow:0 48px 110px rgba(0,0,0,.66),inset 0 1px 0 rgba(255,255,255,.10),inset 0 -18px 45px rgba(0,0,0,.35);
+}
+.crt-shell::before{
+  content:"";position:absolute;left:6%;right:6%;top:5%;height:76%;border-radius:2rem;
+  border:1px solid rgba(255,255,255,.035);pointer-events:none;
+}
+.crt-shell::after{
+  content:"";position:absolute;right:7%;bottom:1.1rem;width:7.2rem;height:2.7rem;opacity:.52;
+  background-image:radial-gradient(circle,rgba(238,230,223,.62) 0 1.2px,transparent 1.5px);
+  background-size:9px 9px;pointer-events:none;
+}
+.crt-screen{
+  border-width:clamp(12px,1.45vw,20px);
+  border-color:#020202;
+  border-radius:14% / 18%;
+  box-shadow:inset 0 0 55px rgba(0,0,0,.7),0 0 0 2px rgba(238,230,223,.07);
+}
+.crt-copy strong{letter-spacing:-.035em;text-shadow:0 0 26px rgba(215,154,170,.18);}
+.crt-panel{right:8.2%;bottom:4.35rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;}
+.crt-panel i{width:21px;height:21px;border:2px solid rgba(238,230,223,.58);background:#151214;box-shadow:inset 0 0 0 5px #0a0809;}
+.crt-link{left:6.5%;bottom:1.65rem;}
+
+/* AUDITORIUM — architecture first: proscenium, projected stage, stage floor and audience rows. */
+.auditorium{
+  background:
+    linear-gradient(108deg,transparent 0 31%,rgba(215,154,170,.06) 31.2% 34%,transparent 34.2% 100%),
+    linear-gradient(72deg,transparent 0 66%,rgba(215,154,170,.05) 66.2% 69%,transparent 69.2% 100%),
+    radial-gradient(ellipse at 50% 17%,rgba(238,230,223,.12),transparent 23%),
+    linear-gradient(180deg,#030303 0 61%,#0a0708 61% 100%);
+}
+.auditorium::before{
+  content:"";position:absolute;z-index:1;left:16%;right:16%;top:56%;height:19%;
+  background:linear-gradient(180deg,#161113,#050505);
+  clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);
+  border-top:1px solid rgba(238,230,223,.18);
+  box-shadow:0 30px 80px rgba(0,0,0,.62);
+}
+.auditorium::after{
+  content:"";position:absolute;z-index:2;left:22%;right:22%;top:72%;height:5px;
+  background:repeating-linear-gradient(90deg,var(--pink) 0 5px,transparent 5px 26px);
+  opacity:.58;box-shadow:0 0 24px rgba(215,154,170,.22);
+}
+.proscenium{
+  left:6%;right:6%;top:5.8%;height:61%;
+  border:12px solid rgba(94,49,64,.55);border-bottom:0;
+  border-radius:48% 48% 0 0/42% 42% 0 0;
+  box-shadow:inset 0 0 0 1px rgba(238,230,223,.18),inset 0 0 100px rgba(215,154,170,.05),0 0 0 1px rgba(0,0,0,.7);
+}
+.proscenium::before,.proscenium::after{
+  top:2%;bottom:0;width:15%;
+  background:
+    repeating-linear-gradient(90deg,rgba(94,49,64,.88) 0 16%,rgba(65,31,43,.92) 16% 32%,rgba(94,49,64,.82) 32% 48%),
+    linear-gradient(90deg,rgba(94,49,64,.95),transparent);
+  opacity:.78;
+}
+.stage-screen{
+  width:min(58vw,860px);margin:-9vh auto 28vh;padding:clamp(2rem,3.7vw,3.7rem);
+  background:linear-gradient(180deg,rgba(8,7,8,.98),rgba(12,9,10,.94));
+  border:1px solid rgba(238,230,223,.28);
+  box-shadow:0 0 0 9px rgba(0,0,0,.44),0 45px 100px rgba(0,0,0,.68);
+}
+.stage-screen::before{inset:-8% -5%;border:1px solid rgba(238,230,223,.10);}
+.stage-screen>p:first-child{letter-spacing:.18em;}
+.stage-screen h2{font-size:clamp(3rem,5.7vw,5.6rem);}
+.seat-field{z-index:3;left:-3%;right:-3%;bottom:-5%;height:43%;transform:rotateX(65deg);}
+.seat-field span{height:17%;margin-bottom:1.6%;background-size:30px 20px;opacity:.58;filter:drop-shadow(0 6px 3px rgba(0,0,0,.5));}
+.auditorium-notes{bottom:1rem;letter-spacing:.08em;}
+
+@media(max-width:820px){
+  .crt-installation::before{top:-3.2rem;width:5rem;height:4rem}.crt-shell::after{width:5rem}.crt-panel{bottom:4.15rem}.watching-wall::before{left:4%;right:4%;top:8%;height:58%}
+  .auditorium::before{left:6%;right:6%;top:58%;height:15%}.auditorium::after{left:14%;right:14%;top:71%}.proscenium{left:1%;right:1%;top:6.5%;height:56%;border-width:7px}.proscenium::before,.proscenium::after{width:11%}.stage-screen{width:84vw;margin:-2vh auto 26vh}.seat-field{height:35%;bottom:-3%}
+}
+@media(max-width:520px){
+  .crt-installation::before{top:-2.4rem;height:3rem;width:4rem}.crt-shell{border-radius:1.8rem 1.8rem 2.6rem 2.6rem}.crt-shell::after{width:4.2rem;height:2.1rem;background-size:8px 8px}.crt-panel{bottom:3.95rem}.crt-panel i{width:17px;height:17px}
+  .auditorium{padding-bottom:0}.proscenium{top:8%;height:48%;border-width:5px}.proscenium::before,.proscenium::after{width:9%}.stage-screen{width:88vw;margin:4vh auto 27vh;padding:1.6rem 1rem}.auditorium::before{top:57%;height:13%;left:4%;right:4%}.auditorium::after{top:69%;left:10%;right:10%}.seat-field{height:31%;bottom:-2%;left:-18%;right:-18%}.auditorium-notes{font-size:.66rem}
+}
+@media(prefers-reduced-motion:reduce){.crt-installation,.auditorium{scroll-behavior:auto}}
