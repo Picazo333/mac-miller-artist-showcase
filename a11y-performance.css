@@ -24,7 +24,29 @@
   padding-block: 0.65rem;
 }
 
-/* Avoid spending mobile rendering budget on an always-running above-fold effect. */
+/* Fifth selected memorial excerpt: kept as a moving tangent so the central
+   orbit stays legible while every approved Group B line is represented. */
+.orbit-memorial::after {
+  content: "I wash these pills down with liquor and fall. · PERFECT CIRCLE / GOD SPEED";
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  bottom: 5%;
+  width: min(76%, 34rem);
+  transform: translateX(-50%) rotate(-2deg);
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(234, 227, 220, 0.28);
+  background: rgba(6, 6, 6, 0.78);
+  color: var(--pink);
+  font: 700 clamp(0.58rem, 1vw, 0.76rem)/1.25 var(--mono);
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* Avoid spending mobile rendering budget on an always-running above-fold effect
+   and guarantee the two-row nav never collides with the portal headline. */
 @media (max-width: 720px) {
   .portal-object {
     animation: none;
@@ -32,5 +54,26 @@
 
   .site-header {
     backdrop-filter: none;
+  }
+
+  .portal {
+    padding-top: 11rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .portal {
+    padding-top: 10.25rem;
+  }
+
+  .orbit-memorial::after {
+    bottom: 1%;
+    width: 88%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-memorial::after {
+    transform: translateX(-50%);
   }
 }
