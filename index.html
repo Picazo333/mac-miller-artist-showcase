@@ -8,10 +8,8 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://picazo333.github.io/mac-miller-artist-showcase/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://thumb.wikimedia.org">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@500;600;700&display=swap">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:title" content="Mac Miller — archivo visual por capítulos">
@@ -20,7 +18,14 @@
   <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mac_Miller_2017_b-w.jpg?width=1200">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="a11y-performance.css">
+  <style>
+    @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400 600;font-display:swap;src:url("https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:"Syne";font-style:normal;font-weight:500 700;font-display:swap;src:url("https://fonts.gstatic.com/s/syne/v24/8vIH7w4qzmVxm2BL9A.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    .star-room{display:none}.watching::after{content:"THE STAR ROOM";position:absolute;z-index:0;left:3vw;bottom:4vh;color:rgba(215,154,170,.58);font-family:var(--display);font-size:clamp(5rem,13vw,13rem);font-weight:700;line-height:.76;letter-spacing:-.03em;pointer-events:none;white-space:nowrap;opacity:.28}.chapter-mark{color:var(--pink-dark)}.chapter-mark--light{color:rgba(238,230,223,.86)}.alarm b{color:rgba(23,18,20,.74)}.catalog span,.catalog em{color:rgba(238,230,223,.76)}.macadelic-photo figcaption,.legacy-photo figcaption{color:rgba(23,18,20,.74)}.auditorium-notes{color:rgba(238,230,223,.64)}.portal-note,.memorial-core small{color:rgba(238,230,223,.68)}.nav a{display:inline-flex;align-items:center;min-height:44px;padding-block:.65rem}.crt-link{display:inline-flex;align-items:center;min-height:44px}.portal-portrait{height:auto;aspect-ratio:500/610;contain:layout paint}.lyric-path path{animation:none!important}
+    @media(max-width:820px){.watching::after{bottom:1.5rem;font-size:clamp(4rem,18vw,8rem)}}
+    @media(max-width:520px){.watching::after{font-size:19vw}.portal-object{animation:none}.site-header{backdrop-filter:none}}
+    @media(prefers-reduced-motion:reduce){.watching::after{opacity:.22}}
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,7 +68,7 @@
         <span class="portal-frame frame-a" aria-hidden="true"></span>
         <span class="portal-frame frame-b" aria-hidden="true"></span>
         <figure class="portal-portrait">
-          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Mac_Miller_2017_b-w.jpg/500px-Mac_Miller_2017_b-w.jpg" alt="Retrato en blanco y negro de Mac Miller en 2017" width="500" height="610" fetchpriority="high" decoding="async">
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Mac_Miller_2017_b-w.jpg/360px-Mac_Miller_2017_b-w.jpg" alt="Retrato en blanco y negro de Mac Miller en 2017" width="360" height="439" fetchpriority="high" decoding="async">
         </figure>
       </a>
       <p class="portal-note">archivo / sonido / memoria</p>
@@ -76,7 +81,7 @@
         <p>En <em>Macadelic</em>, la identidad juvenil deja de ser suficiente. El humor sigue ahí, pero comparte espacio con ansiedad, deseo, consumo y una producción cada vez menos interesada en sonar cómoda.</p>
       </div>
       <figure class="macadelic-photo">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mac_Miller_on_stage_-_Toronto.jpg?width=960" alt="Mac Miller durante una presentación en Toronto" width="1200" height="797" loading="lazy" decoding="async">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Mac_Miller_on_stage_-_Toronto.jpg/640px-Mac_Miller_on_stage_-_Toronto.jpg" alt="Mac Miller durante una presentación en Toronto" width="640" height="425" loading="lazy" decoding="async">
         <figcaption>Presentación en Toronto · Wikimedia Commons</figcaption>
       </figure>
       <blockquote class="lyric-note lyric-question" lang="en">Sometimes I wonder who the fuck I am.<cite>— The Question</cite></blockquote>
