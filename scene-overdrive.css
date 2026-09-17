@@ -24,6 +24,40 @@
 .stage-screen{width:min(58vw,860px);margin:2vh auto 28vh;padding:clamp(2rem,3.7vw,3.7rem);background:linear-gradient(180deg,rgba(8,7,8,.98),rgba(12,9,10,.94));border:1px solid rgba(238,230,223,.34);box-shadow:0 0 0 9px rgba(0,0,0,.44),0 45px 100px rgba(0,0,0,.68)}
 .stage-screen::before{inset:-8% -5%;border:1px solid rgba(238,230,223,.12)}.stage-screen>p:first-child{letter-spacing:.18em}.stage-screen h2{font-size:clamp(3rem,5.7vw,5.6rem)}
 .seat-field{z-index:3;left:-3%;right:-3%;bottom:-5%;height:43%;transform:rotateX(65deg)}.seat-field span{height:17%;margin-bottom:1.6%;background-size:30px 20px;opacity:.7;filter:drop-shadow(0 6px 3px rgba(0,0,0,.5))}.auditorium-notes{bottom:1rem;letter-spacing:.08em}
+
+/* V5 ACCEPTANCE PATCH — remove redundant collision in Macadelic, and make GO:OD AM a clock-led scene rather than a generic card grid. */
+@media(min-width:901px){
+  .macadelic{min-height:118svh!important;padding-bottom:clamp(9rem,12vw,12rem)!important}
+  .macadelic-copy{padding-bottom:0!important}
+  .macadelic-photo{width:min(31vw,470px)!important;height:min(59vh,610px)!important;margin-right:4vw!important;transform:translateY(1.5rem) rotate(2deg)!important}
+  .lyric-question{display:none!important}
+  .lyric-path{bottom:1.5rem!important;height:180px!important}
+
+  .goodam{grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr)!important;grid-template-rows:auto minmax(700px,1fr)!important;column-gap:clamp(4rem,7vw,8rem)!important;min-height:126svh!important;align-items:center!important}
+  .goodam .chapter-mark{grid-column:1/-1!important;grid-row:1!important}
+  .goodam-copy{grid-column:1!important;grid-row:2!important;align-self:center!important;padding:0 0 7rem clamp(0rem,3vw,3rem)!important;max-width:720px!important}
+  .alarm{position:relative!important;grid-column:2!important;grid-row:2!important;right:auto!important;top:auto!important;width:min(47vw,650px)!important;justify-self:center!important;align-self:center!important;margin:0!important;opacity:.96!important;z-index:1!important;border-color:rgba(158,95,115,.5)!important;box-shadow:0 0 0 1px rgba(23,18,20,.08),inset 0 0 80px rgba(215,154,170,.06)!important}
+  .career-timeline{grid-column:2!important;grid-row:2!important;position:relative!important;z-index:4!important;display:grid!important;grid-template-columns:1fr 1fr!important;align-self:center!important;justify-self:center!important;width:min(44vw,610px)!important;aspect-ratio:1!important;margin:0!important;padding:clamp(7rem,9vw,8.7rem) clamp(2.8rem,4.8vw,4.6rem)!important;border:0!important;gap:clamp(1.5rem,2.8vw,2.5rem) clamp(2rem,3.2vw,3rem)!important;background:transparent!important}
+  .career-timeline article{min-height:0!important;padding:0!important;border:0!important;background:transparent!important;max-width:18rem!important}
+  .career-timeline article::before{top:-.55rem!important;left:0!important;width:2.2rem!important;height:2px!important;border-radius:0!important;background:var(--pink-deep)!important}
+  .career-timeline article:nth-child(1){transform:translate(-16%,-12%)!important}
+  .career-timeline article:nth-child(2){transform:translate(16%,-2%)!important}
+  .career-timeline article:nth-child(3){transform:translate(-10%,10%)!important}
+  .career-timeline article:nth-child(4){transform:translate(14%,18%)!important}
+  .career-timeline span{margin:.6rem 0 .35rem!important;font-size:.66rem!important;letter-spacing:.08em!important}
+  .career-timeline h3{margin:0 0 .45rem!important;font-size:clamp(1.1rem,1.45vw,1.45rem)!important;line-height:1!important;text-transform:uppercase!important;letter-spacing:.02em!important}
+  .career-timeline p{max-width:23ch!important;margin:0!important;font-size:clamp(.74rem,.82vw,.86rem)!important;line-height:1.42!important;color:rgba(23,18,20,.74)!important}
+  .lyric-rush{left:var(--v5-gutter)!important;right:auto!important;bottom:2.25rem!important;max-width:26rem!important}
+  .door-line{left:auto!important;right:var(--v5-gutter)!important;top:auto!important;bottom:2.25rem!important;max-width:31rem!important}
+}
+
+@media(max-width:900px){
+  .lyric-question{display:none!important}
+  .goodam .career-timeline{border-top:0!important}
+  .goodam .career-timeline article{border-right:0!important;border-bottom:1px solid rgba(23,18,20,.12)!important;padding:1.4rem 0!important;min-height:0!important}
+  .goodam .career-timeline article:last-child{border-bottom:0!important}
+}
+
 @media(max-width:820px){.crt-installation::before{top:-3.2rem;width:5rem;height:4rem}.crt-shell::after{width:5rem}.crt-panel{bottom:4.15rem}.watching-wall::before{left:4%;right:4%;top:8%;height:58%}.auditorium{min-height:124svh;padding-top:8.5rem}.auditorium::before{left:6%;right:6%;top:58%;height:15%}.auditorium::after{left:14%;right:14%;top:71%}.proscenium{left:1%;right:1%;top:6.5%;height:56%;border-width:7px}.proscenium::before,.proscenium::after{width:11%}.stage-screen{width:84vw;margin:2vh auto 29vh}.seat-field{height:35%;bottom:-3%}}
 @media(max-width:520px){.scene{scroll-margin-top:0}.crt-installation::before{top:-2.4rem;height:3rem;width:4rem}.crt-shell{border-radius:1.8rem 1.8rem 2.6rem 2.6rem}.crt-shell::after{width:4.2rem;height:2.1rem;background-size:8px 8px}.crt-panel{bottom:3.95rem}.crt-panel i{width:17px;height:17px}.auditorium{min-height:132svh;padding-top:9.5rem;padding-bottom:2rem}.proscenium{top:8%;height:48%;border-width:5px}.proscenium::before,.proscenium::after{width:9%}.stage-screen{width:88vw;margin:5vh auto 31vh;padding:1.6rem 1rem}.auditorium::before{top:57%;height:13%;left:4%;right:4%}.auditorium::after{top:69%;left:10%;right:10%}.seat-field{height:29%;bottom:0;left:-18%;right:-18%}.auditorium-notes{bottom:1.4rem;font-size:.66rem}}
 @media(prefers-reduced-motion:reduce){.crt-installation,.auditorium{scroll-behavior:auto}}
