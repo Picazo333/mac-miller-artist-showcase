@@ -1,0 +1,106 @@
+version: "1.0"
+scene:
+  id: "S04"
+  slug: "good-am"
+  name: "GO:OD AM"
+  status: "REFERENCE_FROZEN"
+
+reference:
+  approved: true
+  source_file_name: "amanecer_en_el_portal_del_tiempo.png"
+  source_dimensions: "1672x941"
+  sha256: "33dd704e6e351bb8717373af6b67026a3821c10c6175148aa62da9159d907243"
+  visual_thesis: "Recomposition after Faces: monumental alarm-clock portal, dawn light, strong negative space and residual anomalies of time. The scene must feel cleaner, calmer and more deliberate without becoming generic."
+  immutable_notes:
+    - "The monumental alarm-clock portal is the dominant visual structure."
+    - "Mac sits centered within the circular portal as the human anchor."
+    - "Sunrise/city view through the portal remains essential."
+    - "The composition is frontal, geometric and much calmer than Faces."
+    - "Residual time anomalies remain through secondary clocks and circular forms."
+    - "No bedroom/penthouse reinterpretation is allowed."
+    - "No later redesign from scratch is allowed; only localized clean-master editing."
+
+clean_master:
+  approved: false
+  asset_status: "PENDING_CLEAN_EDIT"
+  intended_repo_path: "assets/backgrounds/s04-good-am-master"
+  reference_protection:
+    lock:
+      - "monumental alarm-clock portal"
+      - "Mac position and scale inside portal"
+      - "sunrise city view"
+      - "secondary wall clocks"
+      - "circular stone form on lower right"
+      - "warm ivory / charcoal / sunrise-gold palette"
+      - "clean frontal geometry"
+    clean:
+      - "generated top navigation"
+      - "large interface title block on left"
+      - "button / CTA graphics"
+      - "footer navigation / social icons"
+      - "interface-style labels that should become HTML"
+    flex:
+      - "plain wall reconstruction behind removed text"
+      - "small peripheral notes if visually non-essential"
+      - "subtle surface texture"
+  factual_text_audit:
+    preserve:
+      - "Only diegetic text that is intentionally part of the environment and remains visually useful"
+    texture_only:
+      - "small handwritten environmental notes"
+    remove_or_rebuild:
+      - "all navigation and interface copy"
+      - "any pseudo-text that competes with semantic HTML"
+
+narrative:
+  role: "Recomposition / morning reset"
+  incoming_transition: "Faces collapse resolves into one dominant circular geometry."
+  outgoing_transition: "The stable circle becomes the softer orbital/portal logic of The Divine Feminine."
+  distortion_visual_only: 4
+  governing_visual_law: "One large stable circle organizes the scene; anomalies survive only at the edges."
+
+content:
+  title: "GO:OD AM"
+  microcopy: ""
+  microcopy_max_words: 12
+  cta_label: "Escuchar GO:OD AM"
+  cta_target: "#divine-feminine"
+
+interaction:
+  enabled: true
+  trigger_id: "good-am-alarm"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  proposed_effect:
+    - "subtle alarm-hand/time-state change"
+    - "slight dawn brightness increase"
+    - "one door/portal edge receives a restrained highlight"
+  reduced_motion_behavior: "Instant static time/light state."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING"
+  desktop_1024:
+    required: true
+    status: "PENDING"
+  tablet_768:
+    required: true
+    status: "PENDING"
+  mobile_390:
+    required: true
+    status: "PENDING"
+    rule: "Preserve Mac, main alarm portal and sunrise. Generate mobile alternate only if crop fails."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+human_approval:
+  reference: true
+  clean_master: false
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-A"
+  deliverable: "Clean Master edit of the approved reference: remove UI text/navigation only; preserve the approved composition."
