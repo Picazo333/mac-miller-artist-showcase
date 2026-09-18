@@ -1,0 +1,187 @@
+version: "1.0"
+scene:
+  id: "S05"
+  slug: "divine-feminine"
+  name: "The Divine Feminine"
+  status: "CLEAN_MASTER_APPROVED"
+
+reference:
+  approved: true
+  source_file_name: "santuario_celestial_entre_rosas_y_sueños.png"
+  source_dimensions: "1672x941"
+  visual_thesis: "A luminous romantic-surreal sanctuary organized around a monumental feminine profile with a high ponytail. The silhouette acts as both figure and portal, containing sky, city and landscape; Mac remains small and contemplative in the foreground."
+  immutable_notes:
+    - "The high-ponytail feminine silhouette is the dominant structural motif."
+    - "The silhouette must remain a portal/negative-space device, not a celebrity poster."
+    - "Mac remains small, seated and contemplative in the foreground."
+    - "The circular architectural opening remains the main compositional frame."
+    - "Roses, pale stone, water and warm sunset light remain."
+    - "The glass slipper remains a small easter egg on the lower right."
+    - "The scene must feel more intimate and stable than GO:OD AM and dramatically less unstable than Faces."
+    - "No generic pink-romance redesign is allowed."
+
+clean_master:
+  approved: true
+  asset_status: "APPROVED_EXTERNAL_MASTER"
+  intended_repo_path: "assets/backgrounds/s05-divine-feminine-master"
+  reference_protection:
+    lock:
+      - "high-ponytail feminine profile silhouette"
+      - "Mac seated foreground figure"
+      - "circular portal / arch"
+      - "sunset sky and city inside silhouette"
+      - "rose architecture"
+      - "reflective water"
+      - "glass slipper easter egg"
+      - "warm ivory / blush / sunset-gold palette"
+    clean:
+      - "No generated navigation"
+      - "No generated hero title"
+      - "No generated CTA"
+      - "No generic love slogans"
+    flex:
+      - "minor drifting petals"
+      - "subtle reflection intensity"
+      - "small peripheral floral density"
+
+narrative:
+  role: "Intimacy / softness / relational orbit"
+  incoming_transition: "GO:OD AM's stable circle softens into a romantic portal organized by the feminine silhouette."
+  outgoing_transition: "The portal and reflective water dissolve into Swimming's submerged interior."
+  distortion_visual_only: 2
+  governing_visual_law: "The world is stable; surrealism lives inside the silhouette and orbital relationships."
+
+content:
+  title: "The Divine Feminine"
+  microcopy: ""
+  microcopy_max_words: 12
+  cta_label: "Escuchar The Divine Feminine"
+  cta_target: "#swimming"
+  visible_strategy: "Keep visible HTML minimal and place it outside the silhouette's facial profile and Mac."
+
+safe_areas:
+  protected:
+    - "feminine profile and ponytail"
+    - "Mac"
+    - "circular portal"
+    - "sunset core"
+    - "glass slipper"
+  flexible:
+    - "upper-left pale architecture"
+    - "lower-left floral foreground"
+    - "far upper-right architecture"
+  content_safe:
+    - "small left-edge or lower-left text zone"
+    - "CTA in lower peripheral band if it does not cover roses or Mac"
+
+easter_eggs:
+  raster_preserved:
+    - "glass slipper"
+    - "planet / celestial orb"
+    - "paired embrace sculptures"
+    - "rose portal"
+  overlays:
+    - "subtle orbital ring"
+    - "backlight enhancement around ponytail silhouette"
+    - "optional drifting-petal micro-layer"
+  interactive:
+    - id: "divine-orbit"
+      target: "small planet/orb near the silhouette"
+      purpose: "Activate a restrained orbit/backlight state around the silhouette without changing the composition."
+
+interaction:
+  enabled: true
+  trigger_id: "divine-orbit"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: "still-orbit"
+  active_state: "orbit-awake"
+  visual_effects:
+    - "one subtle orbital line appears around the small planet"
+    - "slight warm backlight around the ponytail edge"
+    - "very small reflection lift in the water"
+    - "no camera movement"
+    - "no large geometric overlay"
+    - "no extra visible text"
+  reduced_motion_behavior: "Static orbit/backlight state."
+
+assets:
+  svg:
+    - id: "s05-orbit-ring"
+      purpose: "Interactive orbital accent"
+      status: "TO_REFINE"
+  raster_overlays:
+    - id: "s05-ponytail-backlight"
+      purpose: "Optional transparent warm backlight if CSS alone is insufficient"
+      status: "OPTIONAL"
+  html_controls:
+    - "semantic h2"
+    - "CTA anchor"
+    - "accessible orbit toggle"
+
+motion:
+  enabled: true
+  css_only: true
+  effects:
+    - "very slow orbital rotation"
+    - "micro petal drift if approved"
+  reduced_motion_fallback: "Static orbit/backlight state."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve full profile silhouette, Mac, portal and slipper."
+  desktop_1024:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Crop peripheral roses before losing the silhouette or Mac."
+  tablet_768:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve face profile + ponytail + Mac; slipper may crop if necessary."
+  mobile_390:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Vertical crop must preserve the face profile, ponytail and Mac. Generate a mobile alternate only if crop fails."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 420
+  master_webp_target_kb: 520
+  svg_soft_target_kb: 25
+  lazy_load: true
+  preload: false
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: "Activar la órbita de The Divine Feminine"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PENDING_COMPOSITE"
+  spatial_fidelity: "PENDING_COMPOSITE"
+  character_fidelity: "PENDING_COMPOSITE"
+  lighting_fidelity: "PENDING_COMPOSITE"
+  palette_fidelity: "PENDING_COMPOSITE"
+  density_fidelity: "PENDING_COMPOSITE"
+  typography_improvement: "PENDING_COMPOSITE"
+  easter_egg_integration: "PENDING_COMPOSITE"
+  interaction_quality: "PENDING_COMPOSITE"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-B"
+  deliverable: "Desktop composite preserving the approved clean master, with minimal semantic HTML and a subtle planet/orbit interaction."
