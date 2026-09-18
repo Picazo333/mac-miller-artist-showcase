@@ -1,0 +1,257 @@
+version: "1.0"
+
+scene:
+  id: "S10"
+  slug: "celebration-of-life"
+  name: "Celebration of Life"
+  status: "SCENE_CONTRACT_APPROVED"
+
+integration:
+  section_id: "celebration"
+  anchor: "#celebration"
+  legacy_anchor_alias: "#legacy"
+  sequence_after: "S09-memorial"
+  sequence_before: null
+  runtime_change_allowed_now: false
+  note: "Contract only. Final runtime integration remains gated by the V6 preproduction pipeline."
+
+reference:
+  approved: true
+  source_file_name: "homenaje_pixelado_bajo_la_luna.png"
+  source_dimensions: "1672x941"
+  sha256: "097988f051832dca82e7669e0c2380d68d1875d3ceefe89d26414218611d259f"
+  visual_thesis: "The final scene repopulates the stage after Memorial through six small pixel-art figures. Mac stands at the center under a halo, surrounded by five collaborators/friends. The background remains nearly black, theatrical and restrained so the sprites carry the emotional resolution."
+  immutable_notes:
+    - "Pixel-art is mandatory for all six figures."
+    - "Mac Miller remains centered and is the only figure with a halo."
+    - "The five collaborators are Anderson .Paak, Action Bronson, Tyler, The Creator, Thundercat and ScHoolboy Q."
+    - "The canonical left-to-right order is Anderson .Paak, Action Bronson, Mac Miller, Tyler, The Creator, Thundercat, ScHoolboy Q."
+    - "The stage/background remains dark and sparse."
+    - "The large moon remains a restrained background motif."
+    - "No photoreal portraits are introduced into this scene."
+    - "No generic motivational slogans are allowed."
+    - "The mood is celebration-through-presence, not another memorial."
+
+clean_master:
+  asset: "homenaje_pixelado_bajo_la_luna.png"
+  approved: true
+  asset_status: "APPROVED_COMPOSITE_REFERENCE"
+  intended_repo_path: "assets/backgrounds/s10-celebration-stage-master"
+  production_strategy: "Use the approved composite as visual reference, but final implementation should separate stage background and six pixel sprites so each figure can be independently interactive."
+  reference_protection:
+    lock:
+      - "dark stage"
+      - "large moon"
+      - "six-figure lineup"
+      - "Mac in center with halo"
+      - "left-to-right collaborator order"
+      - "low-key warm stage reflection"
+      - "pixel-art scale relationship"
+    clean:
+      - "No generated navigation"
+      - "No generic slogan overlays"
+      - "No baked-in collaborator labels required in final raster"
+    flex:
+      - "minor equipment silhouettes"
+      - "halo intensity"
+      - "small stage reflection"
+      - "sprite spacing within approved order"
+  factual_text_audit:
+    preserve:
+      - "GOLF lettering when used as part of Tyler, The Creator's pixel-art cap treatment"
+    texture_only: []
+    remove_or_rebuild:
+      - "All collaborator names should be semantic HTML, not baked raster labels"
+      - "Any biographical/collaboration facts must be verified before visible integration"
+
+narrative:
+  role: "Communal resolution / friends, collaborators and continuing influence"
+  incoming_transition: "Memorial's empty stage becomes inhabited again, but symbolically and playfully."
+  outgoing_transition: "Final scene. Navigation may return to Home / Archive without introducing a new narrative escalation."
+  distortion_visual_only: 0
+  governing_visual_law: "After absence, presence returns in simplified pixel form; the ending is communal, not grandiose."
+
+content:
+  title: "Celebration of Life"
+  microcopy: ""
+  microcopy_max_words: 12
+  cta_label: "Volver al inicio"
+  cta_target: "#home"
+  visible_strategy: "Names appear only on hover/focus/click or in a compact semantic label band; avoid a large paragraph or slogan."
+
+background:
+  desktop:
+    asset: "assets/backgrounds/s10-celebration-stage-master"
+    focal_point: { x: 50, y: 57 }
+    position: { x: 50, y: 50 }
+  tablet:
+    position: { x: 50, y: 50 }
+  mobile:
+    strategy: "responsive-sprite-reflow"
+    position: { x: 50, y: 50 }
+    alternate_master: null
+
+safe_areas:
+  protected:
+    - "all six pixel figures"
+    - "Mac halo"
+    - "moon"
+    - "stage floor reflection immediately beneath lineup"
+  flexible:
+    - "far left/right equipment darkness"
+    - "upper black curtain field"
+    - "foreground auditorium darkness"
+  content_safe:
+    - "upper-center negative space for compact title"
+    - "lower edge for contextual name labels"
+    - "corners for final navigation"
+
+easter_eggs:
+  raster_preserved:
+    - "Mac halo"
+    - "Tyler GOLF cap treatment"
+    - "Thundercat instrument"
+    - "distinctive silhouette/accessory language for each collaborator"
+  overlays:
+    - "individual sprite focus glow"
+    - "small name plates in HTML"
+  interactive:
+    - id: "celebration-anderson"
+      target: "Anderson .Paak sprite"
+      purpose: "Reveal collaborator name/context."
+    - id: "celebration-action"
+      target: "Action Bronson sprite"
+      purpose: "Reveal collaborator name/context."
+    - id: "celebration-mac"
+      target: "Mac Miller sprite"
+      purpose: "Increase halo slightly and reveal central identity label."
+    - id: "celebration-tyler"
+      target: "Tyler, The Creator sprite"
+      purpose: "Reveal collaborator name/context."
+    - id: "celebration-thundercat"
+      target: "Thundercat sprite"
+      purpose: "Reveal collaborator name/context."
+    - id: "celebration-schoolboy"
+      target: "ScHoolboy Q sprite"
+      purpose: "Reveal collaborator name/context."
+
+interaction:
+  enabled: true
+  trigger_id: "per-sprite"
+  primitive: "focus_hover_click"
+  keyboard_accessible: true
+  default_state: "lineup-still"
+  active_state: "sprite-focused"
+  visual_effects:
+    - "focused sprite receives a small warm halo/glow"
+    - "focused collaborator name appears in real HTML"
+    - "Mac's existing halo may brighten slightly on focus"
+    - "no sprite movement required"
+    - "no full-screen effects"
+    - "no generic inspirational copy"
+  factual_reveal: "PENDING_VERIFIED_COLLAB_CONTEXT"
+  reduced_motion_behavior: "Static focus glow and label only."
+
+assets:
+  svg: []
+  raster_overlays: []
+  pixel:
+    - id: "s10-anderson-paak"
+      subject: "Anderson .Paak"
+      status: "TO_EXTRACT_OR_REBUILD_FROM_APPROVED_REFERENCE"
+    - id: "s10-action-bronson"
+      subject: "Action Bronson"
+      status: "TO_EXTRACT_OR_REBUILD_FROM_APPROVED_REFERENCE"
+    - id: "s10-mac-miller"
+      subject: "Mac Miller"
+      halo: true
+      status: "TO_EXTRACT_OR_REBUILD_FROM_APPROVED_REFERENCE"
+    - id: "s10-tyler-the-creator"
+      subject: "Tyler, The Creator"
+      status: "TO_EXTRACT_OR_REBUILD_FROM_APPROVED_REFERENCE"
+    - id: "s10-thundercat"
+      subject: "Thundercat"
+      status: "TO_EXTRACT_OR_REBUILD_FROM_APPROVED_REFERENCE"
+    - id: "s10-schoolboy-q"
+      subject: "ScHoolboy Q"
+      status: "TO_EXTRACT_OR_REBUILD_FROM_APPROVED_REFERENCE"
+  html_controls:
+    - "semantic h2"
+    - "six accessible sprite buttons/hotspots"
+    - "context/name label region"
+    - "return-home CTA"
+
+motion:
+  enabled: true
+  css_only: true
+  effects:
+    - "small focus glow"
+    - "optional halo breathing on Mac at very low amplitude"
+  reduced_motion_fallback: "Static focus state."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Keep all six sprites in one horizontal lineup."
+  desktop_1024:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve order and individual recognizability; reduce spacing before reducing sprite size."
+  tablet_768:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Prefer compact single row if legible; otherwise use two rows while keeping Mac visually central."
+  mobile_390:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Use a deliberate 2x3 or 3x2 sprite reflow; Mac must remain the compositional center with halo. Do not solve mobile by cropping collaborators out."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 300
+  master_webp_target_kb: 400
+  pixel_sprite_target_kb_each: 40
+  svg_soft_target_kb: 20
+  lazy_load: true
+  preload: false
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "stage background decorative; each collaborator sprite has an accessible button label"
+  interaction_label: "Explorar colaboradores de Celebration of Life"
+  focus_visible: true
+  required_info_not_image_only: true
+  sprite_labels:
+    - "Anderson .Paak"
+    - "Action Bronson"
+    - "Mac Miller"
+    - "Tyler, The Creator"
+    - "Thundercat"
+    - "ScHoolboy Q"
+
+qa:
+  composition_fidelity: "PASS_REFERENCE"
+  spatial_fidelity: "PASS_REFERENCE"
+  character_fidelity: "PASS_REFERENCE_AS_PIXEL_ART"
+  lighting_fidelity: "PASS_REFERENCE"
+  palette_fidelity: "PASS_REFERENCE"
+  density_fidelity: "PASS_REFERENCE"
+  typography_improvement: "PENDING_COMPOSITE"
+  easter_egg_integration: "PASS_REFERENCE"
+  interaction_quality: "PENDING_COMPOSITE"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "ASSET_SPLIT"
+  deliverable: "Separate the approved Celebration reference into a clean dark-stage background plus six individually interactive pixel sprites before desktop composite."
