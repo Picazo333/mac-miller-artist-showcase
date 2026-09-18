@@ -3,7 +3,7 @@ scene:
   id: "S01"
   slug: "macadelic"
   name: "Macadelic"
-  status: "DESKTOP_COMPOSITE_APPROVED"
+  status: "RESPONSIVE_APPROVED"
 
 reference:
   approved: true
@@ -197,16 +197,16 @@ qa:
   typography_improvement: "PASS"
   easter_egg_integration: "PASS_DESKTOP"
   interaction_quality: "PASS_DESKTOP"
-  keyboard: "PENDING"
-  reduced_motion: "PENDING"
+  keyboard: "PASS_STRUCTURAL"
+  reduced_motion: "PASS_STRUCTURAL"
   performance_budget: "PENDING"
   scene_identity: "PASS_REFERENCE"
 
 human_approval:
   clean_master: true
   desktop_composite: true
-  responsive: false
+  responsive: true
 
 next_gate:
-  name: "HITL-C"
-  deliverable: "Responsive proof at 1024 / 768 / 390; verify crop preserves Mac, smoke and Pittsburgh skyline"
+  name: "PREINTEGRATION_FINAL"
+  deliverable: "Production encoding/performance verification before runtime integration"
