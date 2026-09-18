@@ -1,4 +1,5 @@
-version: "1.1"
+version: "1.2"
+
 scene:
   id: "S03"
   slug: "faces"
@@ -7,62 +8,63 @@ scene:
 
 reference:
   approved: true
-  visual_thesis: "The visual peak of the site: a claustrophobic, hallucinatory room where mirrors, masks, faces and architecture fold into one another like a bad acid trip while retaining the visual identity of Faces."
+  visual_thesis: "The visual peak of the site: a claustrophobic, hallucinatory room where masks, eyes, reflections and impossible architecture fold into one another like a bad acid trip while retaining the Faces identity."
   immutable_notes:
-    - "Mac remains seated on the bed as the single stable human anchor."
-    - "The room must feel more unstable and grotesque than every previous scene."
-    - "The giant fractured mirror wall remains the dominant secondary structure."
+    - "The corrected central figure from master v2 remains seated on the bed as the human anchor."
+    - "The short/shaved-hair head silhouette from v2 is frozen."
+    - "The room remains more unstable and grotesque than every previous scene."
+    - "The right reflection/face field remains the dominant secondary structure."
     - "Masks, repeated faces and eyes remain embedded throughout the room."
-    - "The open city/sky aperture remains visible as an impossible spatial rupture."
+    - "The open city/sky rupture remains visible as an impossible spatial break."
     - "Candles, records, clutter and the cat remain part of the lived-in physical base."
     - "Faces is the maximum-distortion scene; no later scene may exceed this density or instability."
 
 clean_master:
   approved: true
-  asset_status: "APPROVED_EXTERNAL_MASTER_V2_CORRECTED"
   master_version: "v2-corrected"
+  asset_status: "APPROVED_EXTERNAL_MASTER_V2_CORRECTED"
   source_file_name: "habitación_surrealista_de_faces.png"
   source_dimensions: "1672x941"
   sha256: "e36777ab52d7e17d8037b57a7fe64cec8f14f84767a18788b6ca3345bd113457"
   supersedes_master: "v1-approved-pre-character-correction"
   intended_repo_path: "assets/backgrounds/s03-faces-master-v2"
+  revision_scope: "Character-only correction. No redesign authorized."
   reference_protection:
     lock:
-      - "Mac seated on bed, corrected appearance from v2 master"
-      - "short/shaved hair treatment and head silhouette from v2 master"
-      - "fractured mirror wall with repeated faces"
-      - "left wall FACES treatment"
+      - "corrected central figure pose, scale, head and hair treatment"
+      - "right reflection/face field"
+      - "left FACES wall treatment"
       - "surreal open city/sky rupture"
-      - "masks / eyes / grotesque sculptural faces"
+      - "masks, eyes and grotesque sculptural faces"
       - "cat on bed"
-      - "candles / turntable / clutter"
-      - "warm black / amber / dirty crimson palette"
+      - "candles, turntable and clutter"
+      - "warm black, amber and dirty-crimson palette"
     clean:
       - "No generated navbar"
       - "No external content card covering the room"
       - "No visible HTML title duplication over the FACES wall treatment"
     flex:
       - "small candle-glow intensity"
-      - "minor eye/reflection locations"
+      - "minor reflection highlights"
       - "small foreground clutter"
       - "tiny text fragments used only as texture"
-  factual_text_audit:
-    preserve:
-      - "FACES"
-      - "Beauty and horror coexist"
-      - "small existential wall fragments that operate as texture, not factual biography"
-    texture_only:
-      - "small handwritten notes"
-      - "stack labels"
-      - "non-semantic scribbles"
-    remove_or_rebuild:
-      - "any generated factual statement about Mac's mental state"
-      - "any duplicated interface-style copy"
+
+factual_text_audit:
+  preserve:
+    - "FACES"
+    - "small existential wall fragments used as texture rather than factual biography"
+  texture_only:
+    - "small handwritten notes"
+    - "stack labels"
+    - "non-semantic scribbles"
+  remove_or_rebuild:
+    - "any generated factual statement about the subject's mental state"
+    - "any duplicated interface-style copy"
 
 narrative:
   role: "Maximum fragmentation / visual collapse"
   incoming_transition: "Watching Movies screens, reflections and false exits multiply until no stable surface remains."
-  outgoing_transition: "One circular/door geometry survives the collapse and becomes the cleaner recomposition logic of GO:OD AM."
+  outgoing_transition: "A surviving geometric/time motif becomes the cleaner recomposition logic of GO:OD AM."
   distortion_visual_only: 10
   governing_visual_law: "Identity, architecture and scale recurse until the room becomes a self-observing maze."
 
@@ -76,8 +78,8 @@ content:
 
 safe_areas:
   protected:
-    - "Mac and bed"
-    - "fractured mirror wall"
+    - "corrected central figure and bed"
+    - "right reflection/face field"
     - "left FACES wall treatment"
     - "central city/sky rupture"
     - "cat"
@@ -98,26 +100,26 @@ background:
     position: { x: 50, y: 51 }
   mobile:
     strategy: "crop-first"
-    position: { x: 50, y: 54 }
+    position: { x: 55, y: 54 }
     alternate_master: null
+    selection_reason: "55% horizontal crop retains the corrected central figure, central rupture and substantial right-side reflection field without requiring a new mobile generation."
 
 easter_eggs:
   raster_preserved:
     - "masks"
     - "eyes"
-    - "hourglass / time motif"
+    - "hourglass/time motif"
     - "records and turntable"
     - "cat"
-    - "yin-yang / sticker language"
+    - "yin-yang/sticker language"
     - "framed figures and impossible architecture"
   overlays:
-    - "mirror reflection enhancement"
-    - "one hidden face layer"
-    - "subtle candle-response layer"
+    - "localized mirror/reflection enhancement"
+    - "one hidden eye layer"
   interactive:
     - id: "faces-mirror"
-      target: "fractured mirror wall"
-      purpose: "Reveal a second reflection state: several mirrored fragments brighten and one hidden face/eye becomes visible."
+      target: "right reflection/face field"
+      purpose: "Reveal a second reflection state without adding a new standalone shape."
 
 interaction:
   enabled: true
@@ -127,9 +129,11 @@ interaction:
   default_state: "mirror-dormant"
   active_state: "mirror-awake"
   visual_effects:
-    - "slightly increase local mirror luminance"
-    - "reveal one extra eye/face in a shard"
-    - "add restrained crimson-gold edge glow to selected cracks"
+    - "OFF state remains visually equivalent to the approved clean master"
+    - "localized existing-shard highlights only"
+    - "one small hidden eye becomes visible"
+    - "no opaque plate"
+    - "no large circle"
     - "no camera shake"
     - "no full-screen strobe"
     - "no increase in overall scene density"
@@ -138,16 +142,13 @@ interaction:
 
 assets:
   svg:
-    - id: "s03-mirror-crack-glow"
-      purpose: "Selective interactive crack highlights"
-      status: "TO_REFINE"
     - id: "s03-hidden-eye"
-      purpose: "Small reveal within one mirror shard"
-      status: "TO_REFINE"
-  raster_overlays:
-    - id: "s03-mirror-reflection-bloom"
-      purpose: "Optional transparent reflection treatment if CSS alone is insufficient"
-      status: "OPTIONAL"
+      purpose: "Small reveal integrated into the existing reflection field"
+      status: "PRODUCTION_CANDIDATE"
+    - id: "s03-localized-shard-highlight"
+      purpose: "Very restrained highlights aligned to existing reflection geometry"
+      status: "PRODUCTION_CANDIDATE"
+  raster_overlays: []
   html_controls:
     - "semantic h2"
     - "transparent CTA anchor"
@@ -157,27 +158,26 @@ motion:
   enabled: true
   css_only: true
   effects:
-    - "very low-amplitude mirror-light change"
-    - "optional crack-glow breathing"
-  reduced_motion_fallback: "Static active mirror state."
+    - "low-amplitude localized reflection-state change"
+  reduced_motion_fallback: "Static active reflection state."
 
 responsive:
   desktop_1440:
     required: true
-    status: "PENDING_REVALIDATION_V2"
-    rule: "Preserve Mac, mirror wall, FACES wall and central rupture simultaneously."
+    status: "PASS_INTERNAL_AWAITING_HITL"
+    rule: "Preserve corrected figure, right reflection field, FACES wall and central rupture simultaneously."
   desktop_1024:
     required: true
-    status: "PENDING_REVALIDATION_V2"
-    rule: "Crop foreground clutter first; retain the three main structural anchors."
+    status: "PASS_INTERNAL_AWAITING_HITL"
+    rule: "Crop foreground clutter first; retain corrected figure, central rupture and major reflection field."
   tablet_768:
     required: true
-    status: "PENDING_REVALIDATION_V2"
-    rule: "Preserve Mac plus either full mirror wall or FACES wall while keeping central rupture visible."
+    status: "PASS_INTERNAL_AWAITING_HITL"
+    rule: "Preserve corrected figure, central rupture and substantial right-side reflection/face structure."
   mobile_390:
     required: true
-    status: "PENDING_REVALIDATION_V2"
-    rule: "Vertical crop must preserve corrected Mac plus at least two of: mirror wall, FACES lettering, central rupture. Generate a mobile alternate only if the v2 crop fails."
+    status: "PASS_INTERNAL_AWAITING_HITL"
+    rule: "Use 55% horizontal crop; preserve corrected figure + central rupture + right reflection field. FACES lettering may be sacrificed on mobile."
   desktop_1920_sanity:
     required: false
     status: "PENDING"
@@ -198,15 +198,16 @@ accessibility:
   required_info_not_image_only: true
 
 qa:
-  composition_fidelity: "PENDING_REVALIDATION_V2"
-  spatial_fidelity: "PENDING_REVALIDATION_V2"
-  character_fidelity: "PENDING_REVALIDATION_V2"
-  lighting_fidelity: "PENDING_REVALIDATION_V2"
-  palette_fidelity: "PENDING_REVALIDATION_V2"
-  density_fidelity: "PENDING_REVALIDATION_V2"
+  clean_master_hash_match: "PASS"
+  composition_fidelity: "PASS_INTERNAL_AWAITING_HITL"
+  spatial_fidelity: "PASS_INTERNAL_AWAITING_HITL"
+  character_correction_preserved: "PASS"
+  lighting_fidelity: "PASS_INTERNAL_AWAITING_HITL"
+  palette_fidelity: "PASS_INTERNAL_AWAITING_HITL"
+  density_fidelity: "PASS_INTERNAL_AWAITING_HITL"
   typography_improvement: "DIEGETIC_TITLE_APPROVED"
-  easter_egg_integration: "PENDING_REVALIDATION_V2"
-  interaction_quality: "PENDING_REVALIDATION_V2"
+  easter_egg_integration: "PASS_INTERNAL_AWAITING_HITL"
+  interaction_quality: "PASS_INTERNAL_AWAITING_HITL"
   keyboard: "PASS_STRUCTURAL"
   reduced_motion: "PASS_STRUCTURAL"
   performance_budget: "PENDING"
@@ -214,48 +215,28 @@ qa:
 
 human_approval:
   clean_master: true
-  desktop_composite: false
-  responsive: false
-
-next_gate:
-  name: "HITL-B-REVALIDATE-V2"
-  deliverable: "Re-run the approved localized mirror interaction and responsive crops against the corrected Faces v2 master before restoring downstream approvals."
-
-qa_notes:
-  - "HITL-B v1 rejected: overlay read as a large opaque terracotta graphic and broke visual fidelity."
-  - "Repair rule: no large geometric plate, no opaque circle, no new standalone object."
-  - "Interaction must live inside existing mirror shards and remain visually subordinate to the approved master."
-
-qa_notes_v2:
-  - "HITL-B v2 accepted by user."
-  - "OFF state preserves the Clean Master; ON state is limited to existing mirror shards."
-
-responsive_qa_notes:
-  - "1024 PASS: major composition anchors survive."
-  - "768 PASS: Mac, central rupture and mirror/faces structure survive."
-  - "390 FAIL with simple crop: central rupture and Mac survive, but FACES lettering and mirror wall are not sufficiently represented together."
-  - "Action: create dedicated 9:16 mobile alternate derived from the approved master; do not reinterpret the scene."
-
-responsive_qa_notes:
-  - "1024: PASS — Mac, FACES wall, central rupture and mirror wall remain legible."
-  - "768: PASS — Mac, central rupture and mirror wall remain strong; FACES lettering is partially cropped."
-  - "390: PASS — Mac, central rupture and mirror wall survive; FACES lettering is intentionally sacrificed to preserve the dominant composition."
-  - "No alternate mobile master required at this stage."
-
-final_approval_notes:
-  - "Responsive proofs approved by user."
-  - "S03 art direction remains the maximum-distortion ceiling for all later scenes."
+  desktop_composite_v2: false
+  responsive_v2: false
 
 master_revision_history:
   - version: "v1"
     status: "SUPERSEDED"
-    reason: "Approved composition, but the central figure had incorrect hair/head appearance."
+    reason: "Composition was approved, but the central figure had the wrong hair/head appearance."
   - version: "v2-corrected"
     status: "APPROVED_CLEAN_MASTER"
     reason: "Character-only correction approved by user; composition, surrealism, density, lighting and easter-egg field remain frozen."
-    invariant: "No redesign. Only the central figure correction is authorized."
 
-revalidation_rule:
-  - "Because the raster master changed, prior HITL-B and responsive approvals are evidence from v1 and cannot be carried forward automatically."
-  - "Reuse the same approved interaction grammar; re-run composite and 1024/768/390 proofs on v2."
-  - "If no drift appears, downstream approvals may be restored without any new art-direction decision."
+interaction_history:
+  - version: "HITL-B-v1"
+    status: "REJECTED"
+    reason: "Large terracotta overlay broke visual fidelity."
+  - version: "HITL-B-v2"
+    status: "APPROVED_GRAMMAR"
+    reason: "Interaction constrained to localized reflection/shard territory."
+  - version: "HITL-B-v2-on-master-v2"
+    status: "PASS_INTERNAL_AWAITING_HITL"
+    reason: "Same approved interaction grammar revalidated against corrected master v2."
+
+next_gate:
+  name: "HITL-REVALIDATION-V2"
+  deliverable: "User review of 1440 OFF/ON plus 1024/768/390 proofs. If approved, restore downstream approvals and move S03 to preintegration-final."
