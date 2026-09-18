@@ -1,0 +1,193 @@
+version: "1.0"
+scene:
+  id: "S00"
+  slug: "home-larry-fisherman"
+  name: "Home / Larry Fisherman"
+  status: "CLEAN_MASTER_APPROVED"
+
+reference:
+  approved: true
+  visual_thesis: "Minimal pixel-art threshold: Mac as Larry Fisherman quietly fishing, viewed from above/behind, before the album universes begin."
+  immutable_notes:
+    - "Mac remains the central seated fisherman."
+    - "Cap must read LARRY."
+    - "Fishing line terminates in the central ripple."
+    - "Frog remains on a lily pad."
+    - "Negative space and calm night atmosphere are essential."
+    - "Home remains exempt from the album distortion system."
+
+clean_master:
+  approved: true
+  asset_status: "APPROVED_EXTERNAL_MASTER"
+  intended_repo_path: "assets/backgrounds/s00-home-larry-fisherman-master"
+  reference_protection:
+    lock:
+      - "Mac sprite / pose / scale"
+      - "LARRY cap"
+      - "dock"
+      - "fishing rod and line"
+      - "central ripple"
+      - "frog and lily-pad cluster"
+      - "moon / night ambience"
+      - "overall dark pixel-art language"
+    clean:
+      - "No generated navbar"
+      - "No generated hero title"
+      - "No generated CTA"
+      - "No generated body copy"
+    flex:
+      - "Peripheral prop density"
+      - "small decorative fireflies"
+      - "minor water highlights"
+
+narrative:
+  role: "Threshold / calm before the album journey"
+  incoming_transition: "None"
+  outgoing_transition: "Central water ripple becomes the first transition motif into S01 Macadelic."
+  distortion_visual_only: 0
+  governing_visual_law: "Stillness interrupted only by concentric water motion."
+
+content:
+  title: "Mac Miller"
+  microcopy: ""
+  microcopy_max_words: 12
+  cta_label: "Seguir la corriente"
+  cta_target: "#macadelic"
+
+safe_areas:
+  protected:
+    - "center-bottom dock and Mac"
+    - "central ripple"
+    - "right-side frog/lily pad"
+    - "major moon reflection"
+  flexible:
+    - "upper-left dark foliage"
+    - "upper-center sky"
+    - "far shoreline"
+  content_safe:
+    - "upper-left / upper-center negative-space zone for minimal identity"
+    - "bottom-left or bottom-center for CTA only if it does not overlap dock"
+
+background:
+  desktop:
+    focal_point: { x: 50, y: 61 }
+    position: { x: 50, y: 50 }
+  tablet:
+    position: { x: 50, y: 52 }
+  mobile:
+    strategy: "crop-first"
+    position: { x: 50, y: 58 }
+    alternate_master: null
+
+easter_eggs:
+  raster_preserved:
+    - "LARRY cap"
+    - "frog"
+    - "lily pads"
+    - "Pittsburgh / Most Dope / DON'T TRIP-style background references where visually unobtrusive"
+  overlays:
+    - "water ripple enhancement if needed"
+    - "minimal firefly light points if needed"
+  interactive:
+    - id: "frog-ripple"
+      target: "frog / lily pad"
+      purpose: "Trigger a restrained secondary ripple and tiny light response."
+
+interaction:
+  enabled: true
+  trigger_id: "frog-ripple"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: "still-water"
+  active_state: "ripple-discovery"
+  visual_effects:
+    - "one secondary ripple expands near the lily pad"
+    - "2–4 firefly points brighten briefly"
+    - "no camera movement"
+    - "no scene-wide animation"
+  factual_reveal: null
+  reduced_motion_behavior: "Use instant opacity/state change without animated ripple."
+
+assets:
+  svg:
+    - id: "s00-ripple-overlay"
+      purpose: "Interactive ripple"
+      status: "TO_REFINE"
+    - id: "global-cta-arrow"
+      purpose: "CTA affordance"
+      status: "GLOBAL"
+  raster_overlays: []
+  pixel:
+    - "clean master background only"
+  html_controls:
+    - "scene title"
+    - "CTA anchor"
+    - "accessible frog/ripple toggle"
+
+motion:
+  enabled: true
+  css_only: true
+  effects:
+    - "ripple scale/opacity"
+    - "micro firefly opacity"
+  reduced_motion_fallback: "Static active-state glow/ring."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve full dock, Mac, frog and central ripple."
+  desktop_1024:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Crop peripheral foliage first."
+  tablet_768:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Keep Mac and ripple centered; reduce optional props."
+  mobile_390:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Use vertical crop focused on Mac, line, ripple and frog; do not shrink the entire 16:9 scene."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 350
+  master_webp_target_kb: 450
+  svg_soft_target_kb: 25
+  lazy_load: false
+  preload: true
+  fetch_priority: "high"
+
+accessibility:
+  heading_level: 1
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: "Activar una onda en el agua"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PENDING_COMPOSITE"
+  spatial_fidelity: "PENDING_COMPOSITE"
+  character_fidelity: "PENDING_COMPOSITE"
+  lighting_fidelity: "PENDING_COMPOSITE"
+  palette_fidelity: "PENDING_COMPOSITE"
+  density_fidelity: "PENDING_COMPOSITE"
+  typography_improvement: "PENDING_COMPOSITE"
+  easter_egg_integration: "PENDING_COMPOSITE"
+  interaction_quality: "PENDING_COMPOSITE"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-B"
+  deliverable: "Desktop composite with real HTML/CSS typography + frog/ripple interaction proof"
