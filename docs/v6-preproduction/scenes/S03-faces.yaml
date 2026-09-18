@@ -3,7 +3,7 @@ scene:
   id: "S03"
   slug: "faces"
   name: "Faces"
-  status: "DESKTOP_COMPOSITE_APPROVED"
+  status: "RESPONSIVE_APPROVED"
 
 reference:
   approved: true
@@ -201,19 +201,19 @@ qa:
   typography_improvement: "DIEGETIC_TITLE_APPROVED"
   easter_egg_integration: "PASS_V2_LOCALIZED"
   interaction_quality: "PASS_V2_LOCALIZED"
-  keyboard: "PENDING"
-  reduced_motion: "PENDING"
+  keyboard: "PASS_STRUCTURAL"
+  reduced_motion: "PASS_STRUCTURAL"
   performance_budget: "PENDING"
   scene_identity: "PASS_REFERENCE"
 
 human_approval:
   clean_master: true
   desktop_composite: true
-  responsive: false
+  responsive: true
 
 next_gate:
-  name: "HITL-C"
-  deliverable: "Responsive proof at 1024 / 768 / 390; verify crop preserves Mac and at least two primary Faces anchors."
+  name: "PREINTEGRATION_FINAL"
+  deliverable: "Production encoding/performance verification before runtime integration."
 
 qa_notes:
   - "HITL-B v1 rejected: overlay read as a large opaque terracotta graphic and broke visual fidelity."
@@ -235,3 +235,7 @@ responsive_qa_notes:
   - "768: PASS — Mac, central rupture and mirror wall remain strong; FACES lettering is partially cropped."
   - "390: PASS — Mac, central rupture and mirror wall survive; FACES lettering is intentionally sacrificed to preserve the dominant composition."
   - "No alternate mobile master required at this stage."
+
+final_approval_notes:
+  - "Responsive proofs approved by user."
+  - "S03 art direction remains the maximum-distortion ceiling for all later scenes."
