@@ -134,16 +134,16 @@ responsive:
     rule: "Preserve full profile silhouette, Mac, portal and slipper."
   desktop_1024:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS_INTERNAL_AWAITING_HITL"
     rule: "Crop peripheral roses before losing the silhouette or Mac."
   tablet_768:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS_INTERNAL_AWAITING_HITL"
     rule: "Preserve face profile + ponytail + Mac; slipper may crop if necessary."
   mobile_390:
     required: true
-    status: "PENDING_COMPOSITE"
-    rule: "Vertical crop must preserve the face profile, ponytail and Mac. Generate a mobile alternate only if crop fails."
+    status: "PASS_INTERNAL_AWAITING_HITL"
+    rule: "Use 44% horizontal crop: preserves profile, ponytail and Mac without generating a mobile alternate."
   desktop_1920_sanity:
     required: false
     status: "PENDING"
@@ -188,3 +188,9 @@ next_gate:
 
 approval_notes:
   - "HITL-B accepted by continuation instruction; advance to responsive QA."
+
+responsive_qa_notes:
+  - "1024 PASS: full silhouette, Mac and portal remain balanced."
+  - "768 PASS: profile, ponytail and Mac remain strong; peripheral roses crop first."
+  - "390 PASS with 44% horizontal crop: Mac, face profile and ponytail all remain visible."
+  - "No alternate mobile master required."
