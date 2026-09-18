@@ -3,7 +3,7 @@ scene:
   id: "S06"
   slug: "swimming"
   name: "Swimming"
-  status: "DESKTOP_COMPOSITE_APPROVED"
+  status: "SCENE_LOCKED"
 
 reference:
   approved: true
@@ -91,16 +91,16 @@ responsive:
     rule: "Preserve Mac, window opening, water plane and vinyl."
   desktop_1024:
     required: true
-    status: "PENDING_HITL_C"
+    status: "PASS"
     rule: "Crop wall negative space before losing Mac or the opening."
   tablet_768:
     required: true
-    status: "PENDING_HITL_C"
+    status: "PASS"
     rule: "Preserve Mac plus doorway and opening; vinyl may reduce."
   mobile_390:
     required: true
-    status: "PENDING_HITL_C"
-    rule: "Preserve Mac in pink suit, doorway niche and at least part of the sea opening. Generate a mobile alternate only if crop fails."
+    status: "PASS"
+    rule: "Preserve Mac in pink suit, doorway niche and at least part of the sea opening. No mobile alternate required."
   desktop_1920_sanity:
     required: false
     status: "PENDING"
@@ -131,14 +131,23 @@ qa:
   interaction_quality: "PASS_DESKTOP"
   keyboard: "PASS_STRUCTURAL"
   reduced_motion: "PASS_STRUCTURAL"
-  performance_budget: "PENDING"
+  performance_budget: "PENDING_PREINTEGRATION"
   scene_identity: "PASS_REFERENCE"
 
 human_approval:
   clean_master: true
   desktop_composite: true
-  responsive: false
+  responsive: true
 
 next_gate:
-  name: "HITL-C"
-  deliverable: "Responsive proof at 1024 / 768 / 390 using the approved pink-suit master."
+  name: "PREINTEGRATION_FINAL"
+  deliverable: "Production encoding/performance verification before runtime integration."
+
+responsive_qa_notes:
+  - "1024 PASS: Mac, pink suit, sea-window, ladder and water remain legible."
+  - "768 PASS: Mac, doorway niche, sea opening and vinyl survive with strong composition."
+  - "390 PASS: Mac in pink suit and doorway remain dominant; a sufficient slice of the sea opening survives to preserve the aquatic spatial logic."
+  - "No alternate mobile master required."
+final_lock_notes:
+  - "S06 locked after explicit user instruction to continue the approved pipeline."
+  - "No further art-direction changes are allowed unless a concrete defect is found."
