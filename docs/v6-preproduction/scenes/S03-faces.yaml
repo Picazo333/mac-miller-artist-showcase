@@ -1,9 +1,9 @@
-version: "1.0"
+version: "1.1"
 scene:
   id: "S03"
   slug: "faces"
   name: "Faces"
-  status: "RESPONSIVE_APPROVED"
+  status: "CLEAN_MASTER_APPROVED"
 
 reference:
   approved: true
@@ -19,11 +19,17 @@ reference:
 
 clean_master:
   approved: true
-  asset_status: "APPROVED_EXTERNAL_MASTER"
-  intended_repo_path: "assets/backgrounds/s03-faces-master"
+  asset_status: "APPROVED_EXTERNAL_MASTER_V2_CORRECTED"
+  master_version: "v2-corrected"
+  source_file_name: "habitación_surrealista_de_faces.png"
+  source_dimensions: "1672x941"
+  sha256: "e36777ab52d7e17d8037b57a7fe64cec8f14f84767a18788b6ca3345bd113457"
+  supersedes_master: "v1-approved-pre-character-correction"
+  intended_repo_path: "assets/backgrounds/s03-faces-master-v2"
   reference_protection:
     lock:
-      - "Mac seated on bed"
+      - "Mac seated on bed, corrected appearance from v2 master"
+      - "short/shaved hair treatment and head silhouette from v2 master"
       - "fractured mirror wall with repeated faces"
       - "left wall FACES treatment"
       - "surreal open city/sky rupture"
@@ -93,7 +99,7 @@ background:
   mobile:
     strategy: "crop-first"
     position: { x: 50, y: 54 }
-    alternate_master: "REQUIRED_S03_MOBILE"
+    alternate_master: null
 
 easter_eggs:
   raster_preserved:
@@ -158,20 +164,20 @@ motion:
 responsive:
   desktop_1440:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PENDING_REVALIDATION_V2"
     rule: "Preserve Mac, mirror wall, FACES wall and central rupture simultaneously."
   desktop_1024:
     required: true
-    status: "PASS"
+    status: "PENDING_REVALIDATION_V2"
     rule: "Crop foreground clutter first; retain the three main structural anchors."
   tablet_768:
     required: true
-    status: "PASS"
+    status: "PENDING_REVALIDATION_V2"
     rule: "Preserve Mac plus either full mirror wall or FACES wall while keeping central rupture visible."
   mobile_390:
     required: true
-    status: "FAIL_CROP_ALT_REQUIRED"
-    rule: "Vertical crop must preserve Mac and at least two of: mirror wall, FACES lettering, central rupture. Generate a mobile alternate preserving Mac + FACES lettering + mirror wall + central rupture."
+    status: "PENDING_REVALIDATION_V2"
+    rule: "Vertical crop must preserve corrected Mac plus at least two of: mirror wall, FACES lettering, central rupture. Generate a mobile alternate only if the v2 crop fails."
   desktop_1920_sanity:
     required: false
     status: "PENDING"
@@ -192,28 +198,28 @@ accessibility:
   required_info_not_image_only: true
 
 qa:
-  composition_fidelity: "PASS"
-  spatial_fidelity: "PASS"
-  character_fidelity: "PASS"
-  lighting_fidelity: "PASS"
-  palette_fidelity: "PASS"
-  density_fidelity: "PASS"
+  composition_fidelity: "PENDING_REVALIDATION_V2"
+  spatial_fidelity: "PENDING_REVALIDATION_V2"
+  character_fidelity: "PENDING_REVALIDATION_V2"
+  lighting_fidelity: "PENDING_REVALIDATION_V2"
+  palette_fidelity: "PENDING_REVALIDATION_V2"
+  density_fidelity: "PENDING_REVALIDATION_V2"
   typography_improvement: "DIEGETIC_TITLE_APPROVED"
-  easter_egg_integration: "PASS_V2_LOCALIZED"
-  interaction_quality: "PASS_V2_LOCALIZED"
+  easter_egg_integration: "PENDING_REVALIDATION_V2"
+  interaction_quality: "PENDING_REVALIDATION_V2"
   keyboard: "PASS_STRUCTURAL"
   reduced_motion: "PASS_STRUCTURAL"
   performance_budget: "PENDING"
-  scene_identity: "PASS_REFERENCE"
+  scene_identity: "PASS_V2_REFERENCE"
 
 human_approval:
   clean_master: true
-  desktop_composite: true
-  responsive: true
+  desktop_composite: false
+  responsive: false
 
 next_gate:
-  name: "PREINTEGRATION_FINAL"
-  deliverable: "Production encoding/performance verification before runtime integration."
+  name: "HITL-B-REVALIDATE-V2"
+  deliverable: "Re-run the approved localized mirror interaction and responsive crops against the corrected Faces v2 master before restoring downstream approvals."
 
 qa_notes:
   - "HITL-B v1 rejected: overlay read as a large opaque terracotta graphic and broke visual fidelity."
@@ -239,3 +245,17 @@ responsive_qa_notes:
 final_approval_notes:
   - "Responsive proofs approved by user."
   - "S03 art direction remains the maximum-distortion ceiling for all later scenes."
+
+master_revision_history:
+  - version: "v1"
+    status: "SUPERSEDED"
+    reason: "Approved composition, but the central figure had incorrect hair/head appearance."
+  - version: "v2-corrected"
+    status: "APPROVED_CLEAN_MASTER"
+    reason: "Character-only correction approved by user; composition, surrealism, density, lighting and easter-egg field remain frozen."
+    invariant: "No redesign. Only the central figure correction is authorized."
+
+revalidation_rule:
+  - "Because the raster master changed, prior HITL-B and responsive approvals are evidence from v1 and cannot be carried forward automatically."
+  - "Reuse the same approved interaction grammar; re-run composite and 1024/768/390 proofs on v2."
+  - "If no drift appears, downstream approvals may be restored without any new art-direction decision."
