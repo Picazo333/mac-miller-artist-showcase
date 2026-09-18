@@ -1,0 +1,72 @@
+name: Import V6 approved visual assets
+
+on:
+  push:
+    branches: [v6-final-integration]
+    paths:
+      - ".github/workflows/import-v6-assets.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v6-final-integration
+      - name: Install WebP encoder
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq webp
+      - name: Download and optimize approved scene masters
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets /tmp/v6
+          download () { curl --fail --location --retry 3 "$1" -o "$2"; }
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/cfb7112e-47fe-4f64-9782-6aa7b003c515.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMDllOWE4MDNhM2ZmNDU4ZSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkzNjY0M30.8IDfLrW228C-VxEZZapJrnQy1qyMle0WmgfSzyd6lQA' /tmp/v6/s00.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/c9c4e7b8-8aeb-4ac0-8abf-33530836de44.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNTNjNGJiMzBiZjgzYjc4ZiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg4MTkwNH0.nBiDgWy30_lHSgigcU-imDZtbBmFuGE4b6cGzgJc3nI' /tmp/v6/s01.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/d216cf39-689a-4af2-aadf-3514347f6729.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYzIxNmIyMGNiMmE4NGM1NCIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg4NjQ3Nn0.4Sb1RbVxRKz2-BGBr5RG6UkjTHgUkJaxjd4MU1-8rB0' /tmp/v6/s02.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/2153ddf6-154d-4d0e-bc43-8c2095747ecf.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzIyZTZlNTA2ZDI4YTJmNSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg4NDQ5Nn0.9TJ3u01OHUq4S2Goh3NBHETCdfop1KgEeO-HWYWYF6Y' /tmp/v6/s03.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/bbec6ab2-e5cb-4987-94ff-3fb10c031250.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZjBiZjMwNzgwNDE3YjBlMyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg5NjgyNH0.eiQAg4NsdZWtP45s2wHM1z84Hqz4PyVtcI6eQfSiLME' /tmp/v6/s04.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/017bc7a2-7d6c-4919-8490-5a0e2c79fd7b.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMWQ4ZWEzOGZkNzBlNjYwZiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkwMDA0N30.41FGdiQaMfgvyYIYz2IXtC22ASTmpI1_kGzK2zLCGI0' /tmp/v6/s05.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/a09fc992-1aa0-4023-aed6-e6802bf690ef.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTU3MDdmMmFhYjAwMGM0NSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg4NDk3MH0.N4yvTyQBo9D3p_zCuLFRZjvYB5uqcJ-N6dXZJwiNpgk' /tmp/v6/s06.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/f8e2d5ed-3fa5-49d7-8e0a-754299425087.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZWMzMzMwMzk2NWVmZDhjZiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkwNDA1N30.NujKerB9YaAngJy2mPelNgRKO-2y8FuUFaWvbJSe3Xc' /tmp/v6/s07.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/ac4f38f4-a6c5-4d5f-929a-cc02d9fb68d1.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZjU0ZjgwZDFiOTYzZmVlZSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkxMzA0MX0.DI3emPzjU2cLbMypG_lusZ2uHfDBf44O_kqtDMVNhVk' /tmp/v6/s08.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/c9562c3c-6002-4f1b-aa09-b9bcca80dbbc.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiN2I2NGViMWM1YzM0YjNmNiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkyOTc1Nn0.KCEuMXvjoaA9xwgshnkqrfFinMW73jbx_yhqLzrD8sM' /tmp/v6/s09.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/20c1e37f-9f5f-4a92-97e7-4979c3f4375a.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTg5N2ZlZDBlNTBiZjk1YyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg4MTY4MH0.Z3VTXAad088cvFKH1UXt-i9HV_aYzTwawA4jd9FPryY' /tmp/v6/s10.png
+
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s00.png -o assets/s00-home.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s01.png -o assets/s01-macadelic.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s02.png -o assets/s02-watching.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s03.png -o assets/s03-faces.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s04.png -o assets/s04-good-am.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s05.png -o assets/s05-divine-feminine.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s06.png -o assets/s06-swimming.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s07.png -o assets/s07-circles.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s08.png -o assets/s08-archive.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s09.png -o assets/s09-memorial.webp
+          cwebp -quiet -q 82 -resize 1440 0 /tmp/v6/s10.png -o assets/s10-celebration-stage.webp
+
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/18112099-9aa5-4419-9988-3b4bcd65a734.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjE1ZDkxMzhiYjg3MDUwNyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkwNTk3Nn0.uv6VYjllXtqe5Gk6gDQvC3fIPE8ntzIbNOKAzFT5XcI' assets/sprite-anderson-paak.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/8efc566d-b47e-4f8b-ba5b-bdc3f718b30c.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiY2NjYjZiYzZkNmUzODIxYyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg3NzA2Mn0.55Jao8nbn-9fYKe3ajgeePdD4raRyfqNO6kcbETI4Xk' assets/sprite-action-bronson.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/6b1716ad-a4c2-4d5a-8579-47b39d2c70d8.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmQxZjBlOWQwOTM0OTgzYSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkyMjA3N30.BtGgnmuYbsROIBneaunNixtTg8NTb-rVinoG-4adGlA' assets/sprite-mac-miller.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/1fd8af68-9454-4c6a-b3dc-0a072d6ecdc4.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYWMzNDg5ZmM4NTczZTQ1MiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTk0MzU0OH0.BeUqyjkVRzddapV1lFNeQSgBFfVaNuG9c9SJ3NP7k1U' assets/sprite-tyler-the-creator.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/19dd9ee6-92f0-4ebf-8b1b-37bd3801dc19.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNTIzZTMzYjk2NGIzYTBkNyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTg2MjU4NX0.uE88rYVOq_HRoVrD3T_haZ55wboJrblZPwnoW7t-wUc' assets/sprite-thundercat.png
+          download 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/83d5f536-b2d1-42f3-a79f-7a96e47e6d59.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNTZjNzYwMDA4ODE3MDdhYiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTkyOTIxNn0.PhXY_0I5XfmYsyiVxLyrIkGfmayg-JL0ImzOzglKG5Q' assets/sprite-schoolboy-q.png
+
+      - name: Commit imported assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if git diff --cached --quiet; then
+            echo "No asset changes."
+          else
+            git commit -m "assets: import approved V6 visual masters [skip ci]"
+            git push origin HEAD:v6-final-integration
+          fi
