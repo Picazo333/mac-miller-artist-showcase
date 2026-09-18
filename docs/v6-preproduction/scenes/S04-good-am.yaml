@@ -3,13 +3,13 @@ scene:
   id: "S04"
   slug: "good-am"
   name: "GO:OD AM"
-  status: "REFERENCE_FROZEN_CLEANUP_REQUIRED"
+  status: "CLEAN_MASTER_APPROVED_WITH_TEXT_EXCEPTION"
 
 reference:
   approved: true
   source_file_name: "amanecer_tras_el_reloj_monumental.png"
   source_dimensions: "1672x941"
-  sha256: "PENDING_REHASH_AFTER_CLEAN_EDIT"
+  sha256: "7487e9a88dd5d3141581ed1c14e3aaf27e5c6aeacd64d76cd824e9318be4d122"
   visual_thesis: "Recomposition after Faces: monumental alarm-clock portal, dawn light, strong negative space and residual anomalies of time. The scene must feel cleaner, calmer and more deliberate without becoming generic."
   immutable_notes:
     - "The monumental alarm-clock portal is the dominant visual structure."
@@ -21,8 +21,9 @@ reference:
     - "No later redesign from scratch is allowed; only localized clean-master editing."
 
 clean_master:
-  approved: false
-  asset_status: "PENDING_CLEAN_TEXT_REMOVAL"
+  approved: true
+  asset_status: "APPROVED_BY_EXCEPTION"
+  approval_type: "provisional_final_with_raster_text_exception"
   intended_repo_path: "assets/backgrounds/s04-good-am-master"
   reference_protection:
     lock:
@@ -34,26 +35,23 @@ clean_master:
       - "warm ivory / charcoal / sunrise-gold palette"
       - "clean frontal geometry"
     clean:
-      - "all generic motivational text not specifically tied to Mac Miller"
-      - "notebook checklist text"
-      - "mug slogans"
-      - "wall phrases such as generic self-help copy"
-      - "Polaroid caption copy unless directly tied to Mac Miller"
-      - "any UI-like or explanatory text that should become HTML/CSS later"
+      - "No mandatory cleanup before continuing; user explicitly approved this raster by exception."
+      - "If raster text later obstructs implementation, perform localized removal only; never redesign the scene."
     flex:
       - "plain wall reconstruction behind removed text"
       - "small peripheral notes if visually non-essential"
       - "subtle surface texture"
   factual_text_audit:
     preserve:
-      - "Only text with a specific, defensible Mac Miller connection"
-      - "GO:OD AM if used as diegetic album identity"
-      - "Other Mac-specific easter eggs only when visually integrated and factually intentional"
-    texture_only:
-      - "small handwritten environmental notes"
-    remove_or_rebuild:
-      - "all navigation and interface copy"
-      - "any pseudo-text that competes with semantic HTML"
+      - "GO:OD AM when used as album identity"
+      - "Mac-specific easter eggs that are intentional and defensible"
+    tolerated_by_exception:
+      - "generic generated raster text already present in this approved master"
+    semantic_rule:
+      - "Tolerated raster text is noncanonical and must never be treated as factual content."
+      - "All actual navigation, CTA, album metadata and accessible copy must be real HTML/CSS."
+    future_cleanup:
+      - "Only if the raster text visibly interferes with implementation; cleanup must be localized."
 
 narrative:
   role: "Recomposition / morning reset"
@@ -64,7 +62,7 @@ narrative:
 
 content:
   title: "GO:OD AM"
-  microcopy: ""
+  microcopy: "Después del colapso, el tiempo vuelve a ordenarse."
   microcopy_max_words: 12
   cta_label: "Escuchar GO:OD AM"
   cta_target: "#divine-feminine"
@@ -75,9 +73,10 @@ interaction:
   primitive: "checkbox_toggle"
   keyboard_accessible: true
   proposed_effect:
-    - "subtle alarm-hand/time-state change"
-    - "slight dawn brightness increase"
-    - "one door/portal edge receives a restrained highlight"
+    - "slight dawn brightness increase inside the portal"
+    - "restrained warm rim-light around the monumental clock edge"
+    - "one or two clock indicators receive a subtle time-awake emphasis"
+    - "no new opaque geometry, no camera movement, no flashing"
   reduced_motion_behavior: "Instant static time/light state."
 
 responsive:
@@ -100,13 +99,13 @@ responsive:
 
 human_approval:
   reference: true
-  clean_master: false
+  clean_master: true
   desktop_composite: false
   responsive: false
 
 next_gate:
-  name: "HITL-A"
-  deliverable: "Clean Master edit of the approved reference: remove UI text/navigation only; preserve the approved composition."
+  name: "HITL-B"
+  deliverable: "Desktop composite using the approved raster as-is, with minimal real HTML/CSS and a subtle clock wake-state interaction."
 
 reference_revision_notes:
   - "User approved the composition with the monumental clock portal and visible sunrise/city background."
@@ -114,3 +113,13 @@ reference_revision_notes:
   - "The approved composition is NOT yet the final Clean Master because it still contains generic generated text."
   - "Next image operation must be an edit of the approved clock-portal composition only: remove generic text while preserving composition, Mac, clock portal, city, lighting, perspective and spatial geometry."
   - "No redesign from scratch. No new room. No new portrait-in-clock concept."
+
+approved_exception:
+  date: "2026-09-18"
+  decision:
+    - "User explicitly permits the monumental-clock image to serve as the S04 Clean Master despite generic raster text."
+    - "The later portrait-in-clock still-life image remains rejected."
+  implementation_constraint:
+    - "Do not add more generic text."
+    - "Do not derive visible HTML copy from generic raster slogans."
+    - "Do not regenerate S04 from scratch."
