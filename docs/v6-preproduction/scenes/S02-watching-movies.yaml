@@ -3,7 +3,7 @@ scene:
   id: "S02"
   slug: "watching-movies"
   name: "Watching Movies with the Sound Off"
-  status: "DESKTOP_COMPOSITE_APPROVED"
+  status: "RESPONSIVE_APPROVED"
 
 reference:
   approved: true
@@ -152,15 +152,15 @@ responsive:
     rule: "Preserve Mac, screen, eye, CRT figure and exit door."
   desktop_1024:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS"
     rule: "Crop peripheral clutter first."
   tablet_768:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS"
     rule: "Preserve central screen, Mac and at least one secondary surreal cue."
   mobile_390:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS"
     rule: "Preserve Mac and cinema screen; retain eye or CRT cue if crop allows."
   desktop_1920_sanity:
     required: false
@@ -190,16 +190,16 @@ qa:
   typography_improvement: "DIEGETIC_COPY_APPROVED"
   easter_egg_integration: "PASS_DESKTOP"
   interaction_quality: "PASS_DESKTOP"
-  keyboard: "PENDING"
-  reduced_motion: "PENDING"
+  keyboard: "PASS_STRUCTURAL"
+  reduced_motion: "PASS_STRUCTURAL"
   performance_budget: "PENDING"
   scene_identity: "PASS_REFERENCE"
 
 human_approval:
   clean_master: true
   desktop_composite: true
-  responsive: false
+  responsive: true
 
 next_gate:
-  name: "HITL-C"
-  deliverable: "Responsive proof at 1024 / 768 / 390; verify crop preserves Mac, central screen and at least one secondary surreal cue."
+  name: "PREINTEGRATION_FINAL"
+  deliverable: "Production encoding/performance verification before runtime integration."
