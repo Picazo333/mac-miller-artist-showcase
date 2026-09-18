@@ -199,8 +199,8 @@ qa:
   palette_fidelity: "PENDING_COMPOSITE"
   density_fidelity: "PENDING_COMPOSITE"
   typography_improvement: "DIEGETIC_TITLE_APPROVED"
-  easter_egg_integration: "PENDING_COMPOSITE"
-  interaction_quality: "PENDING_COMPOSITE"
+  easter_egg_integration: "FAIL_V1_OVERLAY_TOO_VISIBLE"
+  interaction_quality: "FAIL_V1_OVERLAY_TOO_VISIBLE"
   keyboard: "PENDING"
   reduced_motion: "PENDING"
   performance_budget: "PENDING"
@@ -212,5 +212,10 @@ human_approval:
   responsive: false
 
 next_gate:
-  name: "HITL-B"
-  deliverable: "Desktop composite preserving the approved Faces room, with semantic hidden HTML and mirror-reveal interaction proof."
+  name: "HITL-B-REPAIR"
+  deliverable: "Repair mirror interaction so OFF state is identical to the Clean Master and ON state only reveals localized crack highlights plus one hidden eye/face inside existing shards."
+
+qa_notes:
+  - "HITL-B v1 rejected: overlay read as a large opaque terracotta graphic and broke visual fidelity."
+  - "Repair rule: no large geometric plate, no opaque circle, no new standalone object."
+  - "Interaction must live inside existing mirror shards and remain visually subordinate to the approved master."
