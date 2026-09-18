@@ -126,3 +126,5 @@ approved_exception:
 
 approval_notes:
   - "HITL-B desktop composite approved by user."
+
+responsive_qa_state: "PENDING_HITL_C"
