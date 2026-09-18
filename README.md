@@ -4,6 +4,16 @@ The most basic boilerplate for any 4Geeks Academy student, start your very first
 
 > There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
 
+## Project preproduction
+
+The current Mac Miller showcase is in a documented V6 preproduction phase.
+
+- [V6 preproduction index](docs/v6-preproduction/README.md)
+- [Canonical production pipeline](docs/v6-preproduction/PRODUCTION_PIPELINE.md)
+- [Scene Contract template](docs/v6-preproduction/SCENE_CONTRACT_TEMPLATE.yaml)
+
+The runtime implementation remains intentionally unchanged while the 11 approved visual scenes are converted into clean production masters, scene contracts, interactive easter eggs, responsive proofs and final pre-integration QA.
+
 ## What to do next?
 
 Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
