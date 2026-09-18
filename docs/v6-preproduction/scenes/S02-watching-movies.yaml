@@ -1,0 +1,205 @@
+version: "1.0"
+scene:
+  id: "S02"
+  slug: "watching-movies"
+  name: "Watching Movies with the Sound Off"
+  status: "CLEAN_MASTER_APPROVED"
+
+reference:
+  approved: true
+  visual_thesis: "Flooded surreal cinema: analog media, watching eyes, reflective water and unstable boundaries between screen and room."
+  immutable_notes:
+    - "Mac remains seated from behind."
+    - "Central cinema screen remains dominant."
+    - "Large eye remains integrated into the ceiling."
+    - "Flooded floor remains essential."
+    - "Left CRT/angel figure remains visible."
+    - "Red curtains and worn theater seats remain."
+    - "More unstable than Macadelic; less recursive than Faces."
+
+clean_master:
+  approved: true
+  asset_status: "APPROVED_EXTERNAL_MASTER"
+  intended_repo_path: "assets/backgrounds/s02-watching-movies-master"
+  reference_protection:
+    lock:
+      - "Mac seated from behind"
+      - "central cinema screen"
+      - "large eye ceiling"
+      - "flooded theater floor"
+      - "left CRT/angel figure"
+      - "red curtains and worn seats"
+      - "fish, popcorn, VHS and analog-media clutter"
+      - "EXIT REALITY doorway"
+      - "crimson-black-gray palette"
+    clean:
+      - "No extra navbar over the composition"
+      - "No external content card competing with the screen"
+    flex:
+      - "small reflection highlights"
+      - "minor peripheral clutter"
+      - "small red-dot overlay"
+  factual_text_audit:
+    preserve:
+      - "Watching Movies with the Sound Off on central screen"
+      - "ENTRAR as diegetic CTA treatment"
+      - "EXIT REALITY"
+      - "SILENCE SOUNDS DIFFERENT HERE"
+    texture_only:
+      - "small peripheral wall labels"
+    remove_or_rebuild:
+      - "future duplicated visible HTML copy"
+
+narrative:
+  role: "Isolation and distorted perception"
+  incoming_transition: "Macadelic smoke becomes screens, reflections and false exits."
+  outgoing_transition: "Screen-within-screen logic fragments into Faces recursive rooms."
+  distortion_visual_only: 7.5
+  governing_visual_law: "Every surface can become a screen, mirror, window or false exit."
+
+content:
+  title: "Watching Movies with the Sound Off"
+  microcopy: ""
+  cta_label: "Entrar"
+  cta_target: "#faces"
+  visible_strategy: "Keep approved screen text visible; use semantic HTML without duplicating it visually."
+
+safe_areas:
+  protected:
+    - "Mac and center seat"
+    - "central cinema screen"
+    - "large eye ceiling"
+    - "left CRT figure"
+    - "right EXIT REALITY doorway"
+  flexible:
+    - "far lower corners"
+    - "dark curtain edges"
+  content_safe:
+    - "Transparent semantic CTA may align to the approved ENTRAR area."
+
+background:
+  desktop:
+    focal_point: { x: 50, y: 47 }
+    position: { x: 50, y: 50 }
+  tablet:
+    position: { x: 50, y: 50 }
+  mobile:
+    strategy: "crop-first"
+    position: { x: 50, y: 52 }
+    alternate_master: null
+
+easter_eggs:
+  raster_preserved:
+    - "large eye"
+    - "EXIT REALITY"
+    - "fish and flooded floor"
+    - "popcorn"
+    - "VHS / analog-media clutter"
+    - "yin-yang cap"
+    - "CRT figure"
+  overlays:
+    - "screen glow enhancement"
+    - "scanline layer"
+    - "small red-dot reveal"
+  interactive:
+    - id: "watching-crt-toggle"
+      target: "left CRT screen"
+      purpose: "Reveal a brighter analog layer with scanlines and one hidden red-dot reference."
+
+interaction:
+  enabled: true
+  trigger_id: "watching-crt-toggle"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: "cinema-idle"
+  active_state: "analog-layer-visible"
+  visual_effects:
+    - "slightly increase central screen luminance"
+    - "show restrained scanlines"
+    - "reveal one small red dot"
+    - "add faint water reflection"
+  reduced_motion_behavior: "Instant state change without animated flicker."
+
+assets:
+  svg:
+    - id: "s02-red-dot"
+      purpose: "Interactive accent"
+      status: "TO_REFINE"
+    - id: "s02-scanline-layer"
+      purpose: "Subtle screen treatment"
+      status: "TO_REFINE"
+  raster_overlays:
+    - id: "s02-screen-reflection"
+      purpose: "Optional transparent reflection layer if CSS is insufficient"
+      status: "OPTIONAL"
+  html_controls:
+    - "semantic h2"
+    - "transparent CTA anchor aligned to ENTRAR"
+    - "accessible CRT toggle"
+
+motion:
+  enabled: true
+  css_only: true
+  effects:
+    - "screen glow"
+    - "optional low-amplitude analog shimmer"
+  reduced_motion_fallback: "Static active state."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve Mac, screen, eye, CRT figure and exit door."
+  desktop_1024:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Crop peripheral clutter first."
+  tablet_768:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve central screen, Mac and at least one secondary surreal cue."
+  mobile_390:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve Mac and cinema screen; retain eye or CRT cue if crop allows."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 420
+  master_webp_target_kb: 520
+  svg_soft_target_kb: 25
+  lazy_load: true
+  preload: false
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: "Activar la pantalla CRT"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PENDING_COMPOSITE"
+  spatial_fidelity: "PENDING_COMPOSITE"
+  character_fidelity: "PENDING_COMPOSITE"
+  lighting_fidelity: "PENDING_COMPOSITE"
+  palette_fidelity: "PENDING_COMPOSITE"
+  density_fidelity: "PENDING_COMPOSITE"
+  typography_improvement: "DIEGETIC_COPY_APPROVED"
+  easter_egg_integration: "PENDING_COMPOSITE"
+  interaction_quality: "PENDING_COMPOSITE"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-B"
+  deliverable: "Desktop composite with semantic HTML and the CRT interaction proof."
