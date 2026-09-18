@@ -1,0 +1,144 @@
+version: "1.0"
+scene:
+  id: "S06"
+  slug: "swimming"
+  name: "Swimming"
+  status: "DESKTOP_COMPOSITE_APPROVED"
+
+reference:
+  approved: true
+  source_file_name: "habitación_inundada_con_traje_rosa.png"
+  visual_thesis: "A contemplative flooded interior where Mac, in a pink suit, sits quietly between the domestic and the aquatic. The scene should feel suspended, reflective and emotionally buoyant rather than chaotic."
+  immutable_notes:
+    - "Mac in a pink suit is mandatory."
+    - "The flooded room is the main atmospheric device."
+    - "The sea-window opening and ladder remain essential."
+    - "The dark doorway framing Mac remains essential."
+    - "The vinyl in the water remains as an easter egg."
+    - "The scene must stay quieter and more meditative than Faces."
+    - "No redesign from scratch is allowed."
+
+clean_master:
+  approved: true
+  asset_status: "APPROVED_EXTERNAL_MASTER"
+  intended_repo_path: "assets/backgrounds/s06-swimming-master"
+  reference_protection:
+    lock:
+      - "Mac in pink suit"
+      - "flooded reflective floor"
+      - "sea-window opening and ladder"
+      - "dark doorway niche"
+      - "vinyl record in water"
+      - "soft aquatic light"
+    clean:
+      - "no generated navigation"
+      - "no generated title or CTA"
+      - "no generic raster slogans"
+    flex:
+      - "minor water highlight intensity"
+      - "small peripheral decor density"
+      - "subtle shadow and reflection nuance"
+
+narrative:
+  role: "Suspended reflection / floating persistence"
+  incoming_transition: "The Divine Feminine dissolves from romantic portal into a calmer, flooded interior."
+  outgoing_transition: "The water's reflective logic simplifies into the orbital introspection of Circles."
+  distortion_visual_only: 3
+  governing_visual_law: "The world is flooded but not collapsing; movement becomes drift."
+
+content:
+  title: "Swimming"
+  year: "2018"
+  microcopy: "Flotar también es una forma de seguir."
+  cta_label: "Escuchar Swimming"
+  cta_target: "#circles"
+
+interaction:
+  enabled: true
+  trigger_id: "swimming-wake"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: "still-water"
+  active_state: "water-awake"
+  visual_effects:
+    - "subtle ripple lines in the lower water plane"
+    - "slight brightness lift in the reflection"
+    - "very slight light lift at the sea-window opening"
+    - "no camera movement"
+    - "no opaque overlays"
+    - "no visible extra text"
+  reduced_motion_behavior: "Static reflective wake state."
+
+safe_areas:
+  protected:
+    - "Mac"
+    - "pink suit"
+    - "water plane"
+    - "sea-window and ladder"
+    - "dark doorway niche"
+  flexible:
+    - "right wall negative space"
+    - "peripheral plants"
+    - "bed edge"
+  content_safe:
+    - "lower-left or left-middle editorial text zone"
+    - "avoid covering Mac or the window opening"
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PASS"
+    rule: "Preserve Mac, window opening, water plane and vinyl."
+  desktop_1024:
+    required: true
+    status: "PENDING_HITL_C"
+    rule: "Crop wall negative space before losing Mac or the opening."
+  tablet_768:
+    required: true
+    status: "PENDING_HITL_C"
+    rule: "Preserve Mac plus doorway and opening; vinyl may reduce."
+  mobile_390:
+    required: true
+    status: "PENDING_HITL_C"
+    rule: "Preserve Mac in pink suit, doorway niche and at least part of the sea opening. Generate a mobile alternate only if crop fails."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 420
+  master_webp_target_kb: 520
+  svg_soft_target_kb: 25
+  lazy_load: true
+  preload: false
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: "Activar el reflejo de Swimming"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PASS_DESKTOP"
+  spatial_fidelity: "PASS_DESKTOP"
+  character_fidelity: "PASS_DESKTOP"
+  lighting_fidelity: "PASS_DESKTOP"
+  palette_fidelity: "PASS_DESKTOP"
+  density_fidelity: "PASS_DESKTOP"
+  typography_improvement: "PASS_DESKTOP"
+  easter_egg_integration: "PASS_DESKTOP"
+  interaction_quality: "PASS_DESKTOP"
+  keyboard: "PASS_STRUCTURAL"
+  reduced_motion: "PASS_STRUCTURAL"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: true
+  responsive: false
+
+next_gate:
+  name: "HITL-C"
+  deliverable: "Responsive proof at 1024 / 768 / 390 using the approved pink-suit master."
