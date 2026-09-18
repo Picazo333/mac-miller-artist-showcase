@@ -1,0 +1,223 @@
+version: "1.0"
+
+scene:
+  id: "S09"
+  slug: "memorial"
+  name: "Memorial / Absence Present"
+  status: "SCENE_CONTRACT_APPROVED"
+
+integration:
+  section_id: "memorial"
+  anchor: "#memorial"
+  sequence_after: "S08-archive"
+  sequence_before: "S10-celebration-of-life"
+  runtime_change_allowed_now: false
+  note: "Contract only. Final runtime integration remains gated by the V6 preproduction pipeline."
+
+reference:
+  approved: true
+  source_file_name: "escenario_vacío_bajo_el_foco_dorado.png"
+  source_dimensions: "1672x941"
+  sha256: "47e4b22233942a0a75e63b1863c3c110dadcdd84b9f74105411fc0cd9d6376ba"
+  visual_thesis: "Absence is the subject. An empty performance stage, one microphone, a red velvet rug, warm dust-filled spotlight and a DON'T TRIP cap communicate presence through what is missing rather than through a portrait."
+  immutable_notes:
+    - "The stage remains empty: Mac must not appear physically in this scene."
+    - "The microphone is the primary human-scale anchor."
+    - "The red velvet rug remains the dominant path through the composition."
+    - "Restrained white powder traces remain on the rug as a deliberate, non-explanatory visual easter egg."
+    - "The DON'T TRIP cap remains visible and legible."
+    - "The single warm spotlight remains the principal light source."
+    - "The composition must remain solemn, spacious and absence-first."
+    - "No sentimental portrait montage is allowed."
+    - "No additional generic memorial slogans are allowed."
+
+clean_master:
+  asset: "escenario_vacío_bajo_el_foco_dorado.png"
+  approved: true
+  asset_status: "APPROVED_EXTERNAL_MASTER"
+  intended_repo_path: "assets/backgrounds/s09-memorial-master"
+  reference_protection:
+    lock:
+      - "empty stage"
+      - "microphone and stand"
+      - "red velvet rug"
+      - "restrained white powder traces"
+      - "DON'T TRIP cap"
+      - "warm overhead spotlight"
+      - "dark theater architecture"
+      - "large negative-space field"
+    clean:
+      - "No generated navigation"
+      - "No generated memorial title"
+      - "No generic RIP copy"
+      - "No large portrait or figure"
+    flex:
+      - "minor dust density in spotlight"
+      - "candle intensity"
+      - "peripheral stage equipment visibility"
+      - "small rug highlight variation"
+  factual_text_audit:
+    preserve:
+      - "DON'T TRIP on cap"
+    texture_only: []
+    remove_or_rebuild:
+      - "Any future generated memorial slogan"
+      - "Any unverified factual or biographical raster text"
+
+narrative:
+  role: "Absence / mortality / the stage after the voice is gone"
+  incoming_transition: "Archive density collapses into a nearly empty room: from everything that remains to the person who is absent."
+  outgoing_transition: "The empty stage is repopulated symbolically in Celebration of Life through friends and collaborators."
+  distortion_visual_only: 1
+  governing_visual_law: "Nothing moves except light and memory; emptiness carries the narrative."
+
+content:
+  title: "Memorial"
+  microcopy: ""
+  microcopy_max_words: 12
+  cta_label: "Continuar"
+  cta_target: "#celebration"
+  visible_strategy: "Keep visible copy extremely sparse. The image should carry the scene."
+  optional_reveal:
+    text: "I'm hopin' not to join the 27 Club."
+    attribution: "Brand Name"
+    display_rule: "Reveal only through interaction; do not print it permanently into the raster."
+
+background:
+  desktop:
+    asset: "assets/backgrounds/s09-memorial-master"
+    focal_point: { x: 56, y: 48 }
+    position: { x: 50, y: 50 }
+  tablet:
+    position: { x: 53, y: 50 }
+  mobile:
+    strategy: "crop-first"
+    position: { x: 56, y: 50 }
+    alternate_master: null
+
+safe_areas:
+  protected:
+    - "microphone"
+    - "DON'T TRIP cap"
+    - "red rug"
+    - "white powder traces"
+    - "spotlight cone"
+  flexible:
+    - "far left dark theater wall"
+    - "far right curtain/equipment edge"
+    - "foreground auditorium darkness"
+  content_safe:
+    - "upper-left negative space"
+    - "lower-left dark edge"
+    - "small lower-right navigation affordance"
+
+easter_eggs:
+  raster_preserved:
+    - "DON'T TRIP cap"
+    - "white powder traces on red rug"
+    - "empty mic under spotlight"
+  overlays:
+    - "localized spotlight intensity layer"
+    - "optional lyric reveal in semantic HTML"
+  interactive:
+    - id: "memorial-spotlight"
+      target: "microphone / spotlight axis"
+      purpose: "Raise the stage light slightly and reveal the short Brand Name line as a restrained deep-cut reference."
+
+interaction:
+  enabled: true
+  trigger_id: "memorial-spotlight"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: "empty-stage"
+  active_state: "memory-lit"
+  visual_effects:
+    - "slight spotlight lift around microphone"
+    - "subtle increase in rug highlights"
+    - "optional short lyric reveal in HTML"
+    - "no camera movement"
+    - "no apparition / portrait reveal"
+    - "no flashing"
+  factual_reveal:
+    quote: "I'm hopin' not to join the 27 Club."
+    source_label: "Brand Name"
+  reduced_motion_behavior: "Instant static light/reveal state."
+
+assets:
+  svg:
+    - id: "s09-spotlight-falloff"
+      purpose: "Optional soft light mask if CSS radial gradients are insufficient"
+      status: "OPTIONAL"
+  raster_overlays: []
+  pixel: []
+  html_controls:
+    - "semantic h2"
+    - "accessible spotlight toggle"
+    - "optional lyric reveal"
+    - "continue CTA"
+
+motion:
+  enabled: true
+  css_only: true
+  effects:
+    - "very subtle spotlight opacity change"
+  reduced_motion_fallback: "Static active state."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve microphone, cap, rug path and spotlight."
+  desktop_1024:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Crop theater periphery before microphone/cap/rug."
+  tablet_768:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve microphone and cap; rug must still read as the red path of absence."
+  mobile_390:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve microphone + cap + enough red rug to retain the visual thesis. Create alternate mobile master only if that combination fails."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 380
+  master_webp_target_kb: 480
+  svg_soft_target_kb: 20
+  lazy_load: true
+  preload: false
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: "Iluminar el micrófono del memorial"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PASS_REFERENCE"
+  spatial_fidelity: "PASS_REFERENCE"
+  character_fidelity: "NOT_APPLICABLE_ABSENCE_SCENE"
+  lighting_fidelity: "PASS_REFERENCE"
+  palette_fidelity: "PASS_REFERENCE"
+  density_fidelity: "PASS_REFERENCE"
+  typography_improvement: "PENDING_COMPOSITE"
+  easter_egg_integration: "PASS_REFERENCE"
+  interaction_quality: "PENDING_COMPOSITE"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-B"
+  deliverable: "Desktop composite using the approved empty-stage master, minimal semantic HTML and a localized spotlight interaction."
