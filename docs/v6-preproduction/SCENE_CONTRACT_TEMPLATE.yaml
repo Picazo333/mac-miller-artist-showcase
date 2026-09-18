@@ -1,0 +1,134 @@
+version: "1.0"
+status_values:
+  - REFERENCE_FROZEN
+  - CLEAN_MASTER_APPROVED
+  - SCENE_CONTRACT_APPROVED
+  - ASSETS_APPROVED
+  - DESKTOP_COMPOSITE_APPROVED
+  - RESPONSIVE_APPROVED
+  - SCENE_LOCKED
+
+scene:
+  id: "SXX"
+  slug: ""
+  name: ""
+  status: "REFERENCE_FROZEN"
+
+reference:
+  approved: true
+  reference_asset: ""
+  immutable_notes: []
+
+clean_master:
+  asset: ""
+  approved: false
+  reference_protection:
+    lock: []
+    clean: []
+    flex: []
+  factual_text_audit:
+    preserve: []
+    texture_only: []
+    remove_or_rebuild: []
+
+narrative:
+  role: ""
+  incoming_transition: ""
+  outgoing_transition: ""
+  distortion_visual_only: 0
+  governing_visual_law: ""
+
+content:
+  title: ""
+  microcopy: ""
+  microcopy_max_words: 18
+  cta_label: ""
+  cta_target: ""
+
+background:
+  desktop:
+    asset: ""
+    focal_point: { x: null, y: null }
+    position: { x: null, y: null }
+  tablet:
+    position: { x: null, y: null }
+  mobile:
+    strategy: "crop"
+    position: { x: null, y: null }
+    alternate_master: null
+
+safe_areas:
+  protected: []
+  flexible: []
+  content_safe: []
+
+easter_eggs:
+  raster_preserved: []
+  overlays: []
+  interactive: []
+
+interaction:
+  enabled: false
+  trigger_id: ""
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: ""
+  active_state: ""
+  visual_effects: []
+  factual_reveal: null
+  reduced_motion_behavior: ""
+
+assets:
+  svg: []
+  raster_overlays: []
+  pixel: []
+  html_controls: []
+
+motion:
+  enabled: false
+  css_only: true
+  effects: []
+  reduced_motion_fallback: ""
+
+responsive:
+  desktop_1440: { required: true, status: "PENDING" }
+  desktop_1024: { required: true, status: "PENDING" }
+  tablet_768: { required: true, status: "PENDING" }
+  mobile_390: { required: true, status: "PENDING" }
+  desktop_1920_sanity: { required: false, status: "PENDING" }
+
+performance:
+  master_avif_target_kb: 350
+  master_webp_target_kb: 450
+  svg_soft_target_kb: 25
+  lazy_load: true
+  preload: false
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: ""
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PENDING"
+  spatial_fidelity: "PENDING"
+  character_fidelity: "PENDING"
+  lighting_fidelity: "PENDING"
+  palette_fidelity: "PENDING"
+  density_fidelity: "PENDING"
+  typography_improvement: "PENDING"
+  easter_egg_integration: "PENDING"
+  interaction_quality: "PENDING"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PENDING"
+
+human_approval:
+  clean_master: false
+  desktop_composite: false
+  responsive: false
+
+notes: []
