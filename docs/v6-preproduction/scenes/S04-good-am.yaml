@@ -3,7 +3,7 @@ scene:
   id: "S04"
   slug: "good-am"
   name: "GO:OD AM"
-  status: "CLEAN_MASTER_APPROVED_WITH_TEXT_EXCEPTION"
+  status: "DESKTOP_COMPOSITE_APPROVED"
 
 reference:
   approved: true
@@ -100,12 +100,12 @@ responsive:
 human_approval:
   reference: true
   clean_master: true
-  desktop_composite: false
+  desktop_composite: true
   responsive: false
 
 next_gate:
-  name: "HITL-B"
-  deliverable: "Desktop composite using the approved raster as-is, with minimal real HTML/CSS and a subtle clock wake-state interaction."
+  name: "HITL-C"
+  deliverable: "Responsive proof at 1024 / 768 / 390; preserve the monumental clock portal, Mac and sunrise."
 
 reference_revision_notes:
   - "User approved the composition with the monumental clock portal and visible sunrise/city background."
@@ -123,3 +123,6 @@ approved_exception:
     - "Do not add more generic text."
     - "Do not derive visible HTML copy from generic raster slogans."
     - "Do not regenerate S04 from scratch."
+
+approval_notes:
+  - "HITL-B desktop composite approved by user."
