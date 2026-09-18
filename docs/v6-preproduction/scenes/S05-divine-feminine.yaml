@@ -3,7 +3,7 @@ scene:
   id: "S05"
   slug: "divine-feminine"
   name: "The Divine Feminine"
-  status: "CLEAN_MASTER_APPROVED"
+  status: "DESKTOP_COMPOSITE_APPROVED"
 
 reference:
   approved: true
@@ -179,9 +179,12 @@ qa:
 
 human_approval:
   clean_master: true
-  desktop_composite: false
+  desktop_composite: true
   responsive: false
 
 next_gate:
-  name: "HITL-B"
-  deliverable: "Desktop composite preserving the approved clean master, with minimal semantic HTML and a subtle planet/orbit interaction."
+  name: "HITL-C"
+  deliverable: "Responsive proof at 1024 / 768 / 390; preserve the ponytail silhouette, Mac and circular portal."
+
+approval_notes:
+  - "HITL-B accepted by continuation instruction; advance to responsive QA."
