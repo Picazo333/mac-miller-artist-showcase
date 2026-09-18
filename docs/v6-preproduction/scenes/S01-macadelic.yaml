@@ -1,0 +1,211 @@
+version: "1.0"
+scene:
+  id: "S01"
+  slug: "macadelic"
+  name: "Macadelic"
+  status: "CLEAN_MASTER_APPROVED"
+
+reference:
+  approved: true
+  visual_thesis: "A lived-in bedroom/studio under mounting surreal pressure: romance, smoke, city light and distorted architecture remain recognizably physical but are already bending."
+  immutable_notes:
+    - "Mac remains seated on the bed as the human anchor."
+    - "Pittsburgh skyline remains visible through the central balcony/window."
+    - "Smoke remains the principal surreal connective tissue."
+    - "The room must feel significantly more unstable than Home, but less fragmented than Faces."
+    - "Macadelic / The Question / Most Dope / yin-yang references remain diegetic environmental details."
+    - "The ceiling and wall geometry must remain visibly warped."
+
+clean_master:
+  approved: true
+  asset_status: "APPROVED_EXTERNAL_MASTER"
+  intended_repo_path: "assets/backgrounds/s01-macadelic-master"
+  reference_protection:
+    lock:
+      - "Mac pose / bed placement"
+      - "central balcony and Pittsburgh skyline"
+      - "warped ceiling"
+      - "large smoke plume"
+      - "primary magenta / amber / midnight palette"
+      - "Most Dope / The Question / yin-yang environmental references"
+      - "dense but still inhabitable room"
+    clean:
+      - "No generated navbar"
+      - "No generated CTA"
+      - "No generated interface card"
+    flex:
+      - "minor wall clutter"
+      - "small smoke tendrils"
+      - "small candle/light intensity"
+      - "peripheral texture"
+  factual_text_audit:
+    preserve:
+      - "Macadelic"
+      - "The Question"
+      - "Most Dope"
+      - "Pittsburgh"
+    texture_only:
+      - "small illegible wall notes"
+    remove_or_rebuild:
+      - "any future pseudo-copy that reads like interface text rather than diegetic room content"
+
+narrative:
+  role: "Rising turbulence / first strong deformation of ordinary space"
+  incoming_transition: "Home water ripple becomes smoke curl / warped circular ceiling motif."
+  outgoing_transition: "Smoke, mirrors and bent walls hand off to the more explicitly perceptual media-space of Watching Movies."
+  distortion_visual_only: 6
+  governing_visual_law: "The room is still real, but its surfaces and atmosphere no longer obey stable geometry."
+
+content:
+  title: "Macadelic"
+  microcopy: "Una habitación que ya empieza a torcerse."
+  microcopy_max_words: 12
+  cta_label: "Escuchar Macadelic"
+  cta_target: "#watching-movies"
+
+safe_areas:
+  protected:
+    - "Mac and bed, central-lower"
+    - "central balcony / Pittsburgh skyline"
+    - "main smoke plume"
+    - "large MACADELIC wall treatment"
+    - "right mirror / Question area"
+  flexible:
+    - "far lower-left clutter"
+    - "far upper-right wall edge"
+    - "dark lower-center edge"
+  content_safe:
+    - "left-lower overlay zone, kept narrow and translucent"
+    - "small upper-center navigation zone only if needed"
+
+background:
+  desktop:
+    focal_point: { x: 51, y: 50 }
+    position: { x: 50, y: 50 }
+  tablet:
+    position: { x: 50, y: 52 }
+  mobile:
+    strategy: "crop-first"
+    position: { x: 50, y: 54 }
+    alternate_master: null
+
+easter_eggs:
+  raster_preserved:
+    - "The Question wall references"
+    - "Most Dope marks"
+    - "yin-yang motifs"
+    - "Pittsburgh skyline"
+    - "vinyl / turntable / bedroom-studio clutter"
+  overlays:
+    - "smoke-light response"
+    - "lamp glow response"
+  interactive:
+    - id: "macadelic-lamp"
+      target: "left bedside lamp / warm light source"
+      purpose: "Switch the room into a slightly warmer, hazier secondary state without changing composition."
+
+interaction:
+  enabled: true
+  trigger_id: "macadelic-lamp"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: "night-room"
+  active_state: "lamp-on"
+  visual_effects:
+    - "increase localized amber glow at left lamp"
+    - "slightly intensify magenta smoke"
+    - "reveal one additional Question-mark reflection in smoke/mirror"
+    - "no camera movement"
+    - "no scene-wide flashing"
+  factual_reveal: null
+  reduced_motion_behavior: "Instant light-state change; smoke remains static."
+
+assets:
+  svg:
+    - id: "s01-smoke-light"
+      purpose: "Localized smoke highlight / reveal layer"
+      status: "TO_REFINE"
+    - id: "s01-question-reflection"
+      purpose: "Small optional reflection revealed in active state"
+      status: "TO_REFINE"
+    - id: "global-cta-arrow"
+      purpose: "CTA affordance"
+      status: "GLOBAL"
+  raster_overlays:
+    - id: "s01-lamp-bloom"
+      purpose: "Optional transparent warm-light bloom only if CSS gradients are insufficient"
+      status: "OPTIONAL"
+  pixel: []
+  html_controls:
+    - "scene title"
+    - "microcopy"
+    - "CTA anchor"
+    - "accessible lamp toggle"
+
+motion:
+  enabled: true
+  css_only: true
+  effects:
+    - "smoke opacity shift"
+    - "localized lamp glow"
+  reduced_motion_fallback: "Static active-state light and smoke opacity."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve Mac, smoke, balcony and both side walls."
+  desktop_1024:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Lose peripheral clutter before losing the warped ceiling or Question/Most Dope cues."
+  tablet_768:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Prioritize Mac + smoke + skyline; allow one side wall to crop."
+  mobile_390:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Vertical crop must retain Mac, smoke and skyline. The title overlay must not cover Mac or the central smoke plume."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 380
+  master_webp_target_kb: 480
+  svg_soft_target_kb: 25
+  lazy_load: true
+  preload: false
+  fetch_priority: "auto"
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: "Encender la lámpara de la habitación"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PENDING_COMPOSITE"
+  spatial_fidelity: "PENDING_COMPOSITE"
+  character_fidelity: "PENDING_COMPOSITE"
+  lighting_fidelity: "PENDING_COMPOSITE"
+  palette_fidelity: "PENDING_COMPOSITE"
+  density_fidelity: "PENDING_COMPOSITE"
+  typography_improvement: "PENDING_COMPOSITE"
+  easter_egg_integration: "PENDING_COMPOSITE"
+  interaction_quality: "PENDING_COMPOSITE"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-B"
+  deliverable: "Desktop composite with real HTML/CSS title, microcopy, CTA and lamp interaction proof"
