@@ -1,0 +1,105 @@
+version: "1.0"
+scene:
+  id: "S07"
+  slug: "circles"
+  name: "Circles"
+  status: "REFERENCE_FROZEN_CLEANUP_REQUIRED"
+
+reference:
+  approved: true
+  source_file_name: "círculos_un_espacio_sereno.png"
+  source_dimensions: "1672x941"
+  sha256: "23d265934bdbbf7b58a43685ee5282f47bceaf244d6c75e9b193cb1813ea845b"
+  visual_thesis: "A quiet ivory architectural space organized by one large circular aperture, repeated circular windows and reflective water. Mac sits small and still at the center; the scene communicates repetition, calm and breathing room rather than spectacle."
+  immutable_notes:
+    - "Large ivory circular aperture is the dominant structure."
+    - "Mac remains seated, small and centered near the opening."
+    - "Reflective water / pool remains."
+    - "Repeated circular openings on the right remain as a recurrence motif."
+    - "Ivory / stone / pale blue palette remains."
+    - "The scene must be calmer and more spacious than Swimming."
+    - "No redesign from scratch is allowed."
+
+clean_master:
+  approved: false
+  asset_status: "PENDING_LOCALIZED_TEXT_CLEANUP"
+  intended_repo_path: "assets/backgrounds/s07-circles-master"
+  reference_protection:
+    lock:
+      - "large circular aperture"
+      - "Mac placement and scale"
+      - "water/pool reflection"
+      - "right-side repeated circular openings"
+      - "architectural arches"
+      - "ivory stone palette"
+      - "negative space and calm"
+    clean:
+      - "generated navigation"
+      - "large generated CIRCLES title block"
+      - "generated CTA"
+      - "tracklist/footer UI"
+      - "generic motivational / explanatory raster text"
+    preserve_only_if_specific:
+      - "Mac-specific easter eggs that are intentional and defensible"
+    flex:
+      - "plain ivory wall reconstruction behind removed UI"
+      - "small surface texture"
+      - "minor peripheral plant detail"
+
+narrative:
+  role: "Closure / repetition / acceptance"
+  incoming_transition: "Swimming's water and drift simplify into stable reflection and repeated circular geometry."
+  outgoing_transition: "The circle becomes archive/continuity rather than a new escalation."
+  distortion_visual_only: 1
+  governing_visual_law: "Repetition without collapse: circles recur, but the architecture remains stable."
+
+content:
+  title: "Circles"
+  year: "2020"
+  microcopy: ""
+  cta_label: "Escuchar Circles"
+  cta_target: "#archive"
+  text_policy:
+    - "Visible semantic text will be added later in HTML/CSS."
+    - "Do not retain generic raster slogans in the final clean master."
+
+interaction:
+  enabled: true
+  trigger_id: "circles-orbit"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  proposed_effect:
+    - "one restrained concentric ring expands from the main aperture"
+    - "small reflection lift in the pool"
+    - "no camera movement"
+    - "no opaque geometry"
+    - "no additional visible text"
+  reduced_motion_behavior: "Static ring/reflection state."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING"
+  desktop_1024:
+    required: true
+    status: "PENDING"
+  tablet_768:
+    required: true
+    status: "PENDING"
+  mobile_390:
+    required: true
+    status: "PENDING"
+    rule: "Preserve Mac and the dominant circular aperture; repeated circles on the right are secondary."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+human_approval:
+  reference: true
+  clean_master: false
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-A"
+  deliverable: "Localized clean-master edit of the approved Circles reference: remove UI/generic raster text only, preserve architecture, Mac, water and circular recurrence."
