@@ -229,3 +229,9 @@ responsive_qa_notes:
   - "768 PASS: Mac, central rupture and mirror/faces structure survive."
   - "390 FAIL with simple crop: central rupture and Mac survive, but FACES lettering and mirror wall are not sufficiently represented together."
   - "Action: create dedicated 9:16 mobile alternate derived from the approved master; do not reinterpret the scene."
+
+responsive_qa_notes:
+  - "1024: PASS — Mac, FACES wall, central rupture and mirror wall remain legible."
+  - "768: PASS — Mac, central rupture and mirror wall remain strong; FACES lettering is partially cropped."
+  - "390: PASS — Mac, central rupture and mirror wall survive; FACES lettering is intentionally sacrificed to preserve the dominant composition."
+  - "No alternate mobile master required at this stage."
