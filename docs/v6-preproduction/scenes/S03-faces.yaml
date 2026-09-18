@@ -93,7 +93,7 @@ background:
   mobile:
     strategy: "crop-first"
     position: { x: 50, y: 54 }
-    alternate_master: null
+    alternate_master: "REQUIRED_S03_MOBILE"
 
 easter_eggs:
   raster_preserved:
@@ -162,16 +162,16 @@ responsive:
     rule: "Preserve Mac, mirror wall, FACES wall and central rupture simultaneously."
   desktop_1024:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS"
     rule: "Crop foreground clutter first; retain the three main structural anchors."
   tablet_768:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS"
     rule: "Preserve Mac plus either full mirror wall or FACES wall while keeping central rupture visible."
   mobile_390:
     required: true
-    status: "PENDING_COMPOSITE"
-    rule: "Vertical crop must preserve Mac and at least two of: mirror wall, FACES lettering, central rupture. If not possible, generate a mobile alternate."
+    status: "FAIL_CROP_ALT_REQUIRED"
+    rule: "Vertical crop must preserve Mac and at least two of: mirror wall, FACES lettering, central rupture. Generate a mobile alternate preserving Mac + FACES lettering + mirror wall + central rupture."
   desktop_1920_sanity:
     required: false
     status: "PENDING"
@@ -223,3 +223,9 @@ qa_notes:
 qa_notes_v2:
   - "HITL-B v2 accepted by user."
   - "OFF state preserves the Clean Master; ON state is limited to existing mirror shards."
+
+responsive_qa_notes:
+  - "1024 PASS: major composition anchors survive."
+  - "768 PASS: Mac, central rupture and mirror/faces structure survive."
+  - "390 FAIL with simple crop: central rupture and Mac survive, but FACES lettering and mirror wall are not sufficiently represented together."
+  - "Action: create dedicated 9:16 mobile alternate derived from the approved master; do not reinterpret the scene."
