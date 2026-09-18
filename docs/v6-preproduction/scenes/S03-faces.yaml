@@ -1,0 +1,216 @@
+version: "1.0"
+scene:
+  id: "S03"
+  slug: "faces"
+  name: "Faces"
+  status: "CLEAN_MASTER_APPROVED"
+
+reference:
+  approved: true
+  visual_thesis: "The visual peak of the site: a claustrophobic, hallucinatory room where mirrors, masks, faces and architecture fold into one another like a bad acid trip while retaining the visual identity of Faces."
+  immutable_notes:
+    - "Mac remains seated on the bed as the single stable human anchor."
+    - "The room must feel more unstable and grotesque than every previous scene."
+    - "The giant fractured mirror wall remains the dominant secondary structure."
+    - "Masks, repeated faces and eyes remain embedded throughout the room."
+    - "The open city/sky aperture remains visible as an impossible spatial rupture."
+    - "Candles, records, clutter and the cat remain part of the lived-in physical base."
+    - "Faces is the maximum-distortion scene; no later scene may exceed this density or instability."
+
+clean_master:
+  approved: true
+  asset_status: "APPROVED_EXTERNAL_MASTER"
+  intended_repo_path: "assets/backgrounds/s03-faces-master"
+  reference_protection:
+    lock:
+      - "Mac seated on bed"
+      - "fractured mirror wall with repeated faces"
+      - "left wall FACES treatment"
+      - "surreal open city/sky rupture"
+      - "masks / eyes / grotesque sculptural faces"
+      - "cat on bed"
+      - "candles / turntable / clutter"
+      - "warm black / amber / dirty crimson palette"
+    clean:
+      - "No generated navbar"
+      - "No external content card covering the room"
+      - "No visible HTML title duplication over the FACES wall treatment"
+    flex:
+      - "small candle-glow intensity"
+      - "minor eye/reflection locations"
+      - "small foreground clutter"
+      - "tiny text fragments used only as texture"
+  factual_text_audit:
+    preserve:
+      - "FACES"
+      - "Beauty and horror coexist"
+      - "small existential wall fragments that operate as texture, not factual biography"
+    texture_only:
+      - "small handwritten notes"
+      - "stack labels"
+      - "non-semantic scribbles"
+    remove_or_rebuild:
+      - "any generated factual statement about Mac's mental state"
+      - "any duplicated interface-style copy"
+
+narrative:
+  role: "Maximum fragmentation / visual collapse"
+  incoming_transition: "Watching Movies screens, reflections and false exits multiply until no stable surface remains."
+  outgoing_transition: "One circular/door geometry survives the collapse and becomes the cleaner recomposition logic of GO:OD AM."
+  distortion_visual_only: 10
+  governing_visual_law: "Identity, architecture and scale recurse until the room becomes a self-observing maze."
+
+content:
+  title: "Faces"
+  microcopy: ""
+  microcopy_max_words: 12
+  cta_label: "Escuchar Faces"
+  cta_target: "#good-am"
+  visible_strategy: "Use the approved diegetic FACES wall treatment as the visible title; semantic HTML remains present without duplicating it visually."
+
+safe_areas:
+  protected:
+    - "Mac and bed"
+    - "fractured mirror wall"
+    - "left FACES wall treatment"
+    - "central city/sky rupture"
+    - "cat"
+    - "major mask/eye clusters"
+  flexible:
+    - "far lower corners"
+    - "small dark edge zones"
+    - "small candle or clutter pockets"
+  content_safe:
+    - "No large visible copy overlay"
+    - "Transparent CTA may occupy a lower peripheral safe zone"
+
+background:
+  desktop:
+    focal_point: { x: 50, y: 53 }
+    position: { x: 50, y: 50 }
+  tablet:
+    position: { x: 50, y: 51 }
+  mobile:
+    strategy: "crop-first"
+    position: { x: 50, y: 54 }
+    alternate_master: null
+
+easter_eggs:
+  raster_preserved:
+    - "masks"
+    - "eyes"
+    - "hourglass / time motif"
+    - "records and turntable"
+    - "cat"
+    - "yin-yang / sticker language"
+    - "framed figures and impossible architecture"
+  overlays:
+    - "mirror reflection enhancement"
+    - "one hidden face layer"
+    - "subtle candle-response layer"
+  interactive:
+    - id: "faces-mirror"
+      target: "fractured mirror wall"
+      purpose: "Reveal a second reflection state: several mirrored fragments brighten and one hidden face/eye becomes visible."
+
+interaction:
+  enabled: true
+  trigger_id: "faces-mirror"
+  primitive: "checkbox_toggle"
+  keyboard_accessible: true
+  default_state: "mirror-dormant"
+  active_state: "mirror-awake"
+  visual_effects:
+    - "slightly increase local mirror luminance"
+    - "reveal one extra eye/face in a shard"
+    - "add restrained crimson-gold edge glow to selected cracks"
+    - "no camera shake"
+    - "no full-screen strobe"
+    - "no increase in overall scene density"
+  factual_reveal: null
+  reduced_motion_behavior: "Instant reflection-state change; no animated shimmer."
+
+assets:
+  svg:
+    - id: "s03-mirror-crack-glow"
+      purpose: "Selective interactive crack highlights"
+      status: "TO_REFINE"
+    - id: "s03-hidden-eye"
+      purpose: "Small reveal within one mirror shard"
+      status: "TO_REFINE"
+  raster_overlays:
+    - id: "s03-mirror-reflection-bloom"
+      purpose: "Optional transparent reflection treatment if CSS alone is insufficient"
+      status: "OPTIONAL"
+  html_controls:
+    - "semantic h2"
+    - "transparent CTA anchor"
+    - "accessible mirror toggle"
+
+motion:
+  enabled: true
+  css_only: true
+  effects:
+    - "very low-amplitude mirror-light change"
+    - "optional crack-glow breathing"
+  reduced_motion_fallback: "Static active mirror state."
+
+responsive:
+  desktop_1440:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve Mac, mirror wall, FACES wall and central rupture simultaneously."
+  desktop_1024:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Crop foreground clutter first; retain the three main structural anchors."
+  tablet_768:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Preserve Mac plus either full mirror wall or FACES wall while keeping central rupture visible."
+  mobile_390:
+    required: true
+    status: "PENDING_COMPOSITE"
+    rule: "Vertical crop must preserve Mac and at least two of: mirror wall, FACES lettering, central rupture. If not possible, generate a mobile alternate."
+  desktop_1920_sanity:
+    required: false
+    status: "PENDING"
+
+performance:
+  master_avif_target_kb: 450
+  master_webp_target_kb: 550
+  svg_soft_target_kb: 25
+  lazy_load: true
+  preload: false
+  fetch_priority: "auto"
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative-semantic-content-in-html"
+  interaction_label: "Revelar otra capa del espejo"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PENDING_COMPOSITE"
+  spatial_fidelity: "PENDING_COMPOSITE"
+  character_fidelity: "PENDING_COMPOSITE"
+  lighting_fidelity: "PENDING_COMPOSITE"
+  palette_fidelity: "PENDING_COMPOSITE"
+  density_fidelity: "PENDING_COMPOSITE"
+  typography_improvement: "DIEGETIC_TITLE_APPROVED"
+  easter_egg_integration: "PENDING_COMPOSITE"
+  interaction_quality: "PENDING_COMPOSITE"
+  keyboard: "PENDING"
+  reduced_motion: "PENDING"
+  performance_budget: "PENDING"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "HITL-B"
+  deliverable: "Desktop composite preserving the approved Faces room, with semantic hidden HTML and mirror-reveal interaction proof."
