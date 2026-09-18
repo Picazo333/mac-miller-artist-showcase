@@ -3,7 +3,7 @@ scene:
   id: "S00"
   slug: "home-larry-fisherman"
   name: "Home / Larry Fisherman"
-  status: "CLEAN_MASTER_APPROVED"
+  status: "DESKTOP_COMPOSITE_APPROVED"
 
 reference:
   approved: true
@@ -169,13 +169,13 @@ accessibility:
   required_info_not_image_only: true
 
 qa:
-  composition_fidelity: "PENDING_COMPOSITE"
-  spatial_fidelity: "PENDING_COMPOSITE"
-  character_fidelity: "PENDING_COMPOSITE"
-  lighting_fidelity: "PENDING_COMPOSITE"
-  palette_fidelity: "PENDING_COMPOSITE"
-  density_fidelity: "PENDING_COMPOSITE"
-  typography_improvement: "PENDING_COMPOSITE"
+  composition_fidelity: "PASS_HITL_B"
+  spatial_fidelity: "PASS_HITL_B"
+  character_fidelity: "PASS_HITL_B"
+  lighting_fidelity: "PASS_HITL_B"
+  palette_fidelity: "PASS_HITL_B"
+  density_fidelity: "PASS_HITL_B"
+  typography_improvement: "PASS_HITL_B"
   easter_egg_integration: "PENDING_COMPOSITE"
   interaction_quality: "PENDING_COMPOSITE"
   keyboard: "PENDING"
@@ -185,7 +185,7 @@ qa:
 
 human_approval:
   clean_master: true
-  desktop_composite: false
+  desktop_composite: true
   responsive: false
 
 next_gate:
