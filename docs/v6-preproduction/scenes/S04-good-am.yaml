@@ -3,13 +3,13 @@ scene:
   id: "S04"
   slug: "good-am"
   name: "GO:OD AM"
-  status: "REFERENCE_FROZEN"
+  status: "REFERENCE_FROZEN_CLEANUP_REQUIRED"
 
 reference:
   approved: true
-  source_file_name: "amanecer_en_el_portal_del_tiempo.png"
+  source_file_name: "amanecer_tras_el_reloj_monumental.png"
   source_dimensions: "1672x941"
-  sha256: "33dd704e6e351bb8717373af6b67026a3821c10c6175148aa62da9159d907243"
+  sha256: "PENDING_REHASH_AFTER_CLEAN_EDIT"
   visual_thesis: "Recomposition after Faces: monumental alarm-clock portal, dawn light, strong negative space and residual anomalies of time. The scene must feel cleaner, calmer and more deliberate without becoming generic."
   immutable_notes:
     - "The monumental alarm-clock portal is the dominant visual structure."
@@ -22,7 +22,7 @@ reference:
 
 clean_master:
   approved: false
-  asset_status: "PENDING_CLEAN_EDIT"
+  asset_status: "PENDING_CLEAN_TEXT_REMOVAL"
   intended_repo_path: "assets/backgrounds/s04-good-am-master"
   reference_protection:
     lock:
@@ -34,18 +34,21 @@ clean_master:
       - "warm ivory / charcoal / sunrise-gold palette"
       - "clean frontal geometry"
     clean:
-      - "generated top navigation"
-      - "large interface title block on left"
-      - "button / CTA graphics"
-      - "footer navigation / social icons"
-      - "interface-style labels that should become HTML"
+      - "all generic motivational text not specifically tied to Mac Miller"
+      - "notebook checklist text"
+      - "mug slogans"
+      - "wall phrases such as generic self-help copy"
+      - "Polaroid caption copy unless directly tied to Mac Miller"
+      - "any UI-like or explanatory text that should become HTML/CSS later"
     flex:
       - "plain wall reconstruction behind removed text"
       - "small peripheral notes if visually non-essential"
       - "subtle surface texture"
   factual_text_audit:
     preserve:
-      - "Only diegetic text that is intentionally part of the environment and remains visually useful"
+      - "Only text with a specific, defensible Mac Miller connection"
+      - "GO:OD AM if used as diegetic album identity"
+      - "Other Mac-specific easter eggs only when visually integrated and factually intentional"
     texture_only:
       - "small handwritten environmental notes"
     remove_or_rebuild:
@@ -104,3 +107,10 @@ human_approval:
 next_gate:
   name: "HITL-A"
   deliverable: "Clean Master edit of the approved reference: remove UI text/navigation only; preserve the approved composition."
+
+reference_revision_notes:
+  - "User approved the composition with the monumental clock portal and visible sunrise/city background."
+  - "The later still-life/portrait-clock generation is rejected and must not be used."
+  - "The approved composition is NOT yet the final Clean Master because it still contains generic generated text."
+  - "Next image operation must be an edit of the approved clock-portal composition only: remove generic text while preserving composition, Mac, clock portal, city, lighting, perspective and spatial geometry."
+  - "No redesign from scratch. No new room. No new portrait-in-clock concept."
