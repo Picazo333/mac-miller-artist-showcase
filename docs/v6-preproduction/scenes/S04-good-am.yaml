@@ -127,4 +127,9 @@ approved_exception:
 approval_notes:
   - "HITL-B desktop composite approved by user."
 
-responsive_qa_state: "PENDING_HITL_C"
+responsive_qa_state: "PASS_INTERNAL_AWAITING_HITL"
+
+responsive_qa_notes:
+  - "1024 PASS: monumental clock portal, Mac and sunrise remain dominant."
+  - "768 PASS: portal and Mac remain readable; peripheral text loss is acceptable."
+  - "390 PASS: portal, Mac and sunrise remain intact without a mobile alternate."
