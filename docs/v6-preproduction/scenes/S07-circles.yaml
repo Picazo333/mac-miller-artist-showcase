@@ -3,14 +3,14 @@ scene:
   id: "S07"
   slug: "circles"
   name: "Circles"
-  status: "REFERENCE_FROZEN_CLEANUP_REQUIRED"
+  status: "REFERENCE_APPROVED_CLEANUP_REQUIRED"
 
 reference:
   approved: true
-  source_file_name: "círculos_un_espacio_sereno.png"
+  source_file_name: "a_cinematic_photoreal_surreal_album_website_st.png"
   source_dimensions: "1672x941"
-  sha256: "23d265934bdbbf7b58a43685ee5282f47bceaf244d6c75e9b193cb1813ea845b"
-  visual_thesis: "A quiet ivory architectural space organized by one large circular aperture, repeated circular windows and reflective water. Mac sits small and still at the center; the scene communicates repetition, calm and breathing room rather than spectacle."
+  sha256: "PENDING_AFTER_CLEAN_EDIT"
+  visual_thesis: "A quiet ivory architectural sanctuary organized by one monumental circular aperture, reflective water, pale stone and repeated round motifs. Mac sits small and still at the center. The approved direction is serene, orbital and spacious, with a correct Mac treatment and no return to visual chaos."
   immutable_notes:
     - "Large ivory circular aperture is the dominant structure."
     - "Mac remains seated, small and centered near the opening."
@@ -34,11 +34,14 @@ clean_master:
       - "ivory stone palette"
       - "negative space and calm"
     clean:
-      - "generated navigation"
-      - "large generated CIRCLES title block"
-      - "generated CTA"
-      - "tracklist/footer UI"
-      - "generic motivational / explanatory raster text"
+      - "all visible generated UI and interface text"
+      - "MAC MILLER raster label"
+      - "2018 raster label"
+      - "CIRCLES raster title"
+      - "generic raster tagline"
+      - "raster CTA"
+      - "menu icon and carousel dots"
+      - "down chevron"
     preserve_only_if_specific:
       - "Mac-specific easter eggs that are intentional and defensible"
     flex:
@@ -102,4 +105,10 @@ human_approval:
 
 next_gate:
   name: "HITL-A"
-  deliverable: "Localized clean-master edit of the approved Circles reference: remove UI/generic raster text only, preserve architecture, Mac, water and circular recurrence."
+  deliverable: "Localized clean-master edit of the newly approved Circles reference: remove all generated UI/text while preserving Mac, architecture, water, light, composition and circular recurrence exactly."
+
+approval_revision:
+  - "User approved the corrected Circles reference with the updated Mac treatment."
+  - "The visual composition is frozen."
+  - "The current raster is not yet the Clean Master because it contains generated interface text."
+  - "Next operation is cleanup only; no redesign, no new composition and no new text."
