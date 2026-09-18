@@ -88,6 +88,7 @@ background:
     strategy: "crop-first"
     position: { x: 50, y: 54 }
     alternate_master: null
+    internal_qa_note: "Desktop master survives crop; Mac, smoke and Pittsburgh skyline remain legible at 390px. No alternate mobile master required."
 
 easter_eggs:
   raster_preserved:
@@ -157,15 +158,15 @@ responsive:
     rule: "Preserve Mac, smoke, balcony and both side walls."
   desktop_1024:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS_INTERNAL_AWAITING_HITL"
     rule: "Lose peripheral clutter before losing the warped ceiling or Question/Most Dope cues."
   tablet_768:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS_INTERNAL_AWAITING_HITL"
     rule: "Prioritize Mac + smoke + skyline; allow one side wall to crop."
   mobile_390:
     required: true
-    status: "PENDING_COMPOSITE"
+    status: "PASS_INTERNAL_AWAITING_HITL"
     rule: "Vertical crop must retain Mac, smoke and skyline. The title overlay must not cover Mac or the central smoke plume."
   desktop_1920_sanity:
     required: false
