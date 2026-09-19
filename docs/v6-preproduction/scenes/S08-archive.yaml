@@ -4,7 +4,7 @@ scene:
   id: "S08"
   slug: "archive"
   name: "Archive / Everything Remains"
-  status: "SCENE_CONTRACT_APPROVED"
+  status: "SCENE_LOCKED"
 
 integration:
   section_id: "archive"
@@ -180,3 +180,15 @@ human_approval:
 next_gate:
   name: "FINAL_RUNTIME"
   deliverable: "Integrate approved Archive master with six semantic hotspots and responsive crop rules."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"
