@@ -1,0 +1,36 @@
+name: Optimize approved Faces patch
+
+on:
+  push:
+    branches: [faces-patch-exact]
+    paths:
+      - ".github/workflows/optimize-faces-patch.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: faces-patch-exact
+      - name: Optimize transparent patch for rendered size
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq webp
+          dwebp assets/overlays/s03-faces-board-art.webp -o /tmp/faces-patch.png
+          cwebp -quiet -resize 320 0 -q 92 -alpha_q 100 -m 6 /tmp/faces-patch.png -o assets/overlays/s03-faces-board-art.webp
+      - name: Commit optimized asset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/overlays/s03-faces-board-art.webp
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "perf: optimize approved Faces patch [skip ci]"
+            git push origin HEAD:faces-patch-exact
+          fi
