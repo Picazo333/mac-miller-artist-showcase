@@ -36,3 +36,29 @@ quality_rules:
   - "Every disclosure is keyboard accessible."
   - "Respect prefers-reduced-motion."
   - "Do not invent album trivia; fact cards link to supporting sources."
+
+director_cut_balanced:
+  status: "IMPLEMENTED_ON_BRANCH"
+  canonical_stylesheet: "styles.css"
+  javascript_runtime: false
+  systems:
+    - "cinematic-color-script"
+    - "signal-lights-2"
+    - "focus-theatre"
+    - "etched-glass"
+    - "environmental-typography"
+    - "archive-forensic-lite"
+    - "ritual-scroll-level-2"
+  faces:
+    master: "assets/s03-faces.webp"
+    overlay: "assets/overlays/s03-faces-board-patch.svg"
+    overlay_strategy: "full-frame SVG in the master's coordinate system"
+  celebration:
+    canonical_asset: "assets/s10-celebration-composite.webp"
+    strategy: "single composite"
+    old_sprite_runtime: "deprecated"
+  runtime_rules:
+    - "No executable JavaScript."
+    - "No approved scene master is replaced by the Director's Cut layer."
+    - "Only Faces receives a new art overlay."
+    - "Fact disclosures remain native details/summary."
