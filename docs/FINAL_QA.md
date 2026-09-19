@@ -27,6 +27,7 @@
 
 - [x] Approved Faces master remains unchanged.
 - [x] `assets/overlays/s03-faces-board-patch.svg` exists.
+- [x] `assets/overlays/s03-faces-board-art.webp` contains the exact approved patch artwork, optimized to ~320 px source width for its small rendered size.
 - [x] Patch uses full-frame `viewBox="0 0 1672 941"`.
 - [x] Patch is decorative and loaded independently of the master.
 - [x] Faces receives the highest approved cinematic / living-light intensity.

@@ -262,7 +262,9 @@ director_cut_balanced:
   living_light_intensity: 5
   overlay:
     asset: "assets/overlays/s03-faces-board-patch.svg"
+    approved_art: "assets/overlays/s03-faces-board-art.webp"
     type: "full-frame-svg-coordinate-overlay"
+    art_policy: "Exact approved generated patch artwork; optimized only for runtime size, not redesigned."
     view_box: "0 0 1672 941"
     purpose: "Cover the disliked Spanish board copy without modifying the approved Faces master."
     crop_rule: "Overlay uses the same object-fit/object-position behavior as the Faces master."
