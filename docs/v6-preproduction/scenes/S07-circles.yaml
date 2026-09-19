@@ -3,7 +3,7 @@ scene:
   id: "S07"
   slug: "circles"
   name: "Circles"
-  status: "REFERENCE_APPROVED_CLEANUP_REQUIRED"
+  status: "SCENE_LOCKED"
 
 reference:
   approved: true
@@ -112,3 +112,15 @@ approval_revision:
   - "The visual composition is frozen."
   - "The current raster is not yet the Clean Master because it contains generated interface text."
   - "Next operation is cleanup only; no redesign, no new composition and no new text."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"
