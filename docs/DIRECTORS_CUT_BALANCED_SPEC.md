@@ -59,7 +59,10 @@ Faces must pass before global propagation:
 ## Faces overlay strategy
 
 assets/overlays/s03-faces-board-patch.svg
+assets/overlays/s03-faces-board-art.webp
 
+- the WebP is the exact approved patch artwork, resized/compressed only for delivery;
+- the SVG is the full-frame positioning wrapper;
 - full-frame SVG viewBox 0 0 1672 941;
 - transparent background;
 - art positioned in the same coordinate system as the master;
