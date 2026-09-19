@@ -1,42 +1,38 @@
-version: "1.0"
-status: "FINAL_INTEGRATION_IN_PROGRESS"
-architecture: "approved raster master + semantic HTML + CSS interaction overlays"
+version: "2.0"
+status: "FINAL_CSS_ONLY_INTEGRATION"
+architecture: "approved raster master + semantic HTML + canonical styles.css + native details/summary interactions"
+
 runtime:
   html: "index.html"
-  css: "v6.css"
-  js: "v6.js"
-  assets_dir: "assets/"
+  css: "styles.css"
+  javascript: null
+
 scenes:
-  - { id: "S00", slug: "home", asset: "assets/s00-home.webp", mobile_position: "50% 54%", interaction: "water ripple / fireflies" }
-  - { id: "S01", slug: "macadelic", asset: "assets/s01-macadelic.webp", mobile_position: "50% 54%", interaction: "lamp / smoke glow" }
-  - { id: "S02", slug: "watching-movies", asset: "assets/s02-watching.webp", mobile_position: "50% 52%", interaction: "CRT glow / scanlines" }
-  - { id: "S03", slug: "faces", asset: "assets/s03-faces.webp", mobile_position: "55% 54%", interaction: "mirror shards / hidden eye" }
-  - { id: "S04", slug: "good-am", asset: "assets/s04-good-am.webp", mobile_position: "54% 50%", interaction: "clock portal glow" }
-  - { id: "S05", slug: "divine-feminine", asset: "assets/s05-divine-feminine.webp", mobile_position: "44% 50%", interaction: "orbital ring / ponytail backlight" }
-  - { id: "S06", slug: "swimming", asset: "assets/s06-swimming.webp", mobile_position: "46% 50%", interaction: "water wake / window lift" }
-  - { id: "S07", slug: "circles", asset: "assets/s07-circles.webp", mobile_position: "50% 50%", interaction: "concentric ring / reflection lift" }
-  - { id: "S08", slug: "archive", asset: "assets/s08-archive.webp", mobile_position: "65% 50%", interaction: "six object hotspots" }
-  - { id: "S09", slug: "memorial", asset: "assets/s09-memorial.webp", mobile_position: "56% 50%", interaction: "spotlight / Brand Name reveal" }
-  - { id: "S10", slug: "celebration", asset: "assets/s10-celebration-stage.webp", mobile_position: "50% 50%", interaction: "six independent pixel sprites" }
-celebration_sprites:
-  order:
-    - "Anderson .Paak"
-    - "Action Bronson"
-    - "Mac Miller"
-    - "Tyler, The Creator"
-    - "Thundercat"
-    - "ScHoolboy Q"
-  files:
-    - "assets/sprite-anderson-paak.png"
-    - "assets/sprite-action-bronson.png"
-    - "assets/sprite-mac-miller.png"
-    - "assets/sprite-tyler-the-creator.png"
-    - "assets/sprite-thundercat.png"
-    - "assets/sprite-schoolboy-q.png"
+  - { id: "S00", slug: "home", interaction: "CSS checkbox ripple / warm signal light" }
+  - { id: "S01", slug: "macadelic", interaction: "Signal Light + sourced fact card" }
+  - { id: "S02", slug: "watching-movies", interaction: "Signal Light + sourced fact card" }
+  - { id: "S03", slug: "faces", interaction: "Signal Light + sourced fact card" }
+  - { id: "S04", slug: "good-am", interaction: "Signal Light + sourced fact card" }
+  - { id: "S05", slug: "divine-feminine", interaction: "Signal Light + sourced fact card" }
+  - { id: "S06", slug: "swimming", interaction: "Signal Light + sourced fact card" }
+  - { id: "S07", slug: "circles", interaction: "Signal Light + sourced fact card" }
+  - { id: "S08", slug: "archive", interaction: "four CSS-only object notes" }
+  - { id: "S09", slug: "memorial", interaction: "CSS-only microphone reveal" }
+  - { id: "S10", slug: "celebration", interaction: "six details/summary pixel-sprite labels" }
+
+academic_requirements:
+  canonical_stylesheet: "styles.css"
+  executable_javascript: false
+  schema_org: "HTML microdata"
+  required_sections:
+    - "About"
+    - "Career"
+    - "Upcoming Shows"
+
 quality_rules:
-  - "Do not regenerate approved art."
-  - "Do not replace approved scenes with generic derivatives."
-  - "Do not add generic inspirational copy."
-  - "Keep narrative copy minimal and semantic."
-  - "Every interactive hotspot is keyboard-focusable."
+  - "Do not regenerate approved scene art."
+  - "Signal Lights replace weak scene-specific overlays."
+  - "Album explanatory copy remains persistent; fact cards are optional discovery content."
+  - "Every disclosure is keyboard accessible."
   - "Respect prefers-reduced-motion."
+  - "Do not invent album trivia; fact cards link to supporting sources."

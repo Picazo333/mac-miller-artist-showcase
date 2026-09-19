@@ -1,10 +1,10 @@
 # Mac Miller — The Long Way Around
 
-Proyecto académico de 4Geeks Academy: una experiencia visual e interactiva construida con HTML, CSS y JavaScript vanilla.
+Proyecto académico de 4Geeks Academy: una experiencia visual e interactiva construida exclusivamente con HTML y CSS.
 
-## V6 final
+## Experiencia final
 
-La entrega integra once escenas visuales aprobadas:
+La entrega integra once escenas:
 
 1. Home / Larry Fisherman
 2. Macadelic
@@ -22,18 +22,28 @@ La entrega integra once escenas visuales aprobadas:
 
 La implementación final usa:
 
-- masters raster aprobados y optimizados a WebP;
-- HTML semántico para títulos, navegación y CTAs;
-- CSS para composición responsive, overlays y microinteracciones;
-- JavaScript mínimo para hotspots, estado activo y navegación;
+- `index.html` como documento semántico;
+- `styles.css` como única hoja de estilos canónica;
+- cero JavaScript ejecutable;
+- `<details>/<summary>` y controles HTML nativos para interacción;
+- Schema.org mediante microdata HTML;
+- masters visuales WebP ya aprobados;
 - seis sprites PNG independientes en Celebration of Life;
-- Scene Contracts y un Integration Manifest en `docs/v6-preproduction/`.
+- Scene Contracts e Integration Manifest en `docs/v6-preproduction/`.
 
-## Interacciones
+## Interacción
 
-Las escenas incluyen interacciones pequeñas y deliberadas: ondas, luz, CRT, espejo, reloj, órbita, agua, círculos, objetos de archivo, spotlight memorial y personajes pixel-art seleccionables.
+Cada álbum incluye un **Signal Light** visible. Al activarlo aparece una tarjeta breve con un dato verificado del proyecto y su fuente. Home conserva la interacción de ondas/luces; Archive contiene cuatro easter eggs; Memorial revela una línea breve de *Brand Name*; Celebration permite explorar los seis sprites.
 
-Todas las interacciones críticas son accesibles por teclado y existe fallback para `prefers-reduced-motion`.
+Todo funciona con HTML + CSS, teclado y `prefers-reduced-motion`.
+
+## Estructura académica
+
+Al final de la experiencia se incluyen las secciones requeridas:
+
+- About
+- Career
+- Upcoming Shows
 
 ## Ejecutar
 
