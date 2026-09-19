@@ -4,7 +4,7 @@ scene:
   id: "S03"
   slug: "faces"
   name: "Faces"
-  status: "CLEAN_MASTER_APPROVED"
+  status: "SCENE_LOCKED"
 
 reference:
   approved: true
@@ -240,3 +240,15 @@ interaction_history:
 next_gate:
   name: "HITL-REVALIDATION-V2"
   deliverable: "User review of 1440 OFF/ON plus 1024/768/390 proofs. If approved, restore downstream approvals and move S03 to preintegration-final."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"

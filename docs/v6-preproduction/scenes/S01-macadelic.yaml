@@ -3,7 +3,7 @@ scene:
   id: "S01"
   slug: "macadelic"
   name: "Macadelic"
-  status: "RESPONSIVE_APPROVED"
+  status: "SCENE_LOCKED"
 
 reference:
   approved: true
@@ -210,3 +210,15 @@ human_approval:
 next_gate:
   name: "PREINTEGRATION_FINAL"
   deliverable: "Production encoding/performance verification before runtime integration"
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"

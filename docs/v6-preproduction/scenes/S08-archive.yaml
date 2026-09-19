@@ -1,0 +1,194 @@
+version: "1.0"
+
+scene:
+  id: "S08"
+  slug: "archive"
+  name: "Archive / Everything Remains"
+  status: "SCENE_LOCKED"
+
+integration:
+  section_id: "archive"
+  anchor: "#archive"
+  sequence_after: "S07-circles"
+  sequence_before: "S09-memorial"
+  runtime_change_allowed_now: true
+
+reference:
+  approved: true
+  source_file_name: "archivo_eterno_de_mac_miller.png"
+  source_dimensions: "1672x941"
+  visual_thesis: "A long archival table compresses an entire trajectory into one room: recordings, notebooks, photographs, album references, aliases, Pittsburgh cues and a chronological ribbon. The scene is dense by design, but the interaction should reveal rather than explain over it."
+  immutable_notes:
+    - "The long table remains the dominant compositional axis."
+    - "The room remains dark, warm and museum-like."
+    - "The Larry Fisherman reference remains visible."
+    - "The Pittsburgh cap remains visible."
+    - "The album stack remains visible."
+    - "The reel-to-reel tape and cassette language remain."
+    - "The handwritten notebooks remain."
+    - "The chronological ribbon across the table remains."
+    - "No simplification that erases the easter-egg density is allowed."
+
+clean_master:
+  asset: "archivo_eterno_de_mac_miller.png"
+  approved: true
+  asset_status: "APPROVED_BY_EXCEPTION_WITH_RASTER_UI"
+  intended_repo_path: "assets/s08-archive.webp"
+  reference_protection:
+    lock:
+      - "long archival table"
+      - "Larry Fisherman crate"
+      - "Pittsburgh cap"
+      - "album stack"
+      - "reel-to-reel tape"
+      - "headphones"
+      - "chronological ribbon"
+      - "handwritten notebooks"
+      - "warm archival lighting"
+    clean:
+      - "No additional raster copy is to be generated."
+      - "Existing raster interface text is tolerated as part of the approved reference."
+    flex:
+      - "HTML hotspot markers"
+      - "semantic label output"
+      - "responsive crop position"
+
+narrative:
+  role: "Accumulation / evidence / everything that remains"
+  incoming_transition: "Circles ends the album chronology; Archive gathers all eras into one physical field."
+  outgoing_transition: "The density of what remains collapses into the emptiness of Memorial."
+  distortion_visual_only: 1
+  governing_visual_law: "The room is stable; complexity comes from accumulated evidence rather than visual distortion."
+
+content:
+  title: "Archive"
+  microcopy: ""
+  microcopy_max_words: 12
+  cta_label: "Continuar"
+  cta_target: "#memorial"
+  visible_strategy: "Do not cover the table. Keep semantic HTML small and peripheral."
+
+background:
+  desktop:
+    asset: "assets/s08-archive.webp"
+    focal_point: { x: 58, y: 52 }
+    position: { x: 50, y: 50 }
+  tablet:
+    position: { x: 58, y: 50 }
+  mobile:
+    strategy: "crop-first"
+    position: { x: 65, y: 50 }
+    alternate_master: null
+
+safe_areas:
+  protected:
+    - "central and right table surface"
+    - "Larry Fisherman crate"
+    - "album stack"
+    - "chronology ribbon"
+    - "notebooks"
+  flexible:
+    - "far left raster copy field"
+    - "upper dark architecture"
+    - "far right corridor edge"
+  content_safe:
+    - "lower-left peripheral overlay"
+    - "lower-right compact label output"
+
+easter_eggs:
+  raster_preserved:
+    - "Larry Fisherman"
+    - "Pittsburgh"
+    - "discography stack"
+    - "reel-to-reel tape"
+    - "Good Music / Good People / Good Days notebook"
+    - "The universe is doing its thing notebook"
+  overlays:
+    - "six small HTML hotspot markers"
+    - "one semantic label output"
+  interactive:
+    - { id: "archive-larry", target: "Larry Fisherman crate" }
+    - { id: "archive-pittsburgh", target: "Pittsburgh cap" }
+    - { id: "archive-albums", target: "discography stack" }
+    - { id: "archive-reel", target: "reel-to-reel tape" }
+    - { id: "archive-goodmusic", target: "Good Music notebook" }
+    - { id: "archive-universe", target: "universe notebook" }
+
+interaction:
+  enabled: true
+  trigger_id: "per-hotspot"
+  primitive: "focus_hover_click"
+  keyboard_accessible: true
+  default_state: "archive-still"
+  active_state: "object-labeled"
+  visual_effects:
+    - "small hotspot focus ring"
+    - "compact label in real HTML"
+    - "no modal"
+    - "no camera movement"
+    - "no additional explanatory paragraph"
+  reduced_motion_behavior: "Static focus and label."
+
+assets:
+  svg: []
+  raster_overlays: []
+  pixel: []
+  html_controls:
+    - "semantic h2"
+    - "six hotspot buttons"
+    - "aria-live label output"
+    - "official archive link"
+    - "continue CTA"
+
+responsive:
+  desktop_1440: { required: true, status: "PENDING_FINAL_RUNTIME" }
+  desktop_1024: { required: true, status: "PENDING_FINAL_RUNTIME" }
+  tablet_768: { required: true, status: "PENDING_FINAL_RUNTIME" }
+  mobile_390:
+    required: true
+    status: "PENDING_FINAL_RUNTIME"
+    rule: "Favor table/easter-egg density over the baked left-side copy. Preserve at least four recognizable archive objects."
+  desktop_1920_sanity: { required: false, status: "PENDING" }
+
+accessibility:
+  heading_level: 2
+  alt_strategy: "background-decorative; easter-egg labels are semantic HTML"
+  interaction_label: "Explorar objetos del archivo"
+  focus_visible: true
+  required_info_not_image_only: true
+
+qa:
+  composition_fidelity: "PASS_REFERENCE"
+  spatial_fidelity: "PASS_REFERENCE"
+  character_fidelity: "NOT_APPLICABLE"
+  lighting_fidelity: "PASS_REFERENCE"
+  palette_fidelity: "PASS_REFERENCE"
+  density_fidelity: "PASS_REFERENCE"
+  typography_improvement: "PENDING_FINAL_RUNTIME"
+  easter_egg_integration: "PASS_CONTRACT"
+  interaction_quality: "PENDING_FINAL_RUNTIME"
+  keyboard: "PENDING_FINAL_RUNTIME"
+  reduced_motion: "PENDING_FINAL_RUNTIME"
+  performance_budget: "PENDING_FINAL_RUNTIME"
+  scene_identity: "PASS_REFERENCE"
+
+human_approval:
+  clean_master: true
+  desktop_composite: false
+  responsive: false
+
+next_gate:
+  name: "FINAL_RUNTIME"
+  deliverable: "Integrate approved Archive master with six semantic hotspots and responsive crop rules."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"
