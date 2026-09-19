@@ -267,3 +267,23 @@ final_integration:
     - "scene exists in index.html"
     - "responsive focal/crop policy exists in v6.css"
     - "semantic navigation and accessibility structure exist"
+
+director_cut_balanced:
+  status: "CANONICAL_RUNTIME_OVERRIDE"
+  visual_strategy: "single-approved-composite"
+  runtime_asset: "assets/s10-celebration-composite.webp"
+  deprecated_strategy:
+    - "Do not rebuild the runtime from six independent sprites."
+    - "Do not use the old sprite grid as the visual implementation."
+  semantic_preservation:
+    - "The six represented collaborators remain listed in screen-reader-only HTML."
+  css_treatment:
+    cinematic_intensity: 4
+    ritual_scroll_intensity: 1
+    editorial_intensity: 1
+    living_light_intensity: 3
+    interaction: "none added"
+  definition_of_done:
+    - "Composite is shown intact on desktop and mobile."
+    - "No collaborator is cropped by an independent sprite container."
+    - "Mac remains visually central with the approved halo."
