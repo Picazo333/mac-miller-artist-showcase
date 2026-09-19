@@ -151,3 +151,15 @@ responsive_qa_notes:
 final_lock_notes:
   - "S06 locked after explicit user instruction to continue the approved pipeline."
   - "No further art-direction changes are allowed unless a concrete defect is found."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"
