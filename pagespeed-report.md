@@ -1,36 +1,33 @@
 # PageSpeed validation
 
-Final public URL: https://picazo333.github.io/mac-miller-artist-showcase/
+Final public URL:
 
-PageSpeed Insights report:
-https://pagespeed.web.dev/analysis/https-picazo333-github-io-mac-miller-artist-showcase/uxlhj4bvu6?form_factor=mobile
+https://picazo333.github.io/mac-miller-artist-showcase/
 
-## Latest final rerun — user-confirmed
+PageSpeed Insights:
 
-- Performance: **100**
-- Accessibility: **100**
-- Best Practices: **100**
-- SEO: **100**
+https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fpicazo333.github.io%2Fmac-miller-artist-showcase%2F
 
-The final rerun was confirmed at 100/100/100/100 on 2026-09-16. The PNG screenshot required by the academic rubric is still the formal visual evidence artifact that must be committed before submission.
+## Current delivery state
 
-## Prior instrumented mobile run — Lighthouse 13.4.1
+The final runtime was converted to HTML + CSS only, with `styles.css` as the canonical stylesheet, Schema.org microdata, responsive layouts, and native HTML disclosures for interaction.
 
-- Performance: **99**
-- Accessibility: **100**
-- Best Practices: **100**
-- SEO: **100**
-- First Contentful Paint: **0.9 s**
-- Largest Contentful Paint: **1.5 s**
-- Total Blocking Time: **0 ms**
-- Cumulative Layout Shift: **0**
-- Speed Index: **3.7 s**
+A fresh PageSpeed run must be executed against the latest deployed commit because older scores were captured before the final CSS-only architecture pass.
 
-## Prior desktop run
+## Historical evidence
 
-- Performance: **100**
-- Accessibility: **100**
-- Best Practices: **100**
-- SEO: **100**
+Previous project runs reached:
 
-The assignment threshold is Performance >= 80. Both recorded runs exceed the threshold substantially.
+- Performance: 99–100
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 100
+
+These historical numbers are retained only as prior evidence and must not be treated as proof of the latest deployed revision.
+
+## Required final evidence
+
+- Performance >= 80
+- current SEO result checked
+- PNG screenshot of the PageSpeed result committed to the repository
+- screenshot must correspond to the final deployed URL
