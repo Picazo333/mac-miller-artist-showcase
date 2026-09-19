@@ -3,7 +3,7 @@ scene:
   id: "S05"
   slug: "divine-feminine"
   name: "The Divine Feminine"
-  status: "DESKTOP_COMPOSITE_APPROVED"
+  status: "SCENE_LOCKED"
 
 reference:
   approved: true
@@ -194,3 +194,15 @@ responsive_qa_notes:
   - "768 PASS: profile, ponytail and Mac remain strong; peripheral roses crop first."
   - "390 PASS with 44% horizontal crop: Mac, face profile and ponytail all remain visible."
   - "No alternate mobile master required."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"
