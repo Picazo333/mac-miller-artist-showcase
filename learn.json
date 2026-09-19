@@ -1,12 +1,12 @@
 {
   "title": {"en":"Mac Miller — The Long Way Around","es":"Mac Miller — The Long Way Around"},
   "description": {
-    "us":"An interactive HTML/CSS/JavaScript visual tribute built as an 11-scene narrative experience.",
-    "es":"Tributo visual interactivo construido como una experiencia narrativa de 11 escenas con HTML, CSS y JavaScript."
+    "us":"An interactive HTML/CSS visual tribute built as an 11-scene narrative experience.",
+    "es":"Tributo visual interactivo construido como una experiencia narrativa de 11 escenas con HTML y CSS."
   },
   "repository":"https://github.com/Picazo333/mac-miller-artist-showcase",
   "preview":"https://picazo333.github.io/mac-miller-artist-showcase/",
   "projectType":"website",
   "difficulty":"beginner",
-  "technologies":["HTML","CSS","JavaScript","responsive design","accessibility"]
+  "technologies":["HTML","CSS","responsive design","accessibility","Schema.org"]
 }
