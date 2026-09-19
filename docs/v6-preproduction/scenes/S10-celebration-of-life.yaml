@@ -4,7 +4,7 @@ scene:
   id: "S10"
   slug: "celebration-of-life"
   name: "Celebration of Life"
-  status: "SCENE_CONTRACT_APPROVED"
+  status: "SCENE_LOCKED"
 
 integration:
   section_id: "celebration"
@@ -255,3 +255,15 @@ human_approval:
 next_gate:
   name: "ASSET_SPLIT"
   deliverable: "Separate the approved Celebration reference into a clean dark-stage background plus six individually interactive pixel sprites before desktop composite."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"
