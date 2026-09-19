@@ -16,35 +16,51 @@
   <meta property="og:url" content="https://picazo333.github.io/mac-miller-artist-showcase/">
   <meta property="og:image" content="https://picazo333.github.io/mac-miller-artist-showcase/assets/s00-home.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="v6.css">
-  <script defer src="v6.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mac Miller",
+    "alternateName": "Malcolm James McCormick",
+    "birthDate": "1992-01-19",
+    "deathDate": "2018-09-07",
+    "birthPlace": {"@type":"Place","name":"Pittsburgh, Pennsylvania, United States"},
+    "jobTitle": ["Rapper","Singer","Songwriter","Record producer"],
+    "url": "https://www.macmillerswebsite.com/"
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#home">Saltar a la experiencia</a>
 
   <header class="site-chrome" aria-label="Navegación de la experiencia">
     <a class="wordmark" href="#home" aria-label="Mac Miller, volver al inicio">MAC MILLER</a>
-    <p class="chapter-readout" aria-live="polite"><span id="scene-count">01</span><span aria-hidden="true"> / 11</span><b id="scene-name">HOME</b></p>
-    <button class="rail-toggle" type="button" aria-expanded="false" aria-controls="scene-rail">Índice</button>
+    <p class="chapter-readout">THE LONG WAY AROUND <span aria-hidden="true">·</span> 11 SCENES</p>
+    <details class="nav-disclosure">
+      <summary>Índice</summary>
+      <nav class="scene-rail" aria-label="Índice de escenas">
+        <a href="#home"><span>01</span><b>Home</b></a>
+        <a href="#macadelic"><span>02</span><b>Macadelic</b></a>
+        <a href="#watching-movies"><span>03</span><b>Watching Movies</b></a>
+        <a href="#faces"><span>04</span><b>Faces</b></a>
+        <a href="#good-am"><span>05</span><b>GO:OD AM</b></a>
+        <a href="#divine-feminine"><span>06</span><b>The Divine Feminine</b></a>
+        <a href="#swimming"><span>07</span><b>Swimming</b></a>
+        <a href="#circles"><span>08</span><b>Circles</b></a>
+        <a href="#archive"><span>09</span><b>Archive</b></a>
+        <a href="#memorial"><span>10</span><b>Memorial</b></a>
+        <a href="#celebration"><span>11</span><b>Celebration</b></a>
+      </nav>
+    </details>
   </header>
 
-  <nav class="scene-rail" id="scene-rail" aria-label="Índice de escenas">
-    <a href="#home" data-scene-link="home"><span>01</span><b>Home</b></a>
-    <a href="#macadelic" data-scene-link="macadelic"><span>02</span><b>Macadelic</b></a>
-    <a href="#watching-movies" data-scene-link="watching-movies"><span>03</span><b>Watching Movies</b></a>
-    <a href="#faces" data-scene-link="faces"><span>04</span><b>Faces</b></a>
-    <a href="#good-am" data-scene-link="good-am"><span>05</span><b>GO:OD AM</b></a>
-    <a href="#divine-feminine" data-scene-link="divine-feminine"><span>06</span><b>The Divine Feminine</b></a>
-    <a href="#swimming" data-scene-link="swimming"><span>07</span><b>Swimming</b></a>
-    <a href="#circles" data-scene-link="circles"><span>08</span><b>Circles</b></a>
-    <a href="#archive" data-scene-link="archive"><span>09</span><b>Archive</b></a>
-    <a href="#memorial" data-scene-link="memorial"><span>10</span><b>Memorial</b></a>
-    <a href="#celebration" data-scene-link="celebration"><span>11</span><b>Celebration</b></a>
-  </nav>
-
   <main id="experience">
-    <section class="scene scene--home" id="home" data-title="HOME" aria-labelledby="home-title">
-      <img class="scene__image" src="assets/s00-home.webp" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
+    <section class="scene scene--home" id="home" aria-labelledby="home-title">
+      <picture>
+        <source media="(min-width: 1500px)" srcset="assets/hires/s00-home.webp">
+        <img class="scene__image" src="assets/s00-home.webp" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
+      </picture>
       <div class="scene__shade" aria-hidden="true"></div>
       <h1 class="sr-only" id="home-title">Mac Miller</h1>
       <div class="home-lockup">
@@ -52,109 +68,104 @@
         <p class="home-mark">MAC MILLER</p>
         <a class="primary-action" href="#macadelic">Seguir la corriente <span aria-hidden="true">→</span></a>
       </div>
-      <button class="hotspot hotspot--frog" type="button" data-toggle-scene aria-label="Crear una onda en el agua"><span>+</span></button>
+      <input class="scene-toggle" id="home-ripple-toggle" type="checkbox">
+      <label class="signal-orb signal-orb--home" for="home-ripple-toggle"><span aria-hidden="true"></span><span class="sr-only">Activar ondas y luces en el agua</span></label>
       <div class="fx fx--ripple r1" aria-hidden="true"></div><div class="fx fx--ripple r2" aria-hidden="true"></div><div class="fx fx--ripple r3" aria-hidden="true"></div>
       <span class="firefly f1" aria-hidden="true"></span><span class="firefly f2" aria-hidden="true"></span><span class="firefly f3" aria-hidden="true"></span>
     </section>
 
-    <section class="scene scene--macadelic" id="macadelic" data-title="MACADELIC" aria-labelledby="macadelic-title">
-      <img class="scene__image" src="assets/s01-macadelic.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--macadelic" id="macadelic" aria-labelledby="macadelic-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s01-macadelic.webp"><img class="scene__image" src="assets/s01-macadelic.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade" aria-hidden="true"></div>
       <div class="scene-meta album-card"><p class="eyebrow">2012 · 02/11</p><h2 id="macadelic-title">Macadelic</h2><p class="album-copy">Un punto de quiebre: psicodelia, introspección y una voz que empieza a separarse del rap juvenil con el que llegó.</p><div class="scene-actions"><a href="https://macmiller.lnk.to/Macadelic" target="_blank" rel="noopener noreferrer">Escuchar ↗</a><a href="#watching-movies">Siguiente →</a></div></div>
-      <button class="hotspot hotspot--lamp" type="button" data-toggle-scene aria-label="Encender la lámpara de Macadelic"><span>+</span></button>
-      <div class="fx fx--lamp" aria-hidden="true"></div><div class="fx fx--smoke" aria-hidden="true"></div>
+      <details class="signal-note signal-note--macadelic"><summary aria-label="Abrir dato curioso de Macadelic"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE NOTE · MACADELIC</p><p>En “The Question”, Mac decidió buscar a Lil Wayne aunque contó que normalmente no solía pedir colaboraciones.</p><a href="https://www.xxlmag.com/mac-miller-discusses-working-with-lil-wayne-on-new-mixtape-video/" target="_blank" rel="noopener noreferrer">Fuente ↗</a></div></details>
     </section>
 
-    <section class="scene scene--watching" id="watching-movies" data-title="WATCHING MOVIES" aria-labelledby="watching-title">
-      <img class="scene__image" src="assets/s02-watching.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async">
+    <section class="scene scene--watching" id="watching-movies" aria-labelledby="watching-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s02-watching.webp"><img class="scene__image" src="assets/s02-watching.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"></picture>
       <div class="scene__shade" aria-hidden="true"></div>
       <h2 id="watching-title" class="sr-only">Watching Movies with the Sound Off</h2>
       <div class="scene-meta scene-meta--compact album-card"><p class="eyebrow">2013 · 03/11</p><p class="meta-title">Watching Movies with the Sound Off</p><p class="album-copy">Más abstracto y cinematográfico: la producción se vuelve densa, surreal y mucho más dirigida hacia adentro.</p><div class="scene-actions"><a href="https://macmiller.lnk.to/WMWTSO" target="_blank" rel="noopener noreferrer">Escuchar ↗</a><a href="#faces">Siguiente →</a></div></div>
-      <button class="hotspot hotspot--crt" type="button" data-toggle-scene aria-label="Activar la pantalla CRT"><span>+</span></button>
-      <div class="fx fx--crt" aria-hidden="true"></div><div class="fx fx--scan" aria-hidden="true"></div>
+      <details class="signal-note signal-note--watching"><summary aria-label="Abrir dato curioso de Watching Movies with the Sound Off"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE NOTE · WMWTSO</p><p>El intro nació de un beat de Earl Sweatshirt que Mac tomó, transformó y ajustó para que encajara con la visión completa del álbum.</p><a href="https://www.thefader.com/2013/06/05/interview-mac-miller" target="_blank" rel="noopener noreferrer">Fuente ↗</a></div></details>
     </section>
 
-    <section class="scene scene--faces" id="faces" data-title="FACES" aria-labelledby="faces-title">
-      <img class="scene__image" src="assets/s03-faces.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--faces" id="faces" aria-labelledby="faces-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s03-faces.webp"><img class="scene__image" src="assets/s03-faces.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade scene__shade--soft" aria-hidden="true"></div>
       <h2 id="faces-title" class="sr-only">Faces</h2>
       <div class="scene-meta scene-meta--minimal album-card"><p class="eyebrow">2014 · 04/11</p><p class="meta-title">Faces</p><p class="album-copy">Extensa, fragmentada y oscura: Faces convierte el caos cotidiano en jazz torcido, humor negro y confesión.</p><div class="scene-actions"><a href="https://macmiller.lnk.to/faces" target="_blank" rel="noopener noreferrer">Escuchar ↗</a><a href="#good-am">Siguiente →</a></div></div>
-      <button class="hotspot hotspot--mirror" type="button" data-toggle-scene aria-label="Revelar otra capa del espejo"><span>+</span></button>
-      <div class="fx fx--mirror" aria-hidden="true"></div><div class="hidden-eye" aria-hidden="true"></div>
+      <details class="signal-note signal-note--faces"><summary aria-label="Abrir dato curioso de Faces"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE NOTE · FACES</p><p>Faces apareció en Mother's Day de 2014 con 24 canciones; para descargarla desde su web había que armar un sándwich digital.</p><a href="https://pitchfork.com/news/55153-mac-miller-releases-mixtape-featuring-earl-sweatshirt-schoolboy-q-rick-ross-thundercat/" target="_blank" rel="noopener noreferrer">Fuente ↗</a></div></details>
     </section>
 
-    <section class="scene scene--goodam" id="good-am" data-title="GO:OD AM" aria-labelledby="goodam-title">
-      <img class="scene__image" src="assets/s04-good-am.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--goodam" id="good-am" aria-labelledby="goodam-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s04-good-am.webp"><img class="scene__image" src="assets/s04-good-am.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade scene__shade--soft" aria-hidden="true"></div>
       <div class="scene-meta scene-meta--light album-card"><p class="eyebrow">2015 · 05/11</p><h2 id="goodam-title">GO:OD AM</h2><p class="album-copy">Un regreso al rap frontal y a la disciplina de estudio, equilibrando confianza, exceso y una lucidez cada vez más incómoda.</p><div class="scene-actions"><a href="https://macmiller.lnk.to/GOODam" target="_blank" rel="noopener noreferrer">Escuchar ↗</a><a href="#divine-feminine">Siguiente →</a></div></div>
-      <button class="hotspot hotspot--alarm" type="button" data-toggle-scene aria-label="Activar el reloj de GO:OD AM"><span>+</span></button>
-      <div class="fx fx--portal" aria-hidden="true"></div><div class="fx fx--clock-ring" aria-hidden="true"></div>
+      <details class="signal-note signal-note--goodam"><summary aria-label="Abrir dato curioso de GO:OD AM"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE NOTE · GO:OD AM</p><p>GO:OD AM fue el primer álbum de Mac tras firmar con Warner Bros., después de construir su carrera inicial como artista independiente.</p><a href="https://www.maxim.com/entertainment/mac-miller-drug-addiction-donald-trump-new-album-2015-9/" target="_blank" rel="noopener noreferrer">Fuente ↗</a></div></details>
     </section>
 
-    <section class="scene scene--divine" id="divine-feminine" data-title="THE DIVINE FEMININE" aria-labelledby="divine-title">
-      <img class="scene__image" src="assets/s05-divine-feminine.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--divine" id="divine-feminine" aria-labelledby="divine-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s05-divine-feminine.webp"><img class="scene__image" src="assets/s05-divine-feminine.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade scene__shade--soft" aria-hidden="true"></div>
       <div class="scene-meta album-card"><p class="eyebrow">2016 · 06/11</p><h2 id="divine-title">The Divine Feminine</h2><p class="album-copy">El foco cambia hacia el amor, la intimidad y el deseo, con soul y jazz suavizando la arquitectura del disco.</p><div class="scene-actions"><a href="https://macmiller.lnk.to/TheDivineFeminine" target="_blank" rel="noopener noreferrer">Escuchar ↗</a><a href="#swimming">Siguiente →</a></div></div>
-      <button class="hotspot hotspot--orbit" type="button" data-toggle-scene aria-label="Activar la órbita de The Divine Feminine"><span>+</span></button>
-      <div class="fx fx--orbit" aria-hidden="true"></div><div class="fx fx--ponytail" aria-hidden="true"></div>
+      <details class="signal-note signal-note--divine"><summary aria-label="Abrir dato curioso de The Divine Feminine"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE NOTE · THE DIVINE FEMININE</p><p>La imagen de portada partió de una fotografía tomada por su hermano, Miller McCormick; Mac dijo que la foto resumía el concepto del disco.</p><a href="https://www.macmillerswebsite.com/release/divine-feminine" target="_blank" rel="noopener noreferrer">Fuente ↗</a></div></details>
     </section>
 
-    <section class="scene scene--swimming" id="swimming" data-title="SWIMMING" aria-labelledby="swimming-title">
-      <img class="scene__image" src="assets/s06-swimming.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--swimming" id="swimming" aria-labelledby="swimming-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s06-swimming.webp"><img class="scene__image" src="assets/s06-swimming.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade scene__shade--soft" aria-hidden="true"></div>
       <div class="scene-meta album-card"><p class="eyebrow">2018 · 07/11</p><h2 id="swimming-title">Swimming</h2><p class="album-copy">Un álbum sobre mantenerse a flote: sereno en la superficie, pero profundamente introspectivo al hablar de cambio y desgaste.</p><div class="scene-actions"><a href="https://macmiller.lnk.to/swimming" target="_blank" rel="noopener noreferrer">Escuchar ↗</a><a href="#circles">Siguiente →</a></div></div>
-      <button class="hotspot hotspot--water" type="button" data-toggle-scene aria-label="Activar el reflejo de Swimming"><span>+</span></button>
-      <div class="fx fx--water" aria-hidden="true"></div><div class="fx fx--window" aria-hidden="true"></div>
+      <details class="signal-note signal-note--swimming"><summary aria-label="Abrir dato curioso de Swimming"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE NOTE · SWIMMING</p><p>En su Tiny Desk de 2018, Mac interpretó material de Swimming frente a una audiencia; “2009” apareció acompañado por piano y cuarteto de cuerdas.</p><a href="https://www.npr.org/2018/08/06/635054748/mac-miller-tiny-desk-concert" target="_blank" rel="noopener noreferrer">Fuente ↗</a></div></details>
     </section>
 
-    <section class="scene scene--circles" id="circles" data-title="CIRCLES" aria-labelledby="circles-title">
-      <img class="scene__image" src="assets/s07-circles.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async">
+    <section class="scene scene--circles" id="circles" aria-labelledby="circles-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s07-circles.webp"><img class="scene__image" src="assets/s07-circles.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"></picture>
       <div class="scene__shade scene__shade--soft" aria-hidden="true"></div>
       <h2 id="circles-title" class="sr-only">Circles</h2>
       <div class="scene-meta scene-meta--minimal album-card"><p class="eyebrow">2020 · 08/11</p><p class="meta-title">Circles</p><p class="album-copy">La continuación natural de Swimming: arreglos más orgánicos, menos necesidad de imponerse y una sensación de cierre contenida.</p><div class="scene-actions"><a href="https://wr.lnk.to/circles" target="_blank" rel="noopener noreferrer">Escuchar ↗</a><a href="#archive">Siguiente →</a></div></div>
-      <button class="hotspot hotspot--circle" type="button" data-toggle-scene aria-label="Activar el círculo de Circles"><span>+</span></button>
-      <div class="fx fx--circle-ring c1" aria-hidden="true"></div><div class="fx fx--circle-ring c2" aria-hidden="true"></div><div class="fx fx--circle-reflection" aria-hidden="true"></div>
+      <details class="signal-note signal-note--circles"><summary aria-label="Abrir dato curioso de Circles"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE NOTE · CIRCLES</p><p>Mac concibió Circles como un álbum hermano de Swimming. Tras su muerte, Jon Brion lo completó a partir del trabajo y conversaciones que habían compartido.</p><a href="https://www.warnerrecords.com/news/mac-millers-family-announces-final-mac-miller-studio-album-circles" target="_blank" rel="noopener noreferrer">Fuente ↗</a></div></details>
     </section>
 
-    <section class="scene scene--archive" id="archive" data-title="ARCHIVE" aria-labelledby="archive-title">
-      <img class="scene__image" src="assets/s08-archive.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--archive" id="archive" aria-labelledby="archive-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s08-archive.webp"><img class="scene__image" src="assets/s08-archive.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade scene__shade--soft" aria-hidden="true"></div>
       <h2 id="archive-title" class="sr-only">Archive</h2>
       <div class="scene-meta scene-meta--minimal"><p class="eyebrow">09/11</p><p class="meta-title">Archive</p><div class="scene-actions"><a href="https://www.macmillerswebsite.com/" target="_blank" rel="noopener noreferrer">Archivo oficial ↗</a><a href="#memorial">Continuar →</a></div></div>
-      <div class="archive-hints" aria-label="Detalles del archivo">
-        <button class="archive-hotspot ah-larry" type="button" data-label="Larry Fisherman" aria-label="Larry Fisherman"><span>+</span></button>
-        <button class="archive-hotspot ah-pittsburgh" type="button" data-label="Pittsburgh" aria-label="Pittsburgh"><span>+</span></button>
-        <button class="archive-hotspot ah-albums" type="button" data-label="Discografía" aria-label="Discografía"><span>+</span></button>
-        <button class="archive-hotspot ah-reel" type="button" data-label="Cintas y archivo sonoro" aria-label="Cintas y archivo sonoro"><span>+</span></button>
-        <button class="archive-hotspot ah-goodmusic" type="button" data-label="Good Music · Good People · Good Days" aria-label="Good Music, Good People, Good Days"><span>+</span></button>
-        <button class="archive-hotspot ah-universe" type="button" data-label="The universe is doing its thing" aria-label="The universe is doing its thing"><span>+</span></button>
-      </div>
-      <output class="archive-label" id="archive-label" aria-live="polite">Toca los objetos para explorar</output>
+      <details class="signal-note archive-note ah-larry"><summary aria-label="Abrir referencia a Larry Fisherman"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE OBJECT</p><p>Larry Fisherman: una referencia al alias de producción que acompañó buena parte de su exploración fuera del rap frontal.</p></div></details>
+      <details class="signal-note archive-note ah-pittsburgh"><summary aria-label="Abrir referencia a Pittsburgh"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE OBJECT</p><p>Pittsburgh permanece como coordenada de origen: ciudad, memoria y punto de regreso dentro de toda la trayectoria.</p></div></details>
+      <details class="signal-note archive-note ah-albums"><summary aria-label="Abrir referencia a la discografía"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE OBJECT</p><p>La pila de discos concentra el recorrido que acabas de atravesar: distintas identidades, pero una misma evolución artística.</p></div></details>
+      <details class="signal-note archive-note ah-reel"><summary aria-label="Abrir referencia al archivo sonoro"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card"><p class="fact-kicker">ARCHIVE OBJECT</p><p>Cintas, cuadernos y grabaciones funcionan como evidencia material: el archivo no explica la obra, deja que sus rastros convivan.</p></div></details>
     </section>
 
-    <section class="scene scene--memorial" id="memorial" data-title="MEMORIAL" aria-labelledby="memorial-title">
-      <img class="scene__image" src="assets/s09-memorial.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--memorial" id="memorial" aria-labelledby="memorial-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s09-memorial.webp"><img class="scene__image" src="assets/s09-memorial.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade" aria-hidden="true"></div>
       <div class="scene-meta scene-meta--minimal"><p class="eyebrow">10/11</p><h2 id="memorial-title">Memorial</h2><div class="scene-actions"><a href="#celebration">Continuar →</a></div></div>
-      <button class="hotspot hotspot--spotlight" type="button" data-toggle-scene aria-label="Iluminar el micrófono del memorial"><span>+</span></button>
-      <div class="fx fx--spotlight" aria-hidden="true"></div><div class="fx fx--rug" aria-hidden="true"></div>
-      <blockquote class="memorial-quote" aria-live="polite">“I'm hopin' not to join the 27 Club.”<cite>Brand Name</cite></blockquote>
+      <details class="signal-note signal-note--memorial"><summary aria-label="Iluminar el micrófono y revelar una línea de Brand Name"><span class="signal-dot" aria-hidden="true"></span></summary><div class="fact-card memorial-card"><p>“I'm hopin' not to join the 27 Club.”</p><p class="fact-kicker">BRAND NAME</p></div></details>
     </section>
 
-    <section class="scene scene--celebration" id="celebration" data-title="CELEBRATION OF LIFE" aria-labelledby="celebration-title">
-      <img class="scene__image" src="assets/s10-celebration-stage.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+    <section class="scene scene--celebration" id="celebration" aria-labelledby="celebration-title">
+      <picture><source media="(min-width: 1500px)" srcset="assets/hires/s10-celebration-stage.webp"><img class="scene__image" src="assets/s10-celebration-stage.webp" alt="" width="1672" height="941" loading="lazy" decoding="async"></picture>
       <div class="scene__shade scene__shade--celebration" aria-hidden="true"></div>
       <div class="celebration-heading"><p class="eyebrow">11/11</p><h2 id="celebration-title">Celebration of Life</h2></div>
-      <div class="sprite-lineup" role="list" aria-label="Amigos y colaboradores">
-        <button class="sprite sprite--anderson" type="button" data-name="Anderson .Paak" aria-label="Anderson .Paak"><span class="sprite-art" aria-hidden="true"></span></button>
-        <button class="sprite sprite--action" type="button" data-name="Action Bronson" aria-label="Action Bronson"><span class="sprite-art" aria-hidden="true"></span></button>
-        <button class="sprite sprite--mac" type="button" data-name="Mac Miller" aria-label="Mac Miller"><span class="sprite-art" aria-hidden="true"></span></button>
-        <button class="sprite sprite--tyler" type="button" data-name="Tyler, The Creator" aria-label="Tyler, The Creator"><span class="sprite-art" aria-hidden="true"></span></button>
-        <button class="sprite sprite--thundercat" type="button" data-name="Thundercat" aria-label="Thundercat"><span class="sprite-art" aria-hidden="true"></span></button>
-        <button class="sprite sprite--schoolboy" type="button" data-name="ScHoolboy Q" aria-label="ScHoolboy Q"><span class="sprite-art" aria-hidden="true"></span></button>
+      <div class="sprite-lineup" aria-label="Amigos y colaboradores">
+        <details class="sprite-note"><summary aria-label="Anderson .Paak"><img class="sprite-art" src="assets/sprite-anderson-paak.png" alt=""></summary><div class="sprite-card">Anderson .Paak</div></details>
+        <details class="sprite-note"><summary aria-label="Action Bronson"><img class="sprite-art" src="assets/sprite-action-bronson.png" alt=""></summary><div class="sprite-card">Action Bronson</div></details>
+        <details class="sprite-note sprite-note--mac"><summary aria-label="Mac Miller"><img class="sprite-art" src="assets/sprite-mac-miller.png" alt=""></summary><div class="sprite-card">Mac Miller</div></details>
+        <details class="sprite-note"><summary aria-label="Tyler, The Creator"><img class="sprite-art" src="assets/sprite-tyler-the-creator.png" alt=""></summary><div class="sprite-card">Tyler, The Creator</div></details>
+        <details class="sprite-note"><summary aria-label="Thundercat"><img class="sprite-art" src="assets/sprite-thundercat.png" alt=""></summary><div class="sprite-card">Thundercat</div></details>
+        <details class="sprite-note"><summary aria-label="ScHoolboy Q"><img class="sprite-art" src="assets/sprite-schoolboy-q.png" alt=""></summary><div class="sprite-card">ScHoolboy Q</div></details>
       </div>
-      <output class="sprite-output" id="sprite-output" aria-live="polite">Mac Miller</output>
       <a class="return-home" href="#home">Volver al inicio ↑</a>
+    </section>
+
+    <section class="context-section" id="context" aria-labelledby="context-title">
+      <div class="context-intro"><p class="eyebrow">CONTEXT</p><h2 id="context-title">The work beyond the rooms.</h2></div>
+      <div class="context-grid">
+        <article><h3>About</h3><p>Malcolm James McCormick (1992–2018), conocido como Mac Miller, fue rapero, cantante, compositor y productor originario de Pittsburgh.</p></article>
+        <article><h3>Career</h3><p>Su catálogo pasó del impulso juvenil de K.I.D.S. y Blue Slide Park a proyectos cada vez más experimentales como Watching Movies, Faces, GO:OD AM, The Divine Feminine, Swimming y Circles.</p></article>
+        <article><h3>Upcoming Shows</h3><p>No existen futuras presentaciones de Mac Miller. Este sitio es un tributo póstumo; el archivo y los lanzamientos oficiales permanecen disponibles en su sitio oficial.</p><a href="https://www.macmillerswebsite.com/" target="_blank" rel="noopener noreferrer">Sitio oficial ↗</a></article>
+      </div>
     </section>
   </main>
 
