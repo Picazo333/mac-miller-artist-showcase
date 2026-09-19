@@ -1,51 +1,59 @@
-# HTML Hello
+# Mac Miller — The Long Way Around
 
-The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
+Proyecto académico de 4Geeks Academy: una experiencia visual e interactiva construida con HTML, CSS y JavaScript vanilla.
 
-> There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
+## V6 final
 
-## Project preproduction
+La entrega integra once escenas visuales aprobadas:
 
-The current Mac Miller showcase is in a documented V6 preproduction phase.
+1. Home / Larry Fisherman
+2. Macadelic
+3. Watching Movies with the Sound Off
+4. Faces
+5. GO:OD AM
+6. The Divine Feminine
+7. Swimming
+8. Circles
+9. Archive
+10. Memorial / Absence Present
+11. Celebration of Life
 
-- [V6 preproduction index](docs/v6-preproduction/README.md)
-- [Canonical production pipeline](docs/v6-preproduction/PRODUCTION_PIPELINE.md)
-- [Scene Contract template](docs/v6-preproduction/SCENE_CONTRACT_TEMPLATE.yaml)
+## Arquitectura
 
-The runtime implementation remains intentionally unchanged while the 11 approved visual scenes are converted into clean production masters, scene contracts, interactive easter eggs, responsive proofs and final pre-integration QA.
+La implementación final usa:
 
-## What to do next?
+- masters raster aprobados y optimizados a WebP;
+- HTML semántico para títulos, navegación y CTAs;
+- CSS para composición responsive, overlays y microinteracciones;
+- JavaScript mínimo para hotspots, estado activo y navegación;
+- seis sprites PNG independientes en Celebration of Life;
+- Scene Contracts y un Integration Manifest en `docs/v6-preproduction/`.
 
-Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
+## Interacciones
+
+Las escenas incluyen interacciones pequeñas y deliberadas: ondas, luz, CRT, espejo, reloj, órbita, agua, círculos, objetos de archivo, spotlight memorial y personajes pixel-art seleccionables.
+
+Todas las interacciones críticas son accesibles por teclado y existe fallback para `prefers-reduced-motion`.
+
+## Ejecutar
+
+Puede abrirse como sitio estático o mediante:
 
 ```bash
-$ pip3 install flask && python3 server.py
+python3 server.py
 ```
 
-- You can create as many HTML files as you want.
-- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
+## URL
 
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
+GitHub Pages:
 
-- If you want to use Tailwind CSS, add it optionally via the official Tailwind CSS v4 CDN inside the same `<head>`:
+https://picazo333.github.io/mac-miller-artist-showcase/
 
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
+## Documentación
 
-### Contributors
+- `docs/v6-preproduction/PRODUCTION_PIPELINE.md`
+- `docs/v6-preproduction/INTEGRATION_MANIFEST.yaml`
+- `docs/v6-preproduction/scenes/`
+- `docs/FINAL_QA.md`
 
-This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/html-hello/graphs/contributors).
-
-You can find other templates and resources like this at the [school's GitHub page](https://github.com/4geeksacademy/).
+> Tributo visual estudiantil no oficial.
