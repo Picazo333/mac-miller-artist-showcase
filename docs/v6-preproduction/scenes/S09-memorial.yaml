@@ -4,7 +4,7 @@ scene:
   id: "S09"
   slug: "memorial"
   name: "Memorial / Absence Present"
-  status: "SCENE_CONTRACT_APPROVED"
+  status: "SCENE_LOCKED"
 
 integration:
   section_id: "memorial"
@@ -221,3 +221,15 @@ human_approval:
 next_gate:
   name: "HITL-B"
   deliverable: "Desktop composite using the approved empty-stage master, minimal semantic HTML and a localized spotlight interaction."
+
+final_integration:
+  status: "SCENE_LOCKED"
+  delivery_freeze: true
+  basis:
+    - "Existing approved visual direction integrated into the final V6 runtime without generating a replacement scene."
+    - "Final delivery decision supersedes stale intermediate gate labels while preserving their historical notes."
+  verification:
+    - "production asset exists in assets/"
+    - "scene exists in index.html"
+    - "responsive focal/crop policy exists in v6.css"
+    - "semantic navigation and accessibility structure exist"
