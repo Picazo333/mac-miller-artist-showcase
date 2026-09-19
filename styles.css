@@ -140,7 +140,7 @@ a{color:inherit}button,summary{font:inherit}.sr-only{position:absolute!important
 /* Environmental typography: one restrained decorative wordmark per selected scene. */
 .scene-ghost{
   position:absolute;
-  z-index:2;
+  z-index:0;
   left:var(--ghost-x);
   top:var(--ghost-y);
   max-width:92vw;
@@ -291,7 +291,7 @@ a{color:inherit}button,summary{font:inherit}.sr-only{position:absolute!important
 
 /* Mobile containment: every disclosure card stays inside its own scene. */
 @media(max-width:700px){
-  .scene-ghost{font-size:clamp(54px,15vw,92px);opacity:calc(var(--ghost-opacity) * .72)}
+  .scene-ghost{font-size:clamp(54px,15vw,92px);opacity:var(--ghost-opacity)}
   .scene--faces .scene-art--faces-board{object-position:55% 54%}
 
   .scene>.signal-note{
@@ -334,9 +334,9 @@ a{color:inherit}button,summary{font:inherit}.sr-only{position:absolute!important
   .scene>.signal-note[open] .fact-card{animation:directorCardMobile .18s var(--director-ease) both}
   @keyframes directorCardMobile{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 
-  /* Forensic lens is intentionally desktop/tablet only. */
+  /* Local inspection fields/lenses are intentionally desktop/tablet only. */
   .scene--archive .archive-note[open]::after{display:none}
-  .signal-note::before{left:auto;right:auto}
+  .scene>.signal-note::before{display:none}
 }
 
 /* Tablet/Desktop refinement */
