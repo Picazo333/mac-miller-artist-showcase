@@ -1,76 +1,52 @@
-# Final QA — V6 Integration
+# Final QA — CSS-only delivery
 
-## Scope
+## Structural
 
-Integración final de las 11 escenas visuales aprobadas sin generar una nueva dirección artística.
+- [x] 11 narrative scenes exist.
+- [x] Internal scene anchors are unique.
+- [x] `index.html` references `styles.css`.
+- [x] `v6.css` and `v6.js` are no longer part of the runtime.
+- [x] No executable JavaScript is present.
+- [x] Schema.org is implemented with HTML microdata.
+- [x] About, Career and Upcoming Shows are present.
+- [x] All local runtime asset references resolve in the repository.
 
-## Structural gate
+## Interaction
 
-- [x] Existen 11 secciones `.scene`.
-- [x] Los IDs de escena son únicos.
-- [x] La navegación interna apunta a esas 11 escenas.
-- [x] Los 11 masters WebP están presentes en `assets/`.
-- [x] Los seis sprites PNG de Celebration están presentes.
-- [x] `index.html` carga exclusivamente el runtime V6 mediante `v6.css` y `v6.js`.
-- [x] No se requiere framework frontend.
+- [x] Home retains a visible warm Signal Light controlling its water/light interaction.
+- [x] Seven album scenes use native `details/summary` fact cards.
+- [x] Album fact cards include supporting source links.
+- [x] Archive uses four native disclosure easter eggs.
+- [x] Memorial uses a native disclosure on the microphone.
+- [x] Celebration uses six native sprite disclosures.
+- [x] No interaction requires JavaScript.
+- [x] Keyboard focus is visible.
+- [x] Reduced-motion fallback exists.
 
-## Accessibility gate
+## Content / navigation
 
-- [x] Skip link presente.
-- [x] Cada escena tiene heading semántico o heading oculto.
-- [x] Easter eggs interactivos implementados como botones reales.
-- [x] Los botones tienen nombres accesibles.
-- [x] Los seis personajes de Celebration son focusables individualmente.
-- [x] Archive comunica sus labels mediante `aria-live`.
-- [x] Los masters decorativos usan `alt=""`; la información esencial vive en HTML.
-- [x] Hay estado `:focus-visible`.
-- [x] `prefers-reduced-motion` reduce animaciones y transiciones.
-- [x] El índice móvil puede cerrarse con Escape.
+- [x] All seven album secondary CTAs read `Siguiente →`.
+- [x] Album descriptions remain visible in their editorial cards.
+- [x] Fact cards are separate from the persistent album descriptions.
+- [x] Upcoming Shows does not invent future performances.
 
-## Visual fidelity gate
+## Sprite treatment
 
-- [x] S00 conserva Larry Fisherman.
-- [x] S01 usa el master aprobado de Macadelic.
-- [x] S02 usa el master aprobado de Watching Movies.
-- [x] S03 usa Faces v2 corregido.
-- [x] S04 conserva el reloj monumental de GO:OD AM aprobado por excepción.
-- [x] S05 conserva la silueta femenina con high ponytail.
-- [x] S06 conserva el traje rosa de Swimming.
-- [x] S07 conserva la última referencia aprobada de Circles.
-- [x] S08 usa la mesa larga y densa de Archive.
-- [x] S09 conserva escenario vacío, micrófono, alfombra roja y DON'T TRIP.
-- [x] S10 usa escenario limpio + seis sprites pixel-art independientes.
+- [x] Sprites use real `img` elements rather than cropped CSS background layers.
+- [x] Sprite images use `object-fit: contain`.
+- [x] Mobile layout reflows to a 3-column grid instead of cropping characters.
+- [x] Edge/reflection clipping is softened with a CSS mask.
 
-## Interaction gate
+## Remaining evidence gate
 
-- [x] Home: ripple/fireflies.
-- [x] Macadelic: lamp/smoke.
-- [x] Watching Movies: CRT/scanline.
-- [x] Faces: mirror/eye.
-- [x] GO:OD AM: clock/portal.
-- [x] Divine Feminine: orbit/ponytail light.
-- [x] Swimming: water/window lift.
-- [x] Circles: ring/reflection.
-- [x] Archive: six semantic hotspots.
-- [x] Memorial: spotlight + short Brand Name reveal.
-- [x] Celebration: six selectable collaborators.
+After merge/deploy:
 
-## Responsive policy
+- [ ] Run PageSpeed Insights against the deployed final URL.
+- [ ] Confirm Performance >= 80.
+- [ ] Confirm current SEO result.
+- [ ] Save the required PageSpeed evidence PNG in the repository.
+- [ ] Validate the deployed final URL, not an older cached build.
 
-Focal positions de los responsive proofs aprobados se trasladan a CSS. Celebration no recorta colaboradores: redistribuye los seis sprites en grid móvil.
+## Known source limitation
 
-## Performance gate
-
-- [x] Masters convertidos a WebP y limitados a 1440 px de ancho.
-- [x] Sólo S00 usa `fetchpriority=high`.
-- [x] S01–S10 usan lazy loading.
-- [x] No hay dependencia de frameworks ni runtimes de animación externos.
-
-## Remaining verification
-
-- [ ] GitHub Pages debe comprobarse después del merge a `main`.
-- [ ] Los enlaces externos se consideran correctos según el runtime anterior; la disponibilidad de servicios externos depende de sus proveedores.
-
-## Definition of Done
-
-Mergear `v6-final-integration` a `main`, esperar el despliegue de GitHub Pages y verificar que la URL pública responde con el runtime V6.
+The approved scene masters were generated at approximately 1536–1672 px wide. The site does not intentionally upscale or re-interpret them; additional detail beyond the approved source resolution would require a separate super-resolution pass.
