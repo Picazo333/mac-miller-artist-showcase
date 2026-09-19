@@ -68,3 +68,311 @@ a{color:inherit}button,summary{font:inherit}.sr-only{position:absolute!important
 }
 @media(max-width:410px){.scene-meta h2,.scene-meta .meta-title{font-size:27px}.celebration-heading h2{font-size:34px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+
+/* ==========================================================================
+   DIRECTOR'S CUT BALANCED — approved final visual layer
+   This block intentionally overrides the stable CSS-only baseline without
+   changing the underlying scene architecture.
+   ========================================================================== */
+
+:root{
+  --director-ease:cubic-bezier(.2,.72,.2,1);
+  --glass-bg:rgba(9,7,6,.64);
+  --glass-bg-strong:rgba(9,7,6,.86);
+  --glass-border:rgba(244,232,211,.19);
+  --glass-highlight:rgba(255,245,226,.14);
+  --glass-shadow:0 20px 58px rgba(0,0,0,.28);
+  --signal-size:14px;
+  --gate-alpha:.20;
+}
+
+/* Layer model */
+.scene{--grade-a:112,67,35;--grade-b:90,28,20;--grade-strength:.07;--focus-dim:.09;--signal-rgb:229,187,112;--ghost-opacity:.04;--ghost-size:clamp(78px,11vw,176px);--ghost-x:4%;--ghost-y:18%;--ghost-rotate:0deg;--gate-alpha:.18}
+.scene picture{z-index:-6}
+.scene-art{position:absolute;inset:0;z-index:-5;width:100%;height:100%;object-fit:cover;object-position:50% 50%;pointer-events:none;user-select:none}
+.scene__shade{z-index:-4}
+
+/* Color grading + exit gate. One surface, per-scene variables. */
+.scene::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    linear-gradient(to bottom,transparent 0 78%,rgba(5,5,5,var(--gate-alpha)) 100%),
+    radial-gradient(circle at 50% 44%,rgba(var(--grade-b),.08),transparent 58%),
+    linear-gradient(135deg,rgba(var(--grade-a),.72),rgba(var(--grade-b),.36));
+  opacity:var(--grade-strength);
+  mix-blend-mode:soft-light;
+}
+
+/* Focus Theatre dimmer. */
+.scene::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:rgba(3,3,3,.92);
+  opacity:0;
+  transition:opacity .24s var(--director-ease);
+}
+.scene:has(> .signal-note[open])::after{opacity:var(--focus-dim)}
+
+/* Canonical scene grade/signature matrix */
+.scene--home{--grade-a:110,76,44;--grade-b:57,34,22;--grade-strength:.08;--gate-alpha:.18;--signal-rgb:220,177,96}
+.scene--macadelic{--grade-a:92,39,51;--grade-b:191,100,46;--grade-strength:.115;--focus-dim:.10;--gate-alpha:.20;--signal-rgb:231,160,81;--ghost-x:58%;--ghost-y:13%;--ghost-opacity:.038;--ghost-rotate:-2deg}
+.scene--watching{--grade-a:58,38,46;--grade-b:107,65,56;--grade-strength:.11;--focus-dim:.10;--gate-alpha:.20;--signal-rgb:229,220,197;--ghost-x:50%;--ghost-y:12%;--ghost-opacity:.038;--ghost-size:clamp(62px,9vw,150px)}
+.scene--faces{--grade-a:91,27,20;--grade-b:194,99,42;--grade-strength:.145;--focus-dim:.14;--gate-alpha:.22;--signal-rgb:239,164,78;--ghost-x:3%;--ghost-y:45%;--ghost-opacity:.075;--ghost-size:clamp(100px,14vw,220px);--ghost-rotate:-2deg}
+.scene--goodam{--grade-a:181,112,56;--grade-b:96,64,43;--grade-strength:.09;--focus-dim:.09;--gate-alpha:.16;--signal-rgb:239,184,101;--ghost-x:7%;--ghost-y:13%;--ghost-opacity:.035}
+.scene--divine{--grade-a:122,63,74;--grade-b:207,178,157;--grade-strength:.078;--focus-dim:.08;--gate-alpha:.14;--signal-rgb:223,163,157;--ghost-x:48%;--ghost-y:16%;--ghost-opacity:.035;--ghost-size:clamp(55px,8vw,132px)}
+.scene--swimming{--grade-a:58,68,77;--grade-b:151,130,105;--grade-strength:.07;--focus-dim:.08;--gate-alpha:.17;--signal-rgb:216,216,200;--ghost-x:5%;--ghost-y:14%;--ghost-opacity:.035}
+.scene--circles{--grade-a:157,132,101;--grade-b:89,71,54;--grade-strength:.095;--focus-dim:.11;--gate-alpha:.20;--signal-rgb:228,204,159;--ghost-x:55%;--ghost-y:16%;--ghost-opacity:.045}
+.scene--archive{--grade-a:112,66,32;--grade-b:65,38,25;--grade-strength:.105;--focus-dim:.12;--gate-alpha:.16;--signal-rgb:226,167,88}
+.scene--memorial{--grade-a:132,88,42;--grade-b:60,43,30;--grade-strength:.085;--focus-dim:.10;--gate-alpha:.22;--signal-rgb:224,176,98}
+.scene--celebration{--grade-a:114,75,43;--grade-b:72,52,39;--grade-strength:.05;--focus-dim:0;--gate-alpha:.10;--signal-rgb:221,178,103}
+
+/* Faces approved board patch — same full-frame crop system as the master. */
+.scene-art--faces-board{object-position:50% 50%}
+
+/* Environmental typography: one restrained decorative wordmark per selected scene. */
+.scene-ghost{
+  position:absolute;
+  z-index:0;
+  left:var(--ghost-x);
+  top:var(--ghost-y);
+  max-width:92vw;
+  color:#f1e8dc;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:var(--ghost-size);
+  font-weight:400;
+  line-height:.78;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  opacity:var(--ghost-opacity);
+  transform:rotate(var(--ghost-rotate));
+  transform-origin:left center;
+  mix-blend-mode:soft-light;
+  pointer-events:none;
+  user-select:none;
+  text-shadow:0 1px 18px rgba(0,0,0,.22);
+}
+
+/* Etched Glass — persistent editorial information. */
+.scene-meta{
+  border-color:var(--glass-border);
+  background:
+    linear-gradient(180deg,rgba(255,244,224,.045),transparent 12%),
+    linear-gradient(135deg,rgba(8,7,6,.72),rgba(8,7,6,.44) 58%,rgba(8,7,6,.20));
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    inset 0 0 0 1px rgba(0,0,0,.10),
+    var(--glass-shadow);
+  backdrop-filter:blur(9px) saturate(1.06);
+}
+.scene-meta::before{
+  content:"";
+  position:absolute;
+  left:16px;
+  right:44%;
+  top:-1px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(255,229,190,.44),transparent);
+  pointer-events:none;
+}
+.album-copy{color:rgba(244,236,223,.82)}
+
+/* Signal Lights 2.0 */
+.signal-orb span:first-child,
+.signal-note>summary .signal-dot{
+  width:var(--signal-size);
+  height:var(--signal-size);
+  background:
+    radial-gradient(circle at 36% 32%,#fff7df 0 14%,rgba(var(--signal-rgb),1) 22% 48%,rgba(var(--signal-rgb),.56) 54% 66%,rgba(var(--signal-rgb),.08) 72%);
+  box-shadow:
+    0 0 0 7px rgba(var(--signal-rgb),.065),
+    0 0 24px 8px rgba(var(--signal-rgb),.34);
+}
+.signal-orb:hover span:first-child,
+.signal-orb:focus-visible span:first-child,
+.signal-note>summary:hover .signal-dot,
+.signal-note>summary:focus-visible .signal-dot,
+.signal-note[open]>summary .signal-dot{
+  transform:scale(1.12);
+  box-shadow:
+    0 0 0 9px rgba(var(--signal-rgb),.095),
+    0 0 38px 14px rgba(var(--signal-rgb),.52);
+}
+
+/* Local inspected-object light field. */
+.signal-note::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:19px;
+  top:19px;
+  width:112px;
+  height:112px;
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(.78);
+  background:radial-gradient(circle,rgba(var(--signal-rgb),.30) 0,rgba(var(--signal-rgb),.12) 34%,rgba(var(--signal-rgb),0) 72%);
+  opacity:0;
+  transition:opacity .22s var(--director-ease),transform .24s var(--director-ease);
+  pointer-events:none;
+}
+.signal-note[open]::before{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* Etched Glass — fact layer. */
+.fact-card{
+  z-index:4;
+  border-color:rgba(244,230,208,.25);
+  background:
+    linear-gradient(180deg,rgba(255,239,211,.055),transparent 15%),
+    linear-gradient(135deg,rgba(10,8,7,.91),rgba(8,7,6,.80));
+  box-shadow:
+    inset 0 1px 0 rgba(255,242,218,.14),
+    inset 0 0 0 1px rgba(0,0,0,.13),
+    0 22px 64px rgba(0,0,0,.38);
+  backdrop-filter:blur(11px) saturate(1.06);
+}
+.fact-card::before{
+  content:"";
+  position:absolute;
+  left:16px;
+  top:-1px;
+  width:72px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(255,220,170,.62),transparent);
+}
+.fact-card p{max-width:42ch;text-wrap:pretty}
+.fact-kicker{letter-spacing:.20em}
+
+/* Archive Forensic Lite: inspect, don't magnify theatrically. */
+.scene--archive .archive-note[open]::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  left:19px;
+  top:19px;
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(var(--signal-rgb),.30);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 0 36px rgba(var(--signal-rgb),.14);
+  backdrop-filter:brightness(1.15) contrast(1.06) saturate(1.04);
+  pointer-events:none;
+}
+.scene--archive .archive-note>summary{position:relative;z-index:2}
+.scene--archive .archive-note .fact-card{z-index:3}
+
+/* Memorial remains sparse: focus only the existing memorial disclosure. */
+.scene--memorial .signal-note[open]::before{
+  width:150px;
+  height:150px;
+  background:radial-gradient(circle,rgba(var(--signal-rgb),.30),rgba(var(--signal-rgb),.08) 42%,transparent 72%);
+}
+.memorial-card{background:linear-gradient(145deg,rgba(10,8,7,.91),rgba(10,8,7,.74))}
+
+/* Celebration stays an approved single composite — no sprite reconstruction. */
+.scene--celebration .celebration-composite{filter:contrast(1.02) saturate(1.025)}
+.scene--celebration::after{display:none}
+
+/* Compatibility / visibility fallback */
+@supports not (backdrop-filter:blur(1px)){
+  .scene-meta{background:rgba(8,7,6,.84)}
+  .fact-card{background:rgba(8,7,6,.94)}
+}
+
+/* Mobile containment: every disclosure card stays inside its own scene. */
+@media(max-width:700px){
+  .scene-ghost{font-size:clamp(54px,15vw,92px);opacity:var(--ghost-opacity)}
+  .scene--faces .scene-art--faces-board{object-position:55% 54%}
+
+  .scene>.signal-note{
+    left:0!important;
+    right:0!important;
+    top:0!important;
+    bottom:0!important;
+    width:auto!important;
+    height:auto!important;
+    pointer-events:none;
+  }
+  .scene>.signal-note>summary{position:absolute;pointer-events:auto}
+
+  .scene--macadelic .signal-note>summary{left:5%;top:45%}
+  .scene--watching .signal-note>summary{left:7%;top:33%}
+  .scene--faces .signal-note>summary{right:5%;top:24%}
+  .scene--goodam .signal-note>summary{left:55%;top:10%}
+  .scene--divine .signal-note>summary{left:17%;top:34%}
+  .scene--swimming .signal-note>summary{left:46%;top:64%}
+  .scene--circles .signal-note>summary{right:18%;top:20%}
+  .scene--archive .ah-larry>summary{left:14%;top:30%}
+  .scene--archive .ah-pittsburgh>summary{left:29%;top:41%}
+  .scene--archive .ah-albums>summary{left:18%;top:60%}
+  .scene--archive .ah-reel>summary{left:8%;top:74%}
+  .scene--memorial .signal-note>summary{left:48%;top:35%}
+
+  .scene>.signal-note .fact-card,
+  .scene>.signal-note .memorial-card{
+    position:absolute!important;
+    z-index:40;
+    left:14px!important;
+    right:14px!important;
+    top:auto!important;
+    bottom:92px!important;
+    width:auto!important;
+    max-width:none!important;
+    transform:none!important;
+    pointer-events:auto;
+  }
+  .scene>.signal-note[open] .fact-card{animation:directorCardMobile .18s var(--director-ease) both}
+  @keyframes directorCardMobile{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+  /* Local inspection fields/lenses are intentionally desktop/tablet only. */
+  .scene--archive .archive-note[open]::after{display:none}
+  .scene>.signal-note::before{display:none}
+}
+
+/* Tablet/Desktop refinement */
+@media(min-width:701px) and (max-width:1100px){
+  .scene-ghost{opacity:calc(var(--ghost-opacity) * .82)}
+}
+
+/* Optional motion is deliberately tiny and transform-only. */
+@supports (animation-timeline:view()){
+  @media(min-width:901px) and (prefers-reduced-motion:no-preference){
+    .scene--macadelic .scene__image,
+    .scene--faces .scene__image,
+    .scene--swimming .scene__image,
+    .scene--circles .scene__image{
+      animation:directorBreathe linear both;
+      animation-timeline:view();
+      animation-range:entry 0% exit 100%;
+      transform-origin:center center;
+    }
+    @keyframes directorBreathe{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.012)}
+      100%{transform:scale(1)}
+    }
+  }
+}
+
+/* High-contrast preference keeps editorial surfaces legible. */
+@media(prefers-contrast:more){
+  .scene-meta{background:rgba(8,7,6,.88);border-color:rgba(255,255,255,.40)}
+  .fact-card{background:rgba(6,5,5,.96);border-color:rgba(255,255,255,.48)}
+  .signal-note>summary .signal-dot,.signal-orb span:first-child{box-shadow:0 0 0 2px #fff,0 0 22px 8px rgba(var(--signal-rgb),.44)}
+}
+
+/* Reduced-motion remains authoritative. */
+@media(prefers-reduced-motion:reduce){
+  .signal-orb span:first-child,.signal-note>summary .signal-dot{animation:none!important}
+  .signal-note::before,.scene::after{transition:none!important}
+}

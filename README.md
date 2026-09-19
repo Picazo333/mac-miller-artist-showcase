@@ -33,9 +33,23 @@ La implementación final usa:
 
 ## Interacción
 
-Cada álbum incluye un **Signal Light** visible. Al activarlo aparece una tarjeta breve con un dato verificado del proyecto y su fuente. Home conserva la interacción de ondas/luces; Archive contiene cuatro easter eggs; Memorial revela una línea breve de *Brand Name*; Celebration permite explorar los seis sprites.
+Cada álbum incluye un **Signal Light** visible. Al activarlo aparece una tarjeta breve con un dato verificado del proyecto y su fuente. Home conserva la interacción de ondas/luces; Archive contiene cuatro easter eggs; Memorial revela una línea breve de *Brand Name*; Celebration cierra la narrativa con el composite pixel-art aprobado.
 
 Todo funciona con HTML + CSS, teclado y `prefers-reduced-motion`.
+
+## Director's Cut Balanced
+
+La capa final de dirección visual añade, sin JavaScript ni reemplazar los masters aprobados:
+
+- color grading cinematográfico por escena;
+- Focus Theatre al abrir datos curiosos;
+- tarjetas Etched Glass;
+- tipografía ambiental en siete capítulos;
+- Forensic Lite en Archive;
+- parche SVG full-frame sobre el pizarrón de Faces;
+- fallbacks de contraste y movimiento reducido.
+
+La especificación aprobada vive en `docs/DIRECTORS_CUT_BALANCED_SPEC.md`.
 
 ## Estructura académica
 
