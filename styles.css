@@ -376,3 +376,239 @@ a{color:inherit}button,summary{font:inherit}.sr-only{position:absolute!important
   .signal-orb span:first-child,.signal-note>summary .signal-dot{animation:none!important}
   .signal-note::before,.scene::after{transition:none!important}
 }
+
+
+/* ==========================================================================
+   PHASE 1 — FACES GOLDEN SCENE
+   Visual calibration of S03 only. Every selector below is scoped to
+   .scene--faces so the remaining scenes keep their current treatment until
+   the golden-scene gate is approved. No new DOM, no JavaScript.
+   ========================================================================== */
+
+.scene--faces{
+  --grade-a:102,18,18;
+  --grade-b:186,86,33;
+  --heat-rgb:218,119,56;
+  --grade-strength:.34;
+  --focus-dim:.28;
+  --gate-alpha:.26;
+  --signal-rgb:236,162,79;
+  --ghost-opacity:.82;
+  --ghost-size:clamp(88px,11.8vw,186px);
+  --ghost-x:3%;
+  --ghost-y:40%;
+  --ghost-rotate:-3deg;
+  --focus-x:82%;
+  --focus-y:32%;
+  --heat-x:45%;
+  --heat-y:55%;
+}
+
+/* 1-2. Master raster + approved board patch are graded as one plate, so the
+   patch can never read as a lighter sticker pasted over the room. */
+.scene--faces .scene__image,
+.scene--faces .scene-art--faces-board{
+  filter:saturate(1.32) contrast(1.10) brightness(.96) sepia(.12) hue-rotate(-7deg);
+}
+/* Faces opts out of the optional camera breathing. Re-scaling a full-frame
+   filtered plate every scroll tick doubled the long-frame count here, and the
+   breathing is progressive enhancement, so the grade wins. */
+.scene--faces .scene__image{animation:none}
+
+/* 3a. Cinematic grade, pass one: carmine wash + amber heat at the subject.
+   Soft-light keeps skin and facial micro-detail readable. */
+.scene--faces::before{
+  background:
+    linear-gradient(to bottom,transparent 0 72%,rgba(6,3,3,var(--gate-alpha)) 100%),
+    radial-gradient(54% 46% at var(--heat-x) var(--heat-y),rgba(var(--heat-rgb),.98),rgba(var(--heat-rgb),.36) 48%,transparent 78%),
+    linear-gradient(152deg,rgba(var(--grade-a),.96) 0%,rgba(var(--grade-b),.52) 50%,rgba(var(--grade-a),.90) 100%);
+  opacity:var(--grade-strength);
+  mix-blend-mode:soft-light;
+}
+
+/* 3b. Grade, pass two: overlay density inside the picture group. This is what
+   turns the room genuinely crimson instead of tinting it. */
+.scene--faces picture::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(60% 52% at var(--heat-x) var(--heat-y),rgba(var(--heat-rgb),.44),rgba(var(--heat-rgb),.11) 52%,transparent 80%),
+    linear-gradient(150deg,rgba(var(--grade-a),.62) 0%,rgba(var(--grade-b),.20) 54%,rgba(var(--grade-a),.58) 100%);
+  mix-blend-mode:overlay;
+  opacity:.62;
+}
+
+/* 4. Vignette + lateral shadow shaping + warm atmospheric haze.
+   Normal blend on purpose: this layer builds depth, it does not tint. */
+.scene--faces .scene__shade{
+  background:
+    linear-gradient(90deg,rgba(13,3,3,.46) 0%,rgba(13,3,3,.13) 16%,rgba(13,3,3,0) 34%,rgba(13,3,3,0) 66%,rgba(13,3,3,.15) 84%,rgba(13,3,3,.48) 100%),
+    radial-gradient(80% 74% at 50% 53%,rgba(8,3,3,0) 32%,rgba(8,3,3,.26) 74%,rgba(5,2,2,.60) 100%),
+    radial-gradient(40% 34% at var(--heat-x) var(--heat-y),rgba(var(--heat-rgb),.19),rgba(var(--heat-rgb),0) 74%),
+    linear-gradient(180deg,rgba(0,0,0,.40) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 60%,rgba(0,0,0,.50) 100%);
+}
+
+/* 5. Environmental typography. Over a room this dense a filled wordmark only
+   reads as a stain, whatever the blend mode, so FACES is etched instead:
+   a warm hairline outline over a barely-there carmine fill. Perceptible,
+   clearly subordinate to the album card, and it never blocks the artwork.
+   Browsers without -webkit-text-stroke keep the faint fill. */
+.scene--faces .scene-ghost{
+  color:rgba(122,34,20,.26);
+  -webkit-text-stroke:1.5px rgba(255,218,176,.52);
+  mix-blend-mode:normal;
+  letter-spacing:-.02em;
+  text-shadow:none;
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,.70));
+}
+
+/* 7. Signal Light — discoverable at rest, a light source when open. */
+.scene--faces .signal-note>summary{width:46px;height:46px}
+/* Desktop/tablet only: lift the toggle over the fact card so it stays fully
+   clickable while open. On mobile the summary must keep the absolute
+   positioning the scene-contained layout gives it. */
+@media(min-width:701px){
+  .scene--faces .signal-note>summary{position:relative;z-index:2}
+}
+.scene--faces .signal-note>summary .signal-dot{
+  width:17px;
+  height:17px;
+  box-shadow:
+    0 0 3px 1px rgba(255,241,214,.72),
+    0 0 0 9px rgba(var(--signal-rgb),.09),
+    0 0 30px 11px rgba(var(--signal-rgb),.44);
+}
+/* Resting halo so the light reads as findable without hover. */
+.scene--faces .signal-note>summary::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:74px;
+  height:74px;
+  margin:-37px 0 0 -37px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(var(--signal-rgb),.26) 0,rgba(var(--signal-rgb),.09) 40%,rgba(var(--signal-rgb),0) 70%);
+  pointer-events:none;
+  transition:opacity .22s var(--director-ease);
+}
+.scene--faces .signal-note[open]>summary .signal-dot{
+  transform:scale(1.2);
+  box-shadow:
+    0 0 5px 2px rgba(255,246,226,.92),
+    0 0 0 12px rgba(var(--signal-rgb),.13),
+    0 0 52px 20px rgba(var(--signal-rgb),.62);
+}
+.scene--faces .signal-note[open]>summary::after{opacity:0}
+
+/* 8. Focus Theatre. The dimmer keeps a hole around the inspected object, so
+   the rest of the room falls away while that corner stays lit. */
+.scene--faces::after{
+  background:
+    radial-gradient(54% 60% at var(--focus-x) var(--focus-y),rgba(4,2,2,0) 0%,rgba(4,2,2,.18) 24%,rgba(4,2,2,.74) 58%,rgba(4,2,2,1) 100%);
+}
+/* Local light field around the inspected object. */
+.scene--faces .signal-note::before{
+  width:330px;
+  height:330px;
+  background:radial-gradient(circle,rgba(var(--heat-rgb),.40) 0%,rgba(var(--signal-rgb),.19) 30%,rgba(var(--signal-rgb),.07) 52%,rgba(var(--signal-rgb),0) 74%);
+}
+
+/* The persistent editorial card yields while a fact is being inspected. */
+.scene--faces .scene-meta{transition:opacity .24s var(--director-ease)}
+.scene--faces:has(> .signal-note[open]) .scene-meta{opacity:.72}
+.scene--faces .scene-ghost{transition:opacity .24s var(--director-ease)}
+.scene--faces:has(> .signal-note[open]) .scene-ghost{opacity:calc(var(--ghost-opacity) * .55)}
+
+/* 9. Etched Glass — denser, colder glass with one warm etched highlight. */
+.scene--faces .fact-card{
+  border-color:rgba(249,228,198,.30);
+  background:
+    linear-gradient(180deg,rgba(255,233,199,.10),rgba(255,233,199,0) 24%),
+    radial-gradient(130% 86% at 0% 0%,rgba(var(--grade-b),.17),transparent 56%),
+    linear-gradient(145deg,rgba(11,7,6,.96),rgba(6,4,4,.91));
+  box-shadow:
+    inset 0 1px 0 rgba(255,238,210,.26),
+    inset 0 0 0 1px rgba(0,0,0,.58),
+    0 1px 0 rgba(0,0,0,.42),
+    0 30px 78px -16px rgba(0,0,0,.76),
+    0 0 44px -8px rgba(var(--heat-rgb),.20);
+  backdrop-filter:blur(17px) saturate(1.16) brightness(.80);
+  color:rgba(246,239,229,.88);
+}
+.scene--faces .fact-card::before{
+  left:15px;
+  width:88px;
+  background:linear-gradient(90deg,rgba(255,224,178,.80),rgba(255,224,178,0));
+}
+/* Inset rule under the kicker — etched, not printed. Anchored to the kicker
+   itself so it holds at every breakpoint's padding. */
+.scene--faces .fact-kicker{
+  color:rgba(255,216,168,.62)!important;
+  padding-bottom:9px;
+  border-bottom:1px solid rgba(0,0,0,.55);
+  box-shadow:0 1px 0 rgba(255,228,188,.09);
+}
+.scene--faces .fact-card a{border-bottom-color:rgba(255,216,168,.38);color:rgba(248,238,226,.78)}
+
+/* 6. Editorial card sits on the same material family as the fact card. */
+.scene--faces .scene-meta{
+  border-color:rgba(249,228,198,.22);
+  background:
+    linear-gradient(180deg,rgba(255,233,199,.07),rgba(255,233,199,0) 20%),
+    linear-gradient(135deg,rgba(9,6,5,.86),rgba(9,6,5,.56) 58%,rgba(9,6,5,.26));
+  box-shadow:
+    inset 0 1px 0 rgba(255,238,210,.20),
+    inset 0 0 0 1px rgba(0,0,0,.42),
+    0 26px 66px -18px rgba(0,0,0,.70);
+  backdrop-filter:blur(12px) saturate(1.10) brightness(.88);
+}
+
+/* Responsive: keep the focus hole on the signal light and the ghost legible. */
+@media(max-width:700px){
+  .scene--faces{
+    --focus-x:78%;
+    --focus-y:30%;
+    --heat-x:50%;
+    --heat-y:54%;
+    --grade-strength:.31;
+    --ghost-opacity:.62;
+    --ghost-x:3%;
+    --ghost-y:47%;
+  }
+  .scene--faces .signal-note::before{width:220px;height:220px}
+  /* Stack, do not overlap: the fact card opens clear of the editorial card. */
+  .scene--faces>.signal-note .fact-card{bottom:200px!important}
+  .scene--faces .signal-note>summary::after{width:64px;height:64px;margin:-32px 0 0 -32px}
+  .scene--faces .scene__shade{
+    background:
+      radial-gradient(86% 62% at 50% 50%,rgba(8,3,3,0) 34%,rgba(8,3,3,.30) 76%,rgba(5,2,2,.66) 100%),
+      radial-gradient(54% 28% at var(--heat-x) var(--heat-y),rgba(var(--heat-rgb),.17),rgba(var(--heat-rgb),0) 76%),
+      linear-gradient(180deg,rgba(0,0,0,.44) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 54%,rgba(0,0,0,.58) 100%);
+  }
+}
+@media(min-width:701px) and (max-width:1100px){
+  .scene--faces{--focus-x:80%;--focus-y:31%;--heat-x:47%;--heat-y:55%}
+}
+
+/* High contrast: keep the graded room, restore hard editorial legibility. */
+@media(prefers-contrast:more){
+  .scene--faces .fact-card{
+    background:rgba(6,4,4,.97);
+    border-color:rgba(255,255,255,.52);
+    backdrop-filter:none;
+    color:#f6efe5;
+  }
+  .scene--faces .scene-meta{background:rgba(7,5,5,.93);border-color:rgba(255,255,255,.44)}
+  .scene--faces .scene-ghost,
+  .scene--faces:has(> .signal-note[open]) .scene-ghost{opacity:.22}
+  .scene--faces .fact-kicker{color:rgba(255,232,198,.86)!important}
+}
+
+/* Reduced motion: the grade and the Focus Theatre stay, the movement goes. */
+@media(prefers-reduced-motion:reduce){
+  .scene--faces .signal-note>summary::after{transition:none!important}
+  .scene--faces .scene__image{animation:none!important}
+}
