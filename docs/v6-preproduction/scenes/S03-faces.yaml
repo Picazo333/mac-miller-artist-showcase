@@ -252,3 +252,26 @@ final_integration:
     - "scene exists in index.html"
     - "responsive focal/crop policy exists in v6.css"
     - "semantic navigation and accessibility structure exist"
+
+director_cut_balanced:
+  status: "APPROVED_IMPLEMENTATION"
+  golden_scene: true
+  visual_proof_approved: true
+  cinematic_intensity: 5
+  editorial_intensity: 3
+  living_light_intensity: 5
+  overlay:
+    asset: "assets/overlays/s03-faces-board-patch.svg"
+    type: "full-frame-svg-coordinate-overlay"
+    view_box: "0 0 1672 941"
+    purpose: "Cover the disliked Spanish board copy without modifying the approved Faces master."
+    crop_rule: "Overlay uses the same object-fit/object-position behavior as the Faces master."
+    accessibility: "decorative / aria-hidden"
+  runtime:
+    master: "assets/s03-faces.webp"
+    interaction: "native details + Signal Light + Focus Theatre + Etched Glass fact card"
+    javascript: false
+  definition_of_done:
+    - "Spanish board text is fully covered at 390, 768, 1024, 1440 and 1920 widths."
+    - "Mac and protected focal elements remain unobstructed."
+    - "Approved Faces master remains unchanged."
