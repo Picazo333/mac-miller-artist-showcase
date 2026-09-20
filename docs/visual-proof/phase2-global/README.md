@@ -9,7 +9,7 @@ real page, not mockups.
 | File | Shows |
 |---|---|
 | `contact-1440x900-closed.webp` | All eleven scenes, resting state, desktop |
-| `contact-1440x900-open.webp` | Every available open state, desktop (13 disclosures: one per album scene, four for Archive, one for Memorial) |
+| `contact-1440x900-open.webp` | Every available open state, desktop (12 disclosures: seven album scenes, four for Archive, one for Memorial) |
 | `contact-390x844-closed.webp` | All eleven scenes, resting state, phone |
 | `contact-390x844-open.webp` | Every available open state, phone |
 | `contact-1440x900-closed-BEFORE-phase2.webp` | The same desktop sheet at the Phase 1 commit, for comparison |
@@ -68,7 +68,7 @@ contain` so no collaborator is ever cropped.
 - **Hit testing** at 360, 390 and 430: every Signal Light remains the topmost element at its own
   centre point in both the closed and the open state, so no card can swallow the control that
   closes it.
-- **Keyboard**: all 13 disclosures open and close with `Enter` from keyboard focus, each with an
+- **Keyboard**: all 12 disclosures open and close with `Enter` from keyboard focus, each with an
   `aria-label`; `:focus-visible` outline preserved.
 - **Reduced motion**: animations `none`, transitions `0s`, while the grade and the Focus Theatre
   state change survive.
