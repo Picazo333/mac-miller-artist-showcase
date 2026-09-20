@@ -20,7 +20,7 @@
 - [x] Persistent album cards and fact cards use the Etched Glass system.
 - [x] Archive uses Forensic Lite on desktop/tablet and degrades to halo + card on mobile.
 - [x] Ritual Scroll level 2 is implemented as restrained scene-exit grading.
-- [x] Optional camera breathing is progressive enhancement only and transform-only.
+- [x] Scroll-driven camera breathing was removed after runtime profiling showed worse scroll performance; the final build keeps the stronger static cinematic treatment without that effect.
 - [x] High-contrast and reduced-motion preferences have dedicated fallbacks.
 
 ## Faces golden scene
@@ -31,8 +31,8 @@
 - [x] Patch uses full-frame `viewBox="0 0 1672 941"`.
 - [x] Patch is decorative and loaded independently of the master.
 - [x] Faces receives the highest approved cinematic / living-light intensity.
-- [ ] Visual runtime proof: board words fully covered at 390 / 768 / 1024 / 1440 / 1920.
-- [ ] Visual runtime proof: patch does not cover Mac or protected focal details.
+- [x] Visual runtime proof: board words fully covered at 390 / 768 / 1024 / 1440 / 1920.
+- [x] Visual runtime proof: patch does not cover Mac or protected focal details.
 
 ## Interaction
 
@@ -88,17 +88,17 @@
 
 Required runtime screenshots / checks:
 
-- [ ] 390x844
-- [ ] 768x1024
-- [ ] 1024x768
-- [ ] 1440x900
-- [ ] 1920x1080
+- [x] 390x844
+- [x] 768x1024
+- [x] 1024x768
+- [x] 1440x900
+- [x] 1920x1080
 
 Sanity checks:
 
-- [ ] 360 wide
-- [ ] 430 wide
-- [ ] 1366 wide
+- [x] 360 wide
+- [x] 430 wide
+- [x] 1366 wide
 
 ## Resolution policy
 
