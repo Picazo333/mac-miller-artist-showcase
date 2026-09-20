@@ -14,12 +14,14 @@ real page, not mockups.
 | `contact-390x844-open.webp` | Every available open state, phone |
 | `contact-1440x900-closed-BEFORE-phase2.webp` | The same desktop sheet at the Phase 1 commit, for comparison |
 
-Celebration has no disclosure by design, so it appears in the closed sheets only.
+Celebration has no disclosure by design, so it appears in the closed sheets only. The two closed
+sheets were regenerated after the Celebration composite was restored; the open sheets contain no
+Celebration frame and are unchanged.
 
 ## Individual proofs
 
 `s01-macadelic-*`, `s08-archive-*` (closed plus two of the four object states),
-`s09-memorial-*`, `s10-celebration-*`, and `s08-archive-390-open.webp`.
+`s09-memorial-*`, `s08-archive-390-open.webp`, and `s10-celebration-{1440,390,1920}.webp`.
 
 ## Golden Faces regression gate
 
@@ -32,15 +34,30 @@ commit: the Faces patch lost its phone-width crop sync (`object-position: 55% 54
 shared block was rewritten, and the persistent-card hairline changed alpha. Both were restored to
 the Phase 1 values.
 
-## Known defect, not caused by this work
+## Celebration composite — restored
 
-`assets/s10-celebration-composite.webp` is **truncated**: its VP8 chunk header declares 70 436
-bytes while the file is 12 158. No browser can decode it, so Celebration renders as an empty dark
-field with a broken-image marker. It is the only image on the site that fails to decode (1 of 12).
-The only copy in the whole repository history is the same truncated blob, so there is nothing to
-restore from. The two `s10-celebration-*-BROKEN-ASSET.webp` files record that state. Celebration's
-CSS direction is complete and asset-independent; it will read correctly the moment an intact
-composite lands at the same path.
+`assets/s10-celebration-composite.webp` was previously truncated: its VP8 chunk header declared
+70 436 bytes while the file held 12 158, so no browser could decode it and Celebration rendered as
+an empty dark field with a broken-image marker. Every copy in repository history was the same
+truncated blob, so it could not be recovered from git.
+
+It has been re-encoded from the approved source master, now kept in the repository at
+`assets/sources/homenaje_pixelado_bajo_la_luna.png` (1 314 126 bytes, 1672x941, RGB, no alpha,
+`sha256 097988f0…259f` — matching `S10-celebration-of-life.yaml` exactly). The runtime asset is
+168 634 bytes of WebP at quality 100 / method 6, RIFF and VP8 chunk sizes consistent with the file
+length, 1672x941, decoding in both Pillow and Chromium.
+
+Lossless WebP was measured at 938 544 bytes — 4.4x the heaviest existing master — against 168 634
+at quality 100. Rendered through Celebration's own grading at 1440x900 the two differ by a mean of
+1.44/255 per pixel (max channel delta 39, 0.5% of pixels differing by 8 or more), visible only
+under a 6x shadow boost. Quality 100 was chosen on that evidence; the lossless file is a one-line
+change if a future reviewer prefers it.
+
+Verified in Chromium at 1440x900, 390x844 and 1920x1080: composite decodes, no broken-image
+marker, no failed requests, Mac central under his halo, all six figures complete and uncropped,
+floor reflections present, heading and return CTA inside the scene, no horizontal overflow, one
+composite image in the section and zero sprite elements. Mobile keeps the approved `object-fit:
+contain` so no collaborator is ever cropped.
 
 ## Verification performed
 

@@ -20,6 +20,9 @@ reference:
   source_file_name: "homenaje_pixelado_bajo_la_luna.png"
   source_dimensions: "1672x941"
   sha256: "097988f051832dca82e7669e0c2380d68d1875d3ceefe89d26414218611d259f"
+  repo_source_path: "assets/sources/homenaje_pixelado_bajo_la_luna.png"
+  source_retained_in_repo: true
+  source_retention_reason: "The derived runtime composite was once shipped truncated and could not be recovered from git history. The approved master is kept in-repo so the runtime asset can always be re-derived."
   visual_thesis: "The final scene repopulates the stage after Memorial through six small pixel-art figures. Mac stands at the center under a halo, surrounded by five collaborators/friends. The background remains nearly black, theatrical and restrained so the sprites carry the emotional resolution."
   immutable_notes:
     - "Pixel-art is mandatory for all six figures."
@@ -287,3 +290,21 @@ director_cut_balanced:
     - "Composite is shown intact on desktop and mobile."
     - "No collaborator is cropped by an independent sprite container."
     - "Mac remains visually central with the approved halo."
+  runtime_asset_integrity:
+    status: "VALID"
+    encoding: "WebP, quality 100, method 6, RGB (the approved source carries no alpha)"
+    bytes: 168634
+    dimensions: "1672x941"
+    derived_from: "assets/sources/homenaje_pixelado_bajo_la_luna.png"
+    verified:
+      - "RIFF and VP8 chunk sizes consistent with the file length; not truncated"
+      - "decodes in Pillow and in Chromium"
+      - "rendered at 1440x900, 390x844 and 1920x1080 with no broken-image marker"
+      - "moon, halo, floor reflections and all six figures present and uncropped"
+    history:
+      - version: "truncated"
+        status: "SUPERSEDED"
+        reason: "Shipped file held 12158 bytes while its VP8 chunk declared 70456; no browser could decode it and the scene rendered empty. Not recoverable from git history."
+      - version: "re-encoded-from-approved-source"
+        status: "CURRENT"
+        reason: "Re-derived from the approved master with no change to the composition."

@@ -50,6 +50,14 @@
 ## Celebration
 
 - [x] Runtime uses `assets/s10-celebration-composite.webp`.
+- [x] The runtime composite decodes in a real browser. The previously shipped file was truncated
+      (VP8 chunk declared 70 436 bytes, file held 12 158) and rendered nothing; it was re-encoded
+      from the approved source and verified in Chromium at 1440x900, 390x844 and 1920x1080.
+- [x] The approved source master is stored in the repository at
+      `assets/sources/homenaje_pixelado_bajo_la_luna.png`, 1672x941, sha256 `097988f0…259f`,
+      matching `docs/v6-preproduction/scenes/S10-celebration-of-life.yaml`.
+- [x] Moon, halo, floor reflections and all six figures are present and uncropped at every checked
+      width; mobile keeps `object-fit: contain` so no collaborator is cropped.
 - [x] The old six-sprite layout is deprecated and is not the visual runtime.
 - [x] The six represented collaborators remain documented in screen-reader-only HTML.
 - [x] No independent sprite box can crop a collaborator.
