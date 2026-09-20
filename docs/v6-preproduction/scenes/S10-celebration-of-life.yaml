@@ -13,7 +13,9 @@ integration:
   sequence_after: "S09-memorial"
   sequence_before: null
   runtime_change_allowed_now: false
-  note: "Contract only. Final runtime integration remains gated by the V6 preproduction pipeline."
+  note: "Final runtime is frozen as the approved single composite. Earlier split-sprite planning notes in this contract are historical and superseded by director_cut_balanced."
+
+legacy_preproduction_status: "SUPERSEDED_BY_DIRECTOR_CUT_BALANCED"
 
 reference:
   approved: true
