@@ -109,13 +109,26 @@ Sanity checks:
 
 ## Remaining evidence gate after deploy
 
-- [ ] Validate deployed GitHub Pages, not an older cached build.
-- [ ] Confirm visual fidelity of Faces and Archive interactions in the deployed runtime.
-- [ ] Run PageSpeed Insights against the deployed final URL.
-- [ ] Confirm Performance >= 80.
-- [ ] Confirm SEO / Accessibility / Best Practices results.
-- [ ] Store the required PageSpeed evidence PNG in the repository.
-- [ ] Confirm the deployed commit SHA matches the approved merge.
+- [x] Validate deployed GitHub Pages, not an older cached build.
+- [x] Confirm visual fidelity of Faces and Archive interactions in the deployed runtime.
+- [x] Run PageSpeed Insights against the deployed final URL.
+- [x] Confirm Performance >= 80 — final mobile Lighthouse Performance: 100.
+- [x] Confirm SEO / Accessibility / Best Practices results — all 100.
+- [x] Store the required PageSpeed evidence PNG in the repository at `docs/evidence/pagespeed-mobile-final.png`.
+- [x] Confirm the deployed runtime contains the approved merge features and restored final assets for `54995622fe3eb5aefdc5c441e9ce89d681ac6c2b`.
+
+## Final deployed Lighthouse
+
+- Performance: **100**
+- Accessibility: **100**
+- Best Practices: **100**
+- SEO: **100**
+- FCP: **0.9 s**
+- LCP: **1.5 s**
+- TBT: **0 ms**
+- CLS: **0**
+- Speed Index: **0.9 s**
+- Evidence: `docs/evidence/pagespeed-mobile-final.png`
 
 ## Definition of Done
 

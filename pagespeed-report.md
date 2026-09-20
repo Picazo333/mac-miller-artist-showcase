@@ -1,33 +1,46 @@
-# PageSpeed validation
+# PageSpeed validation — final deployed revision
 
 Final public URL:
 
 https://picazo333.github.io/mac-miller-artist-showcase/
 
-PageSpeed Insights:
+Approved merge commit:
 
-https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fpicazo333.github.io%2Fmac-miller-artist-showcase%2F
+`54995622fe3eb5aefdc5c441e9ce89d681ac6c2b`
 
-## Current delivery state
+PageSpeed Insights was rerun against the clean final URL on **Sep 20, 2026 at 00:53 UTC**, using the **Mobile** Lighthouse profile (Emulated Moto G Power, Slow 4G, Lighthouse 13.4.1).
 
-The final runtime was converted to HTML + CSS only, with `styles.css` as the canonical stylesheet, Schema.org microdata, responsive layouts, and native HTML disclosures for interaction.
+## Final Lighthouse scores
 
-A fresh PageSpeed run must be executed against the latest deployed commit because older scores were captured before the final CSS-only architecture pass.
+- Performance: **100**
+- Accessibility: **100**
+- Best Practices: **100**
+- SEO: **100**
+- Agentic Browsing: **2/2**
 
-## Historical evidence
+## Performance metrics
 
-Previous project runs reached:
+- First Contentful Paint (FCP): **0.9 s**
+- Largest Contentful Paint (LCP): **1.5 s**
+- Total Blocking Time (TBT): **0 ms**
+- Cumulative Layout Shift (CLS): **0**
+- Speed Index: **0.9 s**
 
-- Performance: 99–100
-- Accessibility: 100
-- Best Practices: 100
-- SEO: 100
+The report showed no CrUX field data for this URL; the values above are the current Lighthouse lab results.
 
-These historical numbers are retained only as prior evidence and must not be treated as proof of the latest deployed revision.
+## Final evidence
 
-## Required final evidence
+- Screenshot: `docs/evidence/pagespeed-mobile-final.png`
+- PageSpeed URL: https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fpicazo333.github.io%2Fmac-miller-artist-showcase%2F&form_factor=mobile
+- Production runtime verification confirmed:
+  - Phase 1 Faces Golden Scene CSS is deployed;
+  - Phase 2 S00–S10 scene direction CSS is deployed;
+  - Faces board patch loads;
+  - Faces Focus Theatre changes state and the fact card remains scene-contained;
+  - Archive Focus Theatre / Forensic Lite changes state and the card remains scene-contained;
+  - Celebration composite decodes at **1672×941** with no broken-image state;
+  - scroll-driven `directorBreathe` is absent from the final CSS.
 
-- Performance >= 80
-- current SEO result checked
-- PNG screenshot of the PageSpeed result committed to the repository
-- screenshot must correspond to the final deployed URL
+## Remaining optimization opportunities
+
+PageSpeed still reports optional opportunities such as longer cache lifetimes, image-delivery savings, CSS minification and non-composited animation diagnostics. They do **not** prevent the current build from scoring 100 Performance and are not blockers for this academic delivery.
