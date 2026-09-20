@@ -28,7 +28,7 @@ La implementación final usa:
 - `<details>/<summary>` y controles HTML nativos para interacción;
 - Schema.org mediante microdata HTML;
 - masters visuales WebP ya aprobados;
-- seis sprites PNG independientes en Celebration of Life;
+- un composite pixel-art aprobado y restaurado como runtime canónico para Celebration of Life;
 - Scene Contracts e Integration Manifest en `docs/v6-preproduction/`.
 
 ## Interacción
@@ -72,6 +72,15 @@ python3 server.py
 GitHub Pages:
 
 https://picazo333.github.io/mac-miller-artist-showcase/
+
+## Evidencia de rúbrica
+
+- PageSpeed / Lighthouse: evidencia PNG en `docs/evidence/pagespeed-mobile-final.png`
+- Auditoría de criterios: `docs/RUBRIC_AUDIT.md`
+- QA técnico final: `docs/FINAL_QA.md`
+- Sitio público: https://picazo333.github.io/mac-miller-artist-showcase/
+
+La captura final aportada para entrega muestra **100 Performance, 100 Accessibility, 100 Best Practices y 100 SEO**. Una verificación independiente posterior al hotfix visual obtuvo **99 / 100 / 100 / 100**, todavía muy por encima del mínimo académico de 80 en Performance.
 
 ## Documentación
 

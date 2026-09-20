@@ -1,16 +1,16 @@
-# PageSpeed validation — final deployed revision
+# PageSpeed validation — final academic evidence
 
 Final public URL:
 
 https://picazo333.github.io/mac-miller-artist-showcase/
 
-Approved merge commit:
+Final approved runtime commit after the Circles / Archive cleanup hotfix:
 
-`54995622fe3eb5aefdc5c441e9ce89d681ac6c2b`
+`966f86b7248a275158a21a268ee4bd3994d914be`
 
-PageSpeed Insights was rerun against the clean final URL on **Sep 20, 2026 at 00:53 UTC**, using the **Mobile** Lighthouse profile (Emulated Moto G Power, Slow 4G, Lighthouse 13.4.1).
+## Submitted PageSpeed evidence
 
-## Final Lighthouse scores
+The final PageSpeed screenshot supplied for the academic delivery shows:
 
 - Performance: **100**
 - Accessibility: **100**
@@ -18,29 +18,45 @@ PageSpeed Insights was rerun against the clean final URL on **Sep 20, 2026 at 00
 - SEO: **100**
 - Agentic Browsing: **2/2**
 
-## Performance metrics
+Evidence file already committed in the academic repository:
 
-- First Contentful Paint (FCP): **0.9 s**
-- Largest Contentful Paint (LCP): **1.5 s**
-- Total Blocking Time (TBT): **0 ms**
-- Cumulative Layout Shift (CLS): **0**
-- Speed Index: **0.9 s**
+`docs/evidence/pagespeed-mobile-final.png`
 
-The report showed no CrUX field data for this URL; the values above are the current Lighthouse lab results.
+The assignment only requires Performance >= **80**, so this gate passes with substantial margin.
 
-## Final evidence
+## Independent post-hotfix verification
 
-- Screenshot: `docs/evidence/pagespeed-mobile-final.png`
-- PageSpeed URL: https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fpicazo333.github.io%2Fmac-miller-artist-showcase%2F&form_factor=mobile
-- Production runtime verification confirmed:
-  - Phase 1 Faces Golden Scene CSS is deployed;
-  - Phase 2 S00–S10 scene direction CSS is deployed;
-  - Faces board patch loads;
-  - Faces Focus Theatre changes state and the fact card remains scene-contained;
-  - Archive Focus Theatre / Forensic Lite changes state and the card remains scene-contained;
-  - Celebration composite decodes at **1672×941** with no broken-image state;
-  - scroll-driven `directorBreathe` is absent from the final CSS.
+A fresh Mobile PageSpeed run was also executed after the final Circles / Archive visual cleanup. Lighthouse returned:
 
-## Remaining optimization opportunities
+- Performance: **99**
+- Accessibility: **100**
+- Best Practices: **100**
+- SEO: **100**
+- First Contentful Paint: **1.1 s**
+- Largest Contentful Paint: **1.5 s**
+- Total Blocking Time: **0 ms**
+- Cumulative Layout Shift: **0**
+- Speed Index: **3.7 s**
 
-PageSpeed still reports optional opportunities such as longer cache lifetimes, image-delivery savings, CSS minification and non-composited animation diagnostics. They do **not** prevent the current build from scoring 100 Performance and are not blockers for this academic delivery.
+PageSpeed scores are lab measurements and can vary slightly between runs. Both the submitted 100-score evidence and the independent 99-score post-hotfix run satisfy the rubric.
+
+## Runtime verification
+
+The final deployed project was checked for:
+
+- 11 narrative scenes;
+- HTML + CSS only, with no executable JavaScript;
+- semantic HTML and external `styles.css`;
+- responsive behavior;
+- internal anchor navigation;
+- About, Career and Upcoming Shows;
+- accessibility affordances including keyboard focus and reduced motion;
+- Schema.org microdata;
+- Faces approved board patch;
+- Circles and Archive final invisible cleanup plates;
+- Celebration single composite runtime;
+- public GitHub Pages deployment.
+
+## PageSpeed URL
+
+https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fpicazo333.github.io%2Fmac-miller-artist-showcase%2F&form_factor=mobile
