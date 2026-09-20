@@ -115,7 +115,15 @@ Sanity checks:
 - [x] Confirm Performance >= 80 — final mobile Lighthouse Performance: 100.
 - [x] Confirm SEO / Accessibility / Best Practices results — all 100.
 - [x] Store the required PageSpeed evidence PNG in the repository at `docs/evidence/pagespeed-mobile-final.png`.
-- [x] Confirm the deployed runtime contains the approved merge features and restored final assets for `54995622fe3eb5aefdc5c441e9ce89d681ac6c2b`.
+- [x] Confirm the deployed runtime contains the approved final features and hotfix overlays for `966f86b7248a275158a21a268ee4bd3994d914be`.
+
+## Final raster-copy cleanup
+
+- [x] Circles baked quote and fake CTA are visually removed by `assets/overlays/s07-circles-cleanup.svg`.
+- [x] Archive baked catalogue copy, fake CTA and dead chronology are visually removed by `assets/overlays/s08-archive-cleanup.svg`.
+- [x] Both cleanup plates are CSS-only, decorative and pointer-event-free.
+- [x] No master raster, interaction, hotspot, navigation or JavaScript behavior changed.
+- [x] Post-hotfix PageSpeed independently remains above the required threshold: Performance 99, Accessibility 100, Best Practices 100, SEO 100.
 
 ## Final deployed Lighthouse
 
