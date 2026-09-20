@@ -1028,3 +1028,44 @@ a{color:inherit}button,summary{font:inherit}.sr-only{position:absolute!important
   .scene--faces .signal-note>summary::after{transition:none!important}
   .scene--faces .scene__image{animation:none!important}
 }
+
+
+/* ==========================================================================
+   HOTFIX — INVISIBLE RASTER-COPY CLEANUP (S07 / S08 ONLY)
+   Two full-frame SVG restoration plates are composited inside each <picture>.
+   They sit above the approved raster master but below the existing grade pass,
+   so Director's Cut color/depth treatment remains unchanged.
+   No interaction, layout, copy, CTA, hotspot or shared scene rule is altered.
+   ========================================================================== */
+
+.scene--circles picture::before,
+.scene--archive picture::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  background-size:cover;
+  filter:var(--plate);
+}
+
+/* Keep the existing grade pass above the restoration plate. */
+.scene--circles picture::after,
+.scene--archive picture::after{z-index:2}
+
+.scene--circles picture::before{
+  background-image:url("assets/overlays/s07-circles-cleanup.svg");
+  background-position:50% 50%;
+}
+
+.scene--archive picture::before{
+  background-image:url("assets/overlays/s08-archive-cleanup.svg");
+  background-position:50% 50%;
+}
+
+/* Match the same mobile crop used by the underlying approved masters. */
+@media(max-width:700px){
+  .scene--circles picture::before{background-position:50% 50%}
+  .scene--archive picture::before{background-position:65% 50%}
+}
