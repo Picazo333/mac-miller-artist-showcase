@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" role="presentation" aria-hidden="true">
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2=".72">
+      <stop offset="0" stop-color="#060504"/>
+      <stop offset=".42" stop-color="#090605"/>
+      <stop offset=".78" stop-color="#0b0705"/>
+      <stop offset="1" stop-color="#100906"/>
+    </linearGradient>
+    <radialGradient id="warmLift" cx=".88" cy=".74" r=".92">
+      <stop offset="0" stop-color="#3a1a0c" stop-opacity=".16"/>
+      <stop offset=".52" stop-color="#251106" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maskFade" cx=".30" cy=".42" r=".78">
+      <stop offset="0" stop-color="white"/>
+      <stop offset=".72" stop-color="white"/>
+      <stop offset="1" stop-color="black"/>
+    </radialGradient>
+    <mask id="softPatch">
+      <rect x="-8" y="4" width="506" height="572" rx="94" fill="url(#maskFade)"/>
+    </mask>
+  </defs>
+  <!--
+    Localized restoration layer for the baked archive paragraph, fake
+    catalogue CTA and dead chronology. The protected table/object field starts
+    to the right/below this patch and is left untouched.
+  -->
+  <g mask="url(#softPatch)">
+    <rect x="-14" y="-6" width="530" height="600" fill="url(#field)"/>
+    <rect x="-14" y="-6" width="530" height="600" fill="url(#warmLift)"/>
+  </g>
+</svg>

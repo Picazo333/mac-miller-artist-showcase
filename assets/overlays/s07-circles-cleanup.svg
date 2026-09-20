@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="presentation" aria-hidden="true">
+  <defs>
+    <!-- Reconstructed directly from the surrounding sky field in the approved master. -->
+    <linearGradient id="skyY" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#687b91"/>
+      <stop offset=".28" stop-color="#758494"/>
+      <stop offset=".56" stop-color="#87909b"/>
+      <stop offset=".78" stop-color="#9d9695"/>
+      <stop offset="1" stop-color="#b6a095"/>
+    </linearGradient>
+    <linearGradient id="skyX" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#77899a" stop-opacity=".12"/>
+      <stop offset=".55" stop-color="#8b8f98" stop-opacity="0"/>
+      <stop offset="1" stop-color="#c19f8b" stop-opacity=".10"/>
+    </linearGradient>
+    <filter id="feather" x="-20%" y="-35%" width="140%" height="170%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <mask id="softPatch">
+      <rect x="596" y="205" width="430" height="170" rx="36" fill="white" filter="url(#feather)"/>
+    </mask>
+  </defs>
+
+  <!--
+    Surgical cleanup only: removes the baked quote and fake CTA.
+    The raster CIRCLES title, architecture, clouds, Mac and all live HTML/UI remain untouched.
+  -->
+  <g mask="url(#softPatch)">
+    <rect x="560" y="175" width="505" height="235" fill="url(#skyY)"/>
+    <rect x="560" y="175" width="505" height="235" fill="url(#skyX)"/>
+  </g>
+</svg>
