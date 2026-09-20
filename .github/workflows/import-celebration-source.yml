@@ -22,13 +22,8 @@ jobs:
           mkdir -p assets/sources
           curl --fail --location --retry 3 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/5890f85f-90e4-4e24-8fe6-41a9ffaf664a.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNGVhYTQ4ZDYzMjZhYjlkNSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTk3MTQxNH0.5CnpSnJ3PoXk02tDqi6FsihARdyt6gsVIqJOPjy4UJo' -o assets/sources/homenaje_pixelado_bajo_la_luna.png
           echo "097988f051832dca82e7669e0c2380d68d1875d3ceefe89d26414218611d259f  assets/sources/homenaje_pixelado_bajo_la_luna.png" | sha256sum -c -
-          python3 - <<'PY'
-          from PIL import Image
-          p="assets/sources/homenaje_pixelado_bajo_la_luna.png"
-          im=Image.open(p)
-          assert im.size==(1672,941), im.size
-          print("verified", im.size, im.mode)
-          PY
+          file assets/sources/homenaje_pixelado_bajo_la_luna.png | tee /tmp/fileinfo
+          grep -q "PNG image data, 1672 x 941" /tmp/fileinfo
       - name: Commit approved source
         run: |
           git config user.name "github-actions[bot]"
