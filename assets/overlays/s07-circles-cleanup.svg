@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="presentation" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6f89a5"/>
+      <stop offset=".34" stop-color="#8fa0b2"/>
+      <stop offset=".68" stop-color="#b7aaa9"/>
+      <stop offset="1" stop-color="#d3b08f"/>
+    </linearGradient>
+    <radialGradient id="warm" cx=".78" cy=".82" r=".78">
+      <stop offset="0" stop-color="#e0b68f" stop-opacity=".26"/>
+      <stop offset=".58" stop-color="#b8948b" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#8ea0b1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx=".12" cy=".08" r=".72">
+      <stop offset="0" stop-color="#6784a2" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#6784a2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maskFade" cx=".42" cy=".42" r=".72">
+      <stop offset="0" stop-color="white"/>
+      <stop offset=".72" stop-color="white"/>
+      <stop offset="1" stop-color="black"/>
+    </radialGradient>
+    <mask id="softPatch">
+      <rect x="28" y="0" width="760" height="342" rx="86" fill="url(#maskFade)"/>
+    </mask>
+  </defs>
+  <!--
+    Localized restoration layer for the baked quote + fake CTA.
+    It deliberately reconstructs only the quiet sky/wall field and feathers
+    into the untouched master; no semantic/UI content is added.
+  -->
+  <g mask="url(#softPatch)">
+    <rect x="20" y="-10" width="780" height="370" fill="url(#sky)"/>
+    <rect x="20" y="-10" width="780" height="370" fill="url(#warm)"/>
+    <rect x="20" y="-10" width="780" height="370" fill="url(#cool)"/>
+  </g>
+</svg>
